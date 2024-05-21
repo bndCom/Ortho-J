@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.orthoj.Controller.Dashboard">
+   <children>
+      <VBox layoutX="165.0" layoutY="122.0" prefHeight="156.0" prefWidth="270.0" spacing="10.0">
+         <children>
+            <Label fx:id="nom" />
+            <Label fx:id="prenom" />
+            <Label fx:id="adresse" />
+            <Label fx:id="telephone" />
+            <Label fx:id="email" />
+            <Label fx:id="password" />
+         </children>
+      </VBox>
+      <Label layoutX="271.0" layoutY="105.0" text="Dashboard" />
+   </children>
+</AnchorPane>

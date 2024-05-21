@@ -38,4 +38,35 @@ public class Orthophoniste {
     public void setPassword(String password) {
         this.password = password;
     }
+
+    // getters
+
+    public String getNom() {
+        return nom;
+    }
+
+    public String getPrenom() {
+        return prenom;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public String getTelephone() {
+        return telephone;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    // verify the password ( for security reasons )
+    public boolean verifyPassword(String password) {
+        return this.password.equals(password);
+    }
 }

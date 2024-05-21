@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.orthoj.Controller.Connecter">
+   <children>
+      <VBox layoutX="162.0" layoutY="165.0" prefHeight="64.0" prefWidth="276.0" spacing="20.0">
+         <children>
+            <TextField fx:id="email" text="email" />
+            <TextField fx:id="password" text="mot de passe" />
+         </children>
+      </VBox>
+      <Button layoutX="162.0" layoutY="256.0" mnemonicParsing="false" onAction="#connecter" text="se connecter" />
+      <Label layoutX="275.0" layoutY="131.0" text="Connxion" />
+      <Label fx:id="status" layoutX="312.0" layoutY="260.0" />
+   </children>
+</AnchorPane>
