@@ -3,9 +3,13 @@ package com.example.orthoj.Controller;
 import com.example.orthoj.Main;
 import com.example.orthoj.Model.Orthophoniste;
 import javafx.fxml.FXML;
+import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 
-public class Dashboard {
+import java.net.URL;
+import java.util.ResourceBundle;
+
+public class Dashboard{
 
     @FXML
     private Label adresse;
@@ -26,6 +30,9 @@ public class Dashboard {
     private Label telephone;
 
     @FXML
+    private ChoiceBox<String> sfsf;
+
+    @FXML
     void initialize(){
         // getting the doctor of the cabinet
         Orthophoniste doctor = Main.cabinet.getOrthophoniste();
@@ -36,6 +43,9 @@ public class Dashboard {
         telephone.setText(doctor.getTelephone());
         adresse.setText(doctor.getAddress());
         password.setText(doctor.getPassword());
+
+        sfsf.getItems().addAll("amar", "mounir");
     }
+
 
 }

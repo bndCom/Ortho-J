@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.orthoj.Controller.EpreuveTestQCM">
+   <children>
+      <ImageView fitHeight="17.0" fitWidth="343.0" layoutX="141.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Assets/progress_bar1.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="52.0" layoutY="61.0" text="Epreuve Clinique:">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Label>
+      <Button fx:id="ajouter" layoutX="482.0" layoutY="341.0" mnemonicParsing="false" onAction="#ajouterObs" text="Ajouter" />
+      <Button fx:id="suivant" layoutX="531.0" layoutY="10.0" mnemonicParsing="false" onAction="#suivant" text="Suivant" />
+      <VBox layoutX="14.0" layoutY="148.0" prefHeight="114.0" prefWidth="100.0" spacing="40.0">
+         <children>
+            <Button fx:id="qcm" mnemonicParsing="false" onAction="#getQCMPage" prefHeight="25.0" prefWidth="117.0" text="QCM" />
+            <Button fx:id="qcu" mnemonicParsing="false" onAction="#getQCUPage" prefHeight="25.0" prefWidth="117.0" text="QCU" />
+            <Button fx:id="ql" mnemonicParsing="false" onAction="#getQLPage" prefHeight="25.0" prefWidth="117.0" text="QL" />
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

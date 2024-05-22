@@ -50,7 +50,6 @@ public class Inscrire {
         Main.cabinet.signUp(doctor);
         status.setText("Success");
 
-        // loading the dashboard
         FXMLLoader fxmlLoader = new FXMLLoader(com.example.orthoj.Main.class.getResource("View/connecter.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 600, 400);
         Main.stage.setScene(scene);
