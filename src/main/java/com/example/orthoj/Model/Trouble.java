@@ -13,4 +13,12 @@ public class Trouble {
         this.nom = nom;
         this.type = type;
     }
+
+    public String getNom() {
+        return nom;
+    }
+
+    public TypeTrouble getType() {
+        return type;
+    }
 }

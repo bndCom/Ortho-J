@@ -50,5 +50,9 @@ public class EpreuveClinique {
         return score;
     }
 
+    public void setObservations(List<String> obs){
+        this.observations = obs;
+    }
+
 
 }

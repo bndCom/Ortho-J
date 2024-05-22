@@ -17,4 +17,8 @@ public class Diagnostic {
     public void addTrouble(Trouble trouble){
         this.troubles.add(trouble);
     }
+
+    public void setTroubles(List<Trouble> troubles) {
+        this.troubles = troubles;
+    }
 }

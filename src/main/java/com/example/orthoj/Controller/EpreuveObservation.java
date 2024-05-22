@@ -14,6 +14,8 @@ import javafx.scene.control.TextArea;
 import javafx.scene.control.cell.PropertyValueFactory;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class EpreuveObservation {
 
@@ -32,20 +34,23 @@ public class EpreuveObservation {
     @FXML
     private TableColumn<String, String> observationColumn;
 
+    EpreuveClinique epreuve;
+    List<String> observations;
+
     @FXML
     void ajouterObs(ActionEvent event) throws IOException {
-        // adding the observation to epreuve
-        Main.epreuve.addObservation(newObs.getText());
+        // adding the observation to the observations list
+        observations.add(newObs.getText());
+        // update the table
+        observationTable.getItems().add(newObs.getText());
 
-        // reloading the table
-        FXMLLoader fxmlLoader = new FXMLLoader(com.example.orthoj.Main.class.getResource("View/epreuve_observation.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 600, 400);
-        Main.stage.setScene(scene);
-        Main.stage.show();
     }
 
     @FXML
     void suivant(ActionEvent event) throws IOException {
+        // update les epreuves
+        epreuve.setObservations(observations);
+        // load the next stage
         FXMLLoader fxmlLoader = new FXMLLoader(com.example.orthoj.Main.class.getResource("View/epreuve_testQCM.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 600, 400);
         Main.stage.setScene(scene);
@@ -56,9 +61,10 @@ public class EpreuveObservation {
     void initialize() {
         // filling the table with observations
         observationColumn.setCellValueFactory(data -> new javafx.beans.property.SimpleStringProperty(data.getValue()));
-        if(!Main.epreuve.getObservations().isEmpty()){
-            observationTable.setItems(FXCollections.observableArrayList(Main.epreuve.getObservations()));
-        }
+        // init epreuve
+        epreuve = new EpreuveClinique();
+        observations = new ArrayList<String>();
+
     }
 
 }
