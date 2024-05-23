@@ -35,7 +35,7 @@ javafx {
 }
 
 dependencies {
-
+    implementation 'org.jfxtras:jfxtras-controls:11.0-r1'
     testImplementation("org.junit.jupiter:junit-jupiter-api:${junitVersion}")
     testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:${junitVersion}")
 }
