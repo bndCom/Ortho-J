@@ -27,7 +27,7 @@ public class Main extends Application {
     public void start(Stage stage) throws IOException {
         // setting the main stage
         Main.stage = stage;
-        FXMLLoader fxmlLoader = new FXMLLoader(com.example.orthoj.Main.class.getResource("View/diagnostic.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(com.example.orthoj.Main.class.getResource("View/ajouterQCM.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 600, 400);
         stage.setTitle("Ortho-J");
         stage.setScene(scene);

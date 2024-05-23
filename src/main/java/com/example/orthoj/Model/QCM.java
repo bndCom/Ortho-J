@@ -28,6 +28,11 @@ public class QCM extends Question{
         this.form = form;
     }
 
+    // getters
+    public Map<String, Map<String, Boolean>> getForm() {
+        return form;
+    }
+
     // setters
     // setting the responses of the patient, they must be in the same order of the questions
     public void setReponsesChoisis(List<Set<String>> reponsesChoisis) throws InvalidResponse {
