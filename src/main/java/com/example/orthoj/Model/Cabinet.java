@@ -2,15 +2,20 @@ package com.example.orthoj.Model;
 
 import com.example.orthoj.Model.CustomException.NoUserException;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Cabinet {
 
     //attributes
     private Orthophoniste orthophoniste;
+    // questions templates
+    private List<Question> questions;
 
 
     //constructor
     public Cabinet() {
-
+        this.questions = new ArrayList<Question>();
     }
 
     //setters
@@ -30,5 +35,10 @@ public class Cabinet {
             throw new NoUserException();
         }
         return true;
+    }
+
+    // add new question
+    public void addQuestion(Question question){
+        this.questions.add(question);
     }
 }

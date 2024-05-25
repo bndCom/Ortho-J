@@ -26,4 +26,9 @@ public class TestExercice extends Test{
             exercices.add(e);
         }
     }
+
+    // setters
+    public void setExercices(List<Exercice> exercices){
+        this.exercices = exercices;
+    }
 }

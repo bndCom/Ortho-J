@@ -26,6 +26,14 @@ public class Exercice {
         return this.score;
     }
 
+    public String getNom(){
+        return this.nom;
+    }
+
+    public String getMateriel(){
+        return this.materiel;
+    }
+
     public boolean getState(){
         return this.done;
     }

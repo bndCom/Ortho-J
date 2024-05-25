@@ -1,7 +1,9 @@
 package com.example.orthoj.Controller;
 
 import com.example.orthoj.Main;
+import com.example.orthoj.Model.CustomException.InvalidQuestion;
 import com.example.orthoj.Model.QCM;
+import com.example.orthoj.Model.QCU;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -15,7 +17,7 @@ import java.io.IOException;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
-public class AjouterQCM {
+public class AjouterQCU {
 
     @FXML
     private CheckBox check1;
@@ -48,23 +50,23 @@ public class AjouterQCM {
     private Label num;
 
     @FXML
-    private TextField qcmNom;
+    private TextField qcuNom;
 
     @FXML
-    private TextField qcmQuestion;
+    private TextField qcuQuestion;
 
     @FXML
     private Button suivant;
 
     // one response for a single question in qcm
     private Map<String, Boolean> resp1;
-    public static Map<String, Map<String, Boolean>> qcmQ;
+    public static Map<String, Map<String, Boolean>> qcuQ;
     static int qNum;
 
     @FXML
     void initialize(){
         resp1 = new LinkedHashMap<String, Boolean>();
-        qcmQ = new LinkedHashMap<String, Map<String, Boolean>>();
+        qcuQ = new LinkedHashMap<String, Map<String, Boolean>>();
         qNum = 1;
         num.setText(Integer.toString(qNum));
     }
@@ -79,14 +81,19 @@ public class AjouterQCM {
         resp1.put(choix3.getText(), check3.isSelected());
         resp1.put(choix4.getText(), check4.isSelected());
         // adding the question
-        qcmQ.put(qcmQuestion.getText(), resp1);
+        qcuQ.put(qcuQuestion.getText(), resp1);
 
-        QCM qcm = new QCM(qcmQ);
-        Main.cabinet.addQuestion(qcm);
+        QCU qcu;
+        try {
+            qcu = new QCU(qcuQ);
+        } catch (InvalidQuestion e) {
+            throw new RuntimeException(e);
+        }
+        Main.cabinet.addQuestion(qcu);
         // add the question to be shown in the qcm windows
-        EpreuveTestQCM.qcmForm = qcm;
+        EpreuveTestQCU.qcuForm = qcu;
         // loading the test scene
-        FXMLLoader fxmlLoader = new FXMLLoader(com.example.orthoj.Main.class.getResource("View/epreuve_testQCM.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("View/epreuve_testQCU.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 600, 400);
         Main.stage.setScene(scene);
         Main.stage.show();
@@ -102,11 +109,39 @@ public class AjouterQCM {
         resp1.put(choix3.getText(), check3.isSelected());
         resp1.put(choix4.getText(), check4.isSelected());
         // adding the question
-        qcmQ.put(qcmQuestion.getText(), resp1);
+        qcuQ.put(qcuQuestion.getText(), resp1);
         // update number
         qNum+= 1;
         num.setText(Integer.toString(qNum));
 
 
+    }
+
+    @FXML
+    void onCheck1(ActionEvent event) {
+        check2.setSelected(false);
+        check3.setSelected(false);
+        check4.setSelected(false);
+    }
+
+    @FXML
+    void onCheck2(ActionEvent event) {
+        check1.setSelected(false);
+        check3.setSelected(false);
+        check4.setSelected(false);
+    }
+
+    @FXML
+    void onCheck3(ActionEvent event) {
+        check2.setSelected(false);
+        check1.setSelected(false);
+        check4.setSelected(false);
+    }
+
+    @FXML
+    void onCheck4(ActionEvent event) {
+        check2.setSelected(false);
+        check3.setSelected(false);
+        check1.setSelected(false);
     }
 }

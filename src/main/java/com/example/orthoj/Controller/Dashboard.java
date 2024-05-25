@@ -29,8 +29,6 @@ public class Dashboard{
     @FXML
     private Label telephone;
 
-    @FXML
-    private ChoiceBox<String> sfsf;
 
     @FXML
     void initialize(){
@@ -44,7 +42,6 @@ public class Dashboard{
         adresse.setText(doctor.getAddress());
         password.setText(doctor.getPassword());
 
-        sfsf.getItems().addAll("amar", "mounir");
     }
 
 

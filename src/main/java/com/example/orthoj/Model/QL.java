@@ -22,6 +22,10 @@ public class QL extends Question{
         }
     }
 
+    // getters
+    public Map<String, String> getForm(){
+        return this.form;
+    }
     // setters
     // set the chosen responses, they must be in the same order of the questions
     public void setReponsesChoisis(List<String> reponsesChoisis) throws InvalidResponse{
