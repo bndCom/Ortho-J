@@ -10,16 +10,16 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.LinkedHashMap;
+import java.util.List;
 import java.util.Map;
 
 public class Main extends Application {
     public static Cabinet cabinet = new Cabinet();
+    // tmp (waiting for integration)
+    public static List<BO> bos = new ArrayList<>();
     // used variables (tmp) --------------------------------------------
-    public static BO bo = new BO();
-    public static EpreuveClinique epreuve = new EpreuveClinique();
-
-    public static Map<String, Map<String, Boolean>> qcmQuestion = new LinkedHashMap<String, Map<String, Boolean>>();
 
     // -----------------------------------------------------------------
     public static Stage stage;
@@ -27,7 +27,7 @@ public class Main extends Application {
     public void start(Stage stage) throws IOException {
         // setting the main stage
         Main.stage = stage;
-        FXMLLoader fxmlLoader = new FXMLLoader(com.example.orthoj.Main.class.getResource("View/ajouterQCM.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(com.example.orthoj.Main.class.getResource("View/epreuve_observation.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 600, 400);
         stage.setTitle("Ortho-J");
         stage.setScene(scene);

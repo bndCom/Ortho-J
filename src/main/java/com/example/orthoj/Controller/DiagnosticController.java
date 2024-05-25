@@ -1,6 +1,7 @@
 package com.example.orthoj.Controller;
 
 import com.example.orthoj.Main;
+import com.example.orthoj.Model.Diagnostic;
 import com.example.orthoj.Model.Enumeration.TypeTrouble;
 import com.example.orthoj.Model.Trouble;
 import javafx.beans.property.SimpleStringProperty;
@@ -20,7 +21,7 @@ import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Diagnostic {
+public class DiagnosticController {
 
     @FXML
     private Button ajouter;
@@ -43,7 +44,7 @@ public class Diagnostic {
     @FXML
     private TableView<Trouble> troubleTable;
 
-    com.example.orthoj.Model.Diagnostic diagnostic;
+    static public Diagnostic diagnostic;
     List<Trouble> troubles;
 
     @FXML
@@ -60,10 +61,7 @@ public class Diagnostic {
     void suivant(ActionEvent event) throws IOException {
         // update the diagnostic
         diagnostic.setTroubles(troubles);
-        // add the diagnostic to the BO
-        Main.bo.setDiagnostic(diagnostic);
-        // load the next BO step (projet therapeutique)
-        // load the next stage
+
         FXMLLoader fxmlLoader = new FXMLLoader(com.example.orthoj.Main.class.getResource("View/projet_therapeutique.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 600, 400);
         Main.stage.setScene(scene);

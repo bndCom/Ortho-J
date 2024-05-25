@@ -2,6 +2,9 @@ package com.example.orthoj.Controller;
 
 import com.example.orthoj.Main;
 import com.example.orthoj.Model.EpreuveClinique;
+import com.example.orthoj.Model.Test;
+import com.example.orthoj.Model.TestExercice;
+import com.example.orthoj.Model.TestQuestion;
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -34,8 +37,8 @@ public class EpreuveObservation {
     @FXML
     private TableColumn<String, String> observationColumn;
 
-    EpreuveClinique epreuve;
-    List<String> observations;
+    static EpreuveClinique epreuve;
+    private List<String> observations;
 
     @FXML
     void ajouterObs(ActionEvent event) throws IOException {
@@ -51,7 +54,9 @@ public class EpreuveObservation {
         // update les epreuves
         epreuve.setObservations(observations);
         // load the next stage
-        FXMLLoader fxmlLoader = new FXMLLoader(com.example.orthoj.Main.class.getResource("View/epreuve_testQCM.fxml"));
+//        EpreuveTest.testQuestion = new TestQuestion();
+//        EpreuveTest.testExercise = new TestExercice();
+        FXMLLoader fxmlLoader = new FXMLLoader(com.example.orthoj.Main.class.getResource("View/test_choix.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 600, 400);
         Main.stage.setScene(scene);
         Main.stage.show();

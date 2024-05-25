@@ -32,7 +32,10 @@ public class QCU extends Question{
         }
     }
 
-
+    //getters
+    public Map<String, Map<String, Boolean>> getForm(){
+        return this.form;
+    }
 
     // setters
     // setting the responses of the patient, they must be in the same order of the questions
