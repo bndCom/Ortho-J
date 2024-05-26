@@ -13,4 +13,9 @@ public class PremierBO extends BO{
     public void setAnamnese(Anamnese anamnese) {
         this.anamnese = anamnese;
     }
+
+    // getters
+    public Anamnese getAnamnese() {
+        return anamnese;
+    }
 }

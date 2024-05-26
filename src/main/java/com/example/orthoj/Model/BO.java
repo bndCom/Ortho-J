@@ -9,11 +9,13 @@ public class BO {
     protected List<EpreuveClinique> epreuves;
     protected Diagnostic diagnostic;
     protected String projetTherapeutique;
+    private static int id = 0;
 
     //constructor
     public BO(){
         epreuves = new ArrayList<EpreuveClinique>();
         diagnostic = new Diagnostic();
+        this.id++;
     }
 
     // setters
@@ -28,5 +30,16 @@ public class BO {
     // add new Epreuve
     public void addEpreuveClinique(EpreuveClinique ep) {
         epreuves.add(ep);
+    }
+
+    // getters
+    public int getId(){
+        return id;
+    }
+    public String getProjetTherapeutique(){
+        return projetTherapeutique;
+    }
+    public Diagnostic getDiagnostic(){
+        return diagnostic;
     }
 }

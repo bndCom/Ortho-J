@@ -21,4 +21,8 @@ public class Diagnostic {
     public void setTroubles(List<Trouble> troubles) {
         this.troubles = troubles;
     }
+
+    public List<Trouble> getTroubles() {
+        return troubles;
+    }
 }

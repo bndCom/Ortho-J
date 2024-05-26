@@ -119,5 +119,8 @@ public class AnamneseEnfant extends Anamnese{
         return this.questions[6];
     }
 
+    public QLAnamEnfant[] getQuestions(){
+        return this.questions;
+    }
 
 }

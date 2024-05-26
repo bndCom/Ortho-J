@@ -3,6 +3,8 @@ package com.example.orthoj.Model;
 import com.example.orthoj.Model.CustomException.*;
 import com.example.orthoj.Model.Enumeration.TypeQLAnamAdulte;
 
+import java.util.List;
+
 
 public class AnamneseAdulte extends Anamnese{
     // attributes
@@ -45,4 +47,7 @@ public class AnamneseAdulte extends Anamnese{
         return this.questions[1];
     }
 
+    public QLAnamAdulte[] getQuestions(){
+        return this.questions;
+    }
 }

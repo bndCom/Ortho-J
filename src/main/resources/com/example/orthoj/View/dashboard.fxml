@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -24,5 +25,7 @@
             <Image url="@../Assets/comicsman.jpeg" />
          </image>
       </ImageView>
+      <Button fx:id="ajouterBO" layoutX="37.0" layoutY="236.0" mnemonicParsing="false" onAction="#onAjouterBO" text="ajouter BO" />
+      <Button fx:id="listeBO" layoutX="37.0" layoutY="287.0" mnemonicParsing="false" onAction="#onListeBO" text="Liste BO" />
    </children>
 </AnchorPane>
