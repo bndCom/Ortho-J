@@ -11,4 +11,12 @@ abstract public class Test {
 
     // abstract method
     abstract public int calcTestScore();
+
+    public String getNom() {
+        return nom;
+    }
+
+    public void setNom(String nom){
+        this.nom = nom;
+    }
 }

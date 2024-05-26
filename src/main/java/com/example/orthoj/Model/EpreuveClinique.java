@@ -49,6 +49,9 @@ public class EpreuveClinique {
         }
         return score;
     }
+    public List<Test> getTests(){
+        return this.tests;
+    }
 
     public void setObservations(List<String> obs){
         this.observations = obs;

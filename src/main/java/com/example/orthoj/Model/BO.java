@@ -42,4 +42,7 @@ public class BO {
     public Diagnostic getDiagnostic(){
         return diagnostic;
     }
+    public List<EpreuveClinique> getEpreuveCliniques(){
+        return epreuves;
+    }
 }

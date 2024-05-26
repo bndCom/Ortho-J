@@ -1,11 +1,9 @@
 package com.example.orthoj.Model;
 
 import com.example.orthoj.Model.CustomException.InvalidResponse;
+import com.example.orthoj.Model.CustomException.QuestionNotAnswered;
 
-import java.util.HashSet;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 public class QCM extends Question{
     // attributes
@@ -21,6 +19,7 @@ public class QCM extends Question{
      */
     private Map<String, Map<String, Boolean>> form;
     private List<Set<String>> reponsesChoisis;
+    private List<CompteRenduQCM> compteRendusQCM;
 
     //constructure
     public QCM(Map<String, Map<String, Boolean>> form) {
@@ -31,6 +30,45 @@ public class QCM extends Question{
     // getters
     public Map<String, Map<String, Boolean>> getForm() {
         return form;
+    }
+
+    public List<CompteRenduQCM> getCompteRendus() throws QuestionNotAnswered {
+        if(!this.done){
+            throw new QuestionNotAnswered();
+        }
+        // setting questions and choix
+        compteRendusQCM = new LinkedList<>();
+        Iterator<Set<String>> itr = reponsesChoisis.iterator();
+        for(Map.Entry<String, Map<String, Boolean>> entry : form.entrySet()){
+            CompteRenduQCM compteRenduQCM = new CompteRenduQCM();
+            // setting question
+            compteRenduQCM.setQuestion(entry.getKey());
+            Set<String> choisi = itr.next(); // chosen answers in that question
+            String choix = new String();
+            String correctes = new String();
+            String choisis = new String();
+            int i = 1;
+            for(Map.Entry<String, Boolean> entry1 : entry.getValue().entrySet()){
+                // setting choices and the correct ones
+                choix += i+"- "+entry1.getKey()+"\n";
+                if (entry1.getValue()){
+                    correctes += i+"- ";
+                }
+                // checking if the answer is chosen
+                if(choisi.contains(entry1.getKey())){
+                    choisis += i+"- ";
+                }
+                i++;
+            }
+
+            compteRenduQCM.setChoix(choix);
+            compteRenduQCM.setCorrectes(correctes);
+            compteRenduQCM.setChoisis(choisis);
+            compteRenduQCM.setScore(this.score);
+            // adding it to the comptes rendus
+            this.compteRendusQCM.add(compteRenduQCM);
+        }
+        return this.compteRendusQCM;
     }
 
     // setters

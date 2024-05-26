@@ -7,10 +7,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.CheckBox;
-import javafx.scene.control.Label;
-import javafx.scene.control.ScrollPane;
+import javafx.scene.control.*;
 import javafx.scene.layout.VBox;
 
 import java.io.IOException;
@@ -41,6 +38,9 @@ public class EpreuveTestQCM {
     private VBox formArea;
     @FXML
     private ScrollPane scrollpane;
+
+    @FXML
+    private TextField testNom;
 
 
     // the questions to be shown
@@ -144,6 +144,7 @@ public class EpreuveTestQCM {
     @FXML
     void suivant(ActionEvent event) throws IOException {
         // save the test to the epreuve
+        TestChoix.testQuestion.setNom(testNom.getText());
         EpreuveObservation.epreuve.addTest(TestChoix.testQuestion);
         // load the diagnostic window
         FXMLLoader fxmlLoader = new FXMLLoader(com.example.orthoj.Main.class.getResource("View/test_choix.fxml"));

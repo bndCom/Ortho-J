@@ -43,6 +43,9 @@ public class EpreuveTestQL {
     @FXML
     private ScrollPane scrollpane;
 
+    @FXML
+    private TextField testNom;
+
 
     // the questions to be shown
     static QL qlForm;
@@ -143,6 +146,7 @@ public class EpreuveTestQL {
     @FXML
     void suivant(ActionEvent event) throws IOException {
         // save the test to the epreuve
+        TestChoix.testQuestion.setNom(testNom.getText());
         EpreuveObservation.epreuve.addTest(TestChoix.testQuestion);
         // load the diagnostic window
         FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("View/test_choix.fxml"));
