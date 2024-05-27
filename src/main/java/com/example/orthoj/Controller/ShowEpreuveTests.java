@@ -96,7 +96,7 @@ public class ShowEpreuveTests {
                     Button button = new Button(test.getNom());
                     button.setOnAction(event -> {
                         ShowEpreuveTestsExercices.test = (TestExercice) test;
-                        FXMLLoader fxmlLoader = new FXMLLoader(com.example.orthoj.Main.class.getResource("View/show_epreuves_tests_exercices.fxml"));
+                        FXMLLoader fxmlLoader = new FXMLLoader(com.example.orthoj.Main.class.getResource("View/show_epreuve_tests_exercices.fxml"));
                         Scene scene = null;
                         try {
                             scene = new Scene(fxmlLoader.load(), 600, 400);

@@ -4,6 +4,7 @@ import com.example.orthoj.Main;
 import com.example.orthoj.Model.CompteRenduQCM;
 import com.example.orthoj.Model.CustomException.QuestionNotAnswered;
 import com.example.orthoj.Model.QCM;
+import com.example.orthoj.Model.QCU;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -16,7 +17,7 @@ import javafx.scene.control.TableView;
 
 import java.io.IOException;
 
-public class ShowEpreuveTestsQuestionsQCM {
+public class ShowEpreuveTestsQuestionsQCU {
 
     @FXML
     private Button anamnese;
@@ -34,9 +35,6 @@ public class ShowEpreuveTestsQuestionsQCM {
     private Button diagnostic;
 
     @FXML
-    private Label score;
-
-    @FXML
     private Button epreuve;
 
     @FXML
@@ -51,11 +49,14 @@ public class ShowEpreuveTestsQuestionsQCM {
     @FXML
     private TableColumn<CompteRenduQCM, String> questionsColumn;
 
-    public static QCM qcmQuestions;
+    @FXML
+    private Label score;
+
+    public static QCU qcuQuestions;
 
     @FXML
     void onAnamnese(ActionEvent event) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(com.example.orthoj.Main.class.getResource("View/show_anam.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("View/show_anam.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 600, 400);
         Main.stage.setScene(scene);
         Main.stage.show();
@@ -63,7 +64,7 @@ public class ShowEpreuveTestsQuestionsQCM {
 
     @FXML
     void onDiagnostic(ActionEvent event) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(com.example.orthoj.Main.class.getResource("View/show_diagnostic.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("View/show_diagnostic.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 600, 400);
         Main.stage.setScene(scene);
         Main.stage.show();
@@ -76,7 +77,7 @@ public class ShowEpreuveTestsQuestionsQCM {
 
     @FXML
     void onProjet(ActionEvent event) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(com.example.orthoj.Main.class.getResource("View/projet.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("View/projet.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 600, 400);
         Main.stage.setScene(scene);
         Main.stage.show();
@@ -92,8 +93,8 @@ public class ShowEpreuveTestsQuestionsQCM {
         correctColumn.setCellValueFactory(data -> new SimpleStringProperty(data.getValue().getCorrectes()));
         choisisColumn.setCellValueFactory(data -> new SimpleStringProperty(data.getValue().getChoisis()));
 
-        exercicesTable.getItems().addAll(qcmQuestions.getCompteRendus());
-        score.setText("Score: "+qcmQuestions.getQstScore());
+        exercicesTable.getItems().addAll(qcuQuestions.getCompteRendus());
+        score.setText("Score: "+qcuQuestions.getQstScore());
     }
 
 }

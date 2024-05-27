@@ -95,7 +95,7 @@ public class QCM extends Question{
         // iterate over all the questions
         for (Map.Entry<String, Map<String, Boolean>> entry : form.entrySet()) {
             reponsesChx = this.reponsesChoisis.get(i);
-            reponses.clear();
+            reponses = new HashSet<String>();
             // retrieving all the correct answers of the question
             tmp = entry.getValue(); // map of the responses of the current question
             for(Map.Entry<String, Boolean> entry1 : tmp.entrySet()) {

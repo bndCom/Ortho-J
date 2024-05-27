@@ -1,9 +1,9 @@
 package com.example.orthoj.Controller;
 
 import com.example.orthoj.Main;
-import com.example.orthoj.Model.CompteRenduQCM;
-import com.example.orthoj.Model.CustomException.QuestionNotAnswered;
-import com.example.orthoj.Model.QCM;
+import com.example.orthoj.Model.QCU;
+import com.example.orthoj.Model.QL;
+import com.example.orthoj.Model.QLData;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -15,32 +15,21 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 
 import java.io.IOException;
+import java.util.Map;
 
-public class ShowEpreuveTestsQuestionsQCM {
+public class ShowEpreuveTestsQuestionsQL {
 
     @FXML
     private Button anamnese;
 
     @FXML
-    private TableColumn<CompteRenduQCM, String> choisisColumn;
-
-    @FXML
-    private TableColumn<CompteRenduQCM, String> choixColumn;
-
-    @FXML
-    private TableColumn<CompteRenduQCM, String> correctColumn;
-
-    @FXML
     private Button diagnostic;
-
-    @FXML
-    private Label score;
 
     @FXML
     private Button epreuve;
 
     @FXML
-    private TableView<CompteRenduQCM> exercicesTable;
+    private TableView<QLData> exercicesTable;
 
     @FXML
     private Label nomBO;
@@ -49,13 +38,19 @@ public class ShowEpreuveTestsQuestionsQCM {
     private Button projet;
 
     @FXML
-    private TableColumn<CompteRenduQCM, String> questionsColumn;
+    private TableColumn<QLData, String> questionsColumn;
 
-    public static QCM qcmQuestions;
+    @FXML
+    private TableColumn<QLData, String> reponseColumn;
+
+    @FXML
+    private Label score;
+
+    public static QL qlQuestions;
 
     @FXML
     void onAnamnese(ActionEvent event) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(com.example.orthoj.Main.class.getResource("View/show_anam.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("View/show_anam.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 600, 400);
         Main.stage.setScene(scene);
         Main.stage.show();
@@ -63,7 +58,7 @@ public class ShowEpreuveTestsQuestionsQCM {
 
     @FXML
     void onDiagnostic(ActionEvent event) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(com.example.orthoj.Main.class.getResource("View/show_diagnostic.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("View/show_diagnostic.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 600, 400);
         Main.stage.setScene(scene);
         Main.stage.show();
@@ -76,24 +71,26 @@ public class ShowEpreuveTestsQuestionsQCM {
 
     @FXML
     void onProjet(ActionEvent event) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(com.example.orthoj.Main.class.getResource("View/projet.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("View/projet.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 600, 400);
         Main.stage.setScene(scene);
         Main.stage.show();
     }
 
     @FXML
-    void initialize() throws QuestionNotAnswered {
+    void initialize(){
         nomBO.setText("BO "+BoMain.bo.getId());
         epreuve.setDisable(true);
-        // adding les comptes rendus to table
+        // init the table
         questionsColumn.setCellValueFactory(data -> new SimpleStringProperty(data.getValue().getQuestion()));
-        choixColumn.setCellValueFactory(data -> new SimpleStringProperty(data.getValue().getChoix()));
-        correctColumn.setCellValueFactory(data -> new SimpleStringProperty(data.getValue().getCorrectes()));
-        choisisColumn.setCellValueFactory(data -> new SimpleStringProperty(data.getValue().getChoisis()));
-
-        exercicesTable.getItems().addAll(qcmQuestions.getCompteRendus());
-        score.setText("Score: "+qcmQuestions.getQstScore());
+        reponseColumn.setCellValueFactory(data -> new SimpleStringProperty(data.getValue().getAnswer()));
+        // fill the table
+        for(Map.Entry<String, String> entry : qlQuestions.getForm().entrySet()){
+            QLData qlData = new QLData(entry.getKey(), entry.getValue());
+            exercicesTable.getItems().add(qlData);
+        }
+        // writing the score
+        score.setText("Score: "+qlQuestions.getQstScore());
     }
 
 }

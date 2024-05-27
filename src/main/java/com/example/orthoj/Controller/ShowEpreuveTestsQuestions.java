@@ -70,12 +70,12 @@ public class ShowEpreuveTestsQuestions {
     }
 
     @FXML
-    void initialize(){
-        nomBO.setText("BO "+BoMain.bo.getId());
+    void initialize() {
+        nomBO.setText("BO " + BoMain.bo.getId());
         epreuve.setDisable(true);
         // setting the buttons for tests
-        for(Question question: test.getQuestions()){
-            if(question instanceof QCM) {
+        for (Question question : test.getQuestions()) {
+            if (question instanceof QCM) {
                 Button button = new Button("qcm"); // change it with the name of qcm
                 button.setOnAction(event -> {
                     // setting the qcm
@@ -92,44 +92,46 @@ public class ShowEpreuveTestsQuestions {
                 });
                 // adding the button to its area
                 qcmArea.getChildren().add(button);
+
+            } else if (question instanceof QCU) {
+                Button button = new Button("qcu"); // change it with the name of qcm
+                button.setOnAction(event -> {
+                    // setting the qcm
+                    ShowEpreuveTestsQuestionsQCU.qcuQuestions = (QCU) question;
+                    FXMLLoader fxmlLoader = new FXMLLoader(com.example.orthoj.Main.class.getResource("View/show_epreuve_tests_questions_QCU.fxml"));
+                    Scene scene = null;
+                    try {
+                        scene = new Scene(fxmlLoader.load(), 600, 400);
+                    } catch (IOException e) {
+                        throw new RuntimeException(e);
+                    }
+                    Main.stage.setScene(scene);
+                    Main.stage.show();
+                });
+                // adding the button to its area
+                qcuArea.getChildren().add(button);
+
+            } else if (question instanceof QL) {
+                Button button = new Button("ql"); // change it with the name of qcm
+                button.setOnAction(event -> {
+                    // setting the qcm
+                    ShowEpreuveTestsQuestionsQL.qlQuestions = (QL) question;
+                    FXMLLoader fxmlLoader = new FXMLLoader(com.example.orthoj.Main.class.getResource("View/show_epreuve_tests_questions_QL.fxml"));
+                    Scene scene = null;
+                    try {
+                        scene = new Scene(fxmlLoader.load(), 600, 400);
+                    } catch (IOException e) {
+                        throw new RuntimeException(e);
+                    }
+                    Main.stage.setScene(scene);
+                    Main.stage.show();
+                });
+                // adding the button to its area
+                qlArea.getChildren().add(button);
             }
-//            } else if (question instanceof QCU) {
-//                Button button = new Button("qcu"); // change it with the name of qcm
-//                button.setOnAction(event -> {
-//                    // setting the qcm
-//                    ShowEpreuveTestsQuestionsQCU.qcuQuestions = (QCU) question;
-//                    FXMLLoader fxmlLoader = new FXMLLoader(com.example.orthoj.Main.class.getResource("View/show_epreuve_tests_questions_QCU.fxml"));
-//                    Scene scene = null;
-//                    try {
-//                        scene = new Scene(fxmlLoader.load(), 600, 400);
-//                    } catch (IOException e) {
-//                        throw new RuntimeException(e);
-//                    }
-//                    Main.stage.setScene(scene);
-//                    Main.stage.show();
-//                });
-//                // adding the button to its area
-//                qcuArea.getChildren().add(button);
-//            } else if (question instanceof QL) {
-//                Button button = new Button("ql"); // change it with the name of qcm
-//                button.setOnAction(event -> {
-//                    // setting the qcm
-//                    ShowEpreuveTestsQuestionsQL.qlQuestions = (QL) question;
-//                    FXMLLoader fxmlLoader = new FXMLLoader(com.example.orthoj.Main.class.getResource("View/show_epreuve_tests_questions_QL.fxml"));
-//                    Scene scene = null;
-//                    try {
-//                        scene = new Scene(fxmlLoader.load(), 600, 400);
-//                    } catch (IOException e) {
-//                        throw new RuntimeException(e);
-//                    }
-//                    Main.stage.setScene(scene);
-//                    Main.stage.show();
-//                });
-//                // adding the button to its area
-//                qlArea.getChildren().add(button);
-//            }
+
+
         }
 
     }
-
 }

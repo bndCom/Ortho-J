@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.orthoj.Controller.ShowEpreuveTestsQuestionsQCM">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.orthoj.Controller.ShowEpreuveTestsQuestionsQL">
    <children>
       <Label fx:id="nomBO" layoutX="38.0" layoutY="24.0" text="nom">
          <font>
@@ -25,12 +25,10 @@
       </HBox>
       <TableView fx:id="exercicesTable" layoutX="52.0" layoutY="119.0" prefHeight="200.0" prefWidth="498.0">
         <columns>
-          <TableColumn fx:id="questionsColumn" prefWidth="178.5" text="Question" />
-          <TableColumn fx:id="choixColumn" minWidth="0.0" prefWidth="169.0" text="Choix" />
-            <TableColumn fx:id="correctColumn" prefWidth="73.5" text="Correctes" />
-            <TableColumn fx:id="choisisColumn" prefWidth="76.0" text="Choisis" />
+          <TableColumn fx:id="questionsColumn" prefWidth="241.0" text="Question" />
+          <TableColumn fx:id="reponseColumn" minWidth="0.0" prefWidth="256.0" text="Réponse" />
         </columns>
       </TableView>
-      <Label fx:id="score" layoutX="52.0" layoutY="330.0" text="Score:" />
+      <Label fx:id="score" layoutX="52.0" layoutY="333.0" text="score" />
    </children>
 </AnchorPane>
