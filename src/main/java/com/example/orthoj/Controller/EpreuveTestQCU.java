@@ -44,6 +44,10 @@ public class EpreuveTestQCU {
     private TextField testNom;
 
 
+    @FXML
+    private Button choisir;
+
+
     // the questions to be shown
     static QCU qcuForm;
 
@@ -171,6 +175,13 @@ public class EpreuveTestQCU {
         Main.stage.setScene(scene);
         Main.stage.show();
 
+    }
+    @FXML
+    void onChoisir(ActionEvent event) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("View/liste_QCU.fxml"));
+        Scene scene = new Scene(fxmlLoader.load(), 600, 400);
+        Main.stage.setScene(scene);
+        Main.stage.show();
     }
 
 }

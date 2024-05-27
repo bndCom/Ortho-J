@@ -2,7 +2,7 @@ package com.example.orthoj.Model;
 
 import java.util.List;
 
-abstract public class Question {
+abstract public class Question{
 
     // attributes
     protected int score;
@@ -25,4 +25,5 @@ abstract public class Question {
     public int getQstScore(){
         return this.score;
     };
+
 }

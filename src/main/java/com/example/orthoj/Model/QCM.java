@@ -113,4 +113,7 @@ public class QCM extends Question{
         }
 
     }
+    public boolean equals(QCM qcm){
+        return this.form.equals(qcm.getForm());
+    }
 }

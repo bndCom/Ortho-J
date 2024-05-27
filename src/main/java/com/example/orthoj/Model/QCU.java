@@ -121,4 +121,8 @@ public class QCU extends Question{
         }
         return trues == form.size();
     }
+
+    public boolean equals(QCU qcu){
+        return this.form.equals(qcu.getForm());
+    }
 }

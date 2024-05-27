@@ -27,6 +27,9 @@ public class Cabinet {
     public Orthophoniste getOrthophoniste(){
         return this.orthophoniste;
     }
+    public List<Question> getQuestions() {
+        return questions;
+    }
 
     // login
     public boolean signIn(String email, String password) throws NoUserException{
@@ -40,5 +43,10 @@ public class Cabinet {
     // add new question
     public void addQuestion(Question question){
         this.questions.add(question);
+    }
+
+    // delete a question
+    public void removeQuestion(Question question){
+        this.questions.remove(question);
     }
 }

@@ -43,8 +43,12 @@ public class EpreuveTestQCM {
     private TextField testNom;
 
 
+    @FXML
+    private Button choisir;
+
+
     // the questions to be shown
-    static QCM qcmForm;
+    public static QCM qcmForm;
 
     @FXML
     void initialize(){
@@ -152,6 +156,14 @@ public class EpreuveTestQCM {
         Main.stage.setScene(scene);
         Main.stage.show();
 
+    }
+
+    @FXML
+    void onChoisir(ActionEvent event) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("View/liste_QCM.fxml"));
+        Scene scene = new Scene(fxmlLoader.load(), 600, 400);
+        Main.stage.setScene(scene);
+        Main.stage.show();
     }
 
 }
