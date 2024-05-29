@@ -3,23 +3,41 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.orthoj.Controller.Inscrire">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="830.0" prefWidth="1440.0" stylesheets="@../Style/button.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.orthoj.Controller.Inscrire">
    <children>
-      <Label fx:id="inscrireLable" layoutX="161.0" layoutY="72.0" text="Inscrire" />
-      <Button fx:id="signupBtn" layoutX="161.0" layoutY="316.0" mnemonicParsing="false" onAction="#signUp" text="Inscrire" />
-      <VBox layoutX="161.0" layoutY="101.0" prefHeight="200.0" prefWidth="279.0" spacing="10.0">
+      <VBox alignment="CENTER" layoutX="889.0" layoutY="319.0" prefHeight="260.0" prefWidth="278.0" spacing="10.0">
          <children>
-            <TextField fx:id="nom" text="nom" />
-            <TextField fx:id="prenom" text="prénom" />
-            <TextField fx:id="adresse" text="adresse" />
-            <TextField fx:id="telephone" text="numéro du téléphone" />
-            <TextField fx:id="email" text="email" />
-            <TextField fx:id="password" text="mot de passe" />
+            <Label fx:id="inscrireLable" styleClass="title3" text="Inscrire" />
+            <TextField fx:id="nom" promptText="nom" />
+            <TextField fx:id="prenom" promptText="prénom" />
+            <TextField fx:id="adresse" promptText="adresse" />
+            <TextField fx:id="telephone" promptText="numéro du téléphone" />
+            <TextField fx:id="email" promptText="email" />
+            <TextField fx:id="password" promptText="mot de passe" />
+            <Button fx:id="signupBtn" mnemonicParsing="false" onAction="#signUp" text="Inscrire" />
          </children>
       </VBox>
       <Label fx:id="status" layoutX="287.0" layoutY="320.0" />
+      <VBox alignment="CENTER" layoutX="754.0" layoutY="142.0" prefHeight="117.0" prefWidth="562.0" spacing="30.0">
+         <children>
+            <Label prefHeight="98.0" prefWidth="192.0" styleClass="title1" text="Ortho-J">
+               <font>
+                  <Font size="32.0" />
+               </font>
+            </Label>
+            <Label styleClass="title3" text="Parler avec Confiance, Vivre avec Joie" />
+         </children>
+      </VBox>
+      <ImageView fitHeight="579.0" fitWidth="651.0" layoutX="84.0" layoutY="149.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Assets/Illustration.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>

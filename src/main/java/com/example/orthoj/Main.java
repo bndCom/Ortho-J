@@ -42,8 +42,7 @@ public class Main extends Application {
         // setting the main stage
         Main.stage = stage;
         FXMLLoader fxmlLoader = new FXMLLoader(com.example.orthoj.Main.class.getResource("View/main.fxml"));
-        Screen screen = Screen.getPrimary();
-        Scene scene = new Scene(fxmlLoader.load(), screen.getBounds().getWidth(), screen.getBounds().getHeight() - 70);
+        Scene scene = new Scene(fxmlLoader.load(), 1440, 830);
         stage.setTitle("Ortho-J");
         stage.setScene(scene);
 

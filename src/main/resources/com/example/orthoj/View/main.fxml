@@ -2,18 +2,39 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.orthoj.Controller.MainController">
+<AnchorPane prefHeight="830.0" prefWidth="1440.0" stylesheets="@../Style/button.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.orthoj.Controller.MainController">
    <children>
-      <HBox layoutX="156.0" layoutY="187.0" prefHeight="27.0" prefWidth="289.0" spacing="60.0">
+      <ImageView fitHeight="579.0" fitWidth="651.0" layoutX="64.0" layoutY="129.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Assets/Illustration.png" />
+         </image>
+      </ImageView>
+      <VBox layoutX="708.0" layoutY="236.0" prefHeight="200.0" prefWidth="637.0" spacing="140.0">
          <children>
-            <Button fx:id="connecter" mnemonicParsing="false" onAction="#getConnecterView" prefHeight="25.0" prefWidth="115.0" text="se connecter" />
-            <Button fx:id="inscrire" mnemonicParsing="false" onAction="#getInscrireView" prefHeight="25.0" prefWidth="115.0" text="inscrire" />
+            <VBox alignment="CENTER" prefHeight="117.0" prefWidth="562.0" spacing="30.0">
+               <children>
+                  <Label prefHeight="98.0" prefWidth="192.0" styleClass="title1" text="Ortho-J">
+                     <font>
+                        <Font size="32.0" />
+                     </font>
+                  </Label>
+                  <Label styleClass="title3" text="Parler avec Confiance, Vivre avec Joie" />
+               </children>
+            </VBox>
+            <HBox alignment="CENTER" prefHeight="43.0" prefWidth="396.0" spacing="60.0">
+               <children>
+                  <Button fx:id="connecter" mnemonicParsing="false" onAction="#getConnecterView" prefHeight="27.0" prefWidth="173.0" text="se connecter" />
+                  <Button fx:id="inscrire" mnemonicParsing="false" onAction="#getInscrireView" prefHeight="39.0" prefWidth="161.0" text="inscrire" />
+               </children>
+            </HBox>
          </children>
-      </HBox>
-      <Label layoutX="280.0" layoutY="77.0" text="Ortho-J" />
-      <Label layoutX="226.0" layoutY="103.0" text="Your way into well speaking" />
+      </VBox>
    </children>
 </AnchorPane>

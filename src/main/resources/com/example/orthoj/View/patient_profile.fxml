@@ -3,17 +3,86 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.orthoj.Controller.PatientProfile">
    <children>
-      <HBox layoutX="60.0" layoutY="31.0" prefHeight="25.0" prefWidth="481.0" spacing="30.0">
+      <HBox layoutX="114.0" layoutY="39.0" prefHeight="25.0" prefWidth="372.0" spacing="30.0">
          <children>
-            <Button fx:id="information" mnemonicParsing="false" onAction="#onInformation" text="Information" />
             <Button fx:id="bo" mnemonicParsing="false" onAction="#onBo" text="BO" />
             <Button fx:id="fiche" mnemonicParsing="false" onAction="#onFiche" text="Fiche de suivi" />
             <Button fx:id="rdv" mnemonicParsing="false" onAction="#onRdv" text="Rendez-vous" />
             <Button fx:id="progression" mnemonicParsing="false" onAction="#onProgression" text="Progression" />
          </children>
       </HBox>
+      <VBox layoutX="114.0" layoutY="118.0" prefHeight="212.0" prefWidth="189.0">
+         <children>
+            <HBox prefHeight="32.0" prefWidth="189.0" spacing="20.0">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Nom" />
+                  <Text fx:id="nom" strokeType="OUTSIDE" strokeWidth="0.0" text="test" />
+               </children>
+            </HBox>
+            <HBox prefHeight="32.0" prefWidth="189.0" spacing="20.0">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Prénom" />
+                  <Text fx:id="prenom" strokeType="OUTSIDE" strokeWidth="0.0" text="test" />
+               </children>
+            </HBox>
+            <HBox prefHeight="32.0" prefWidth="189.0" spacing="20.0">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Age" />
+                  <Text fx:id="age" strokeType="OUTSIDE" strokeWidth="0.0" text="test" />
+               </children>
+            </HBox>
+            <HBox prefHeight="32.0" prefWidth="189.0" spacing="20.0">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="N° dossier" />
+                  <Text fx:id="nbrDossier" strokeType="OUTSIDE" strokeWidth="0.0" text="test" />
+               </children>
+            </HBox>
+            <HBox prefHeight="32.0" prefWidth="189.0" spacing="20.0">
+               <children>
+                  <Text fx:id="numPapa" strokeType="OUTSIDE" strokeWidth="0.0" />
+                  <Text fx:id="numPapaVal" strokeType="OUTSIDE" strokeWidth="0.0" />
+               </children>
+            </HBox>
+            <HBox prefHeight="32.0" prefWidth="189.0" spacing="20.0">
+               <children>
+                  <Text fx:id="numMama" strokeType="OUTSIDE" strokeWidth="0.0" />
+                  <Text fx:id="numMamaVal" strokeType="OUTSIDE" strokeWidth="0.0" />
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+      <VBox layoutX="303.0" layoutY="118.0" prefHeight="165.0" prefWidth="189.0">
+         <children>
+            <HBox prefHeight="32.0" prefWidth="189.0" spacing="20.0">
+               <children>
+                  <Text fx:id="diplomeOuNomPere" strokeType="OUTSIDE" strokeWidth="0.0" />
+                  <Text fx:id="diplomeOuNomPereVal" strokeType="OUTSIDE" strokeWidth="0.0" />
+               </children>
+            </HBox>
+            <HBox prefHeight="32.0" prefWidth="189.0" spacing="20.0">
+               <children>
+                  <Text fx:id="telephoneOuPrenomPere" strokeType="OUTSIDE" strokeWidth="0.0" />
+                  <Text fx:id="telephoneOuPrenomPereVal" strokeType="OUTSIDE" strokeWidth="0.0" />
+               </children>
+            </HBox>
+            <HBox prefHeight="32.0" prefWidth="189.0" spacing="20.0">
+               <children>
+                  <Text fx:id="professionOuNomMere" strokeType="OUTSIDE" strokeWidth="0.0" />
+                  <Text fx:id="professionOuNomMereVal" strokeType="OUTSIDE" strokeWidth="0.0" />
+               </children>
+            </HBox>
+            <HBox prefHeight="32.0" prefWidth="189.0" spacing="20.0">
+               <children>
+                  <Text fx:id="prenomMere" strokeType="OUTSIDE" strokeWidth="0.0" />
+                  <Text fx:id="prenomMereVal" strokeType="OUTSIDE" strokeWidth="0.0" />
+               </children>
+            </HBox>
+         </children>
+      </VBox>
    </children>
 </AnchorPane>

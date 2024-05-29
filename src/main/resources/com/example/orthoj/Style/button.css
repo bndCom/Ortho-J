@@ -1,0 +1,91 @@
+/* Button styles */
+.button {
+    -fx-background-color: #4527A0; /* Deep purple color */
+    -fx-text-fill: white;
+    -fx-font-size: 16px; /* Font size for the button */
+    -fx-font-family: "Segoe UI", "Arial", sans-serif; /* Font family */
+    -fx-padding: 10px 30px;
+    -fx-background-radius: 20px;
+    -fx-border-radius: 20px;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.15), 10, 0, 0, 2);
+    -fx-cursor: hand;
+    -fx-font-weight: bold;
+    -fx-transition: all 0.3s ease-in-out;
+}
+
+.button:hover {
+    -fx-background-color: #5E35B1; /* Lighter purple on hover */
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.25), 15, 0, 0, 3);
+}
+
+.button:pressed {
+    -fx-background-color: #311B92; /* Darker purple when pressed */
+    -fx-effect: none;
+    -fx-padding: 12px 32px;
+}
+
+.button:focused {
+    -fx-background-color: #4527A0;
+    -fx-border-color: #311B92;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.25), 15, 0, 0, 3);
+}
+
+/* General text styles */
+.label {
+    -fx-font-family: "Segoe UI", "Arial", sans-serif; /* Font family */
+    -fx-font-size: 14px; /* General font size */
+    -fx-text-fill: #4527A0; /* Text color */
+}
+
+/* Header text styles */
+.header-text {
+    -fx-font-family: "Segoe UI", "Arial", sans-serif; /* Font family */
+    -fx-font-size: 18px; /* Larger font size for headers */
+    -fx-font-weight: bold; /* Bold font */
+    -fx-text-fill: #4527A0; /* Text color */
+}
+
+/* Card styles */
+.card {
+    -fx-background-color: white;
+    -fx-padding: 15px;
+    -fx-background-radius: 10px;
+    -fx-border-radius: 10px;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.1), 10, 0, 0, 2);
+    -fx-font-family: "Segoe UI", "Arial", sans-serif; /* Font family */
+    -fx-font-size: 14px; /* General font size */
+    -fx-text-fill: #4527A0; /* Text color */
+}
+
+/* Title styles within cards */
+.card-title {
+    -fx-font-size: 24px; /* Slightly larger font size for titles */
+    -fx-font-weight: bold; /* Bold font for titles */
+    -fx-text-fill: #311B92; /* Darker text color */
+}
+
+/* Title styles within cards */
+.title1 {
+    -fx-font-size: 50px; /* Slightly larger font size for titles */
+    -fx-font-weight: bold; /* Bold font for titles */
+    -fx-text-fill: #311B92; /* Darker text color */
+}
+
+.title3 {
+    -fx-font-size: 30px; /* Smaller font size for descriptions */
+    -fx-text-fill: #4527A0; /* Text color */
+}
+
+
+
+/* Subtitle or date styles within cards */
+.card-subtitle {
+    -fx-font-size: 14px; /* General font size */
+    -fx-text-fill: #4527A0; /* Text color */
+}
+
+/* Description styles within cards */
+.card-description {
+    -fx-font-size: 12px; /* Smaller font size for descriptions */
+    -fx-text-fill: #4527A0; /* Text color */
+}
