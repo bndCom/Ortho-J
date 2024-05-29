@@ -83,4 +83,8 @@ public class PatientEnfant  extends  Patient{
     public void setNumMama(String numMama) {
         this.numMama = numMama;
     }
+
+    public String getType(){
+        return "Enfant";
+    }
 }

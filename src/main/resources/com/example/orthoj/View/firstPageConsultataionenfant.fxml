@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.orthoj.Controller.FirstPageConsultataionenfantController">
+   <children>
+      <AnchorPane layoutX="10.0" layoutY="10.0" prefHeight="400.0" prefWidth="600.0">
+         <children>
+            <DatePicker id="Date" fx:id="date" layoutX="73.0" layoutY="140.0" prefHeight="26.0" prefWidth="150.0" promptText="Date de Naissance" />
+            <Text layoutX="74.0" layoutY="48.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Donne personelle">
+               <font>
+                  <Font size="26.0" />
+               </font>
+            </Text>
+            <Text layoutX="74.0" layoutY="74.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Remplissez les champs suivant svp : " />
+            <TextField id="Nom" fx:id="nom" layoutX="74.0" layoutY="98.0" promptText="Nom" />
+            <TextField id="Prenom" fx:id="prenom" layoutX="247.0" layoutY="98.0" promptText="Prenom" />
+            <TextField id="lieu" fx:id="lieu" layoutX="247.0" layoutY="140.0" promptText="lieu de naissance" />
+            <HBox layoutX="74.0" layoutY="273.0" prefHeight="16.0" prefWidth="200.0" spacing="30.0" />
+            <Button id="ajouter" layoutX="430.0" layoutY="336.0" mnemonicParsing="false" text="Suivant" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" />
+            <TextField id="adresse" fx:id="adresse" layoutX="73.0" layoutY="185.0" promptText="Adresse " />
+            <TextField id="classe" fx:id="classe" layoutX="73.0" layoutY="227.0" promptText="Niveau etude" />
+            <TextField id="numpapa" fx:id="numtelpapa" layoutX="73.0" layoutY="271.0" promptText="Num tel PAPA" />
+            <TextField id="numpapa" fx:id="numtelmama" layoutX="247.0" layoutY="271.0" promptText="Num tel MAMA" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

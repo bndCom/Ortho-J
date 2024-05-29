@@ -2,6 +2,8 @@ package com.example.orthoj.Model.Patient;
 
 import com.example.orthoj.Model.RendezVousManagement.Consultaion;
 
+import java.time.LocalDate;
+
 public class Patient {
     String nom ;
     String prenom ;
@@ -11,6 +13,38 @@ public class Patient {
     String NumTel ;
 
     int numDossier;
+
+
+    LocalDate DateDeNaissance ;
+    String lieuDeNaissance;
+    String adresse;
+
+    public String getAdresse() {
+        return adresse;
+    }
+
+    public void setAdresse(String adresse) {
+        this.adresse = adresse;
+    }
+
+    public void setDateDeNaissance(LocalDate dateDeNaissance) {
+        DateDeNaissance = dateDeNaissance;
+    }
+
+
+
+    public LocalDate getDateDeNaissance() {
+        return DateDeNaissance;
+    }
+
+    public String getLieuDeNaissance() {
+        return lieuDeNaissance;
+    }
+
+
+    public void setLieuDeNaissance(String lieuDeNaissance) {
+        this.lieuDeNaissance = lieuDeNaissance;
+    }
 
     public int getNumDossier() {
         return numDossier;
@@ -50,5 +84,9 @@ public class Patient {
 
     public void setNumTel(String numTel) {
         NumTel = numTel;
+    }
+
+    public  String getType(){
+        return "";
     }
 }

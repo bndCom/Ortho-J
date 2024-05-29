@@ -17,6 +17,16 @@ public class Cabinet implements Serializable {
     LinkedList<Dossier> dossierLinkedList = new LinkedList<Dossier>();
     public RendezVous selectedRendezVous = null;
 
+    public Dossier selectedDossier = null;
+
+    public Dossier getSelectedDossier() {
+        return selectedDossier;
+    }
+
+    public void setSelectedDossier(Dossier selectedDossier) {
+        this.selectedDossier = selectedDossier;
+    }
+
     public void setSelectedRendezVous(RendezVous selectedRendezVous) {
         this.selectedRendezVous = selectedRendezVous;
     }

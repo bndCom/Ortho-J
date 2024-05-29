@@ -43,7 +43,9 @@ public class PatientAdulte extends Patient {
         this.consultaionAdulte = consultaionAdulte;
     }
 
-
+    public String getType(){
+        return "Adulte";
+    }
 
     ConsultaionAdulte consultaionAdulte  ;
 
