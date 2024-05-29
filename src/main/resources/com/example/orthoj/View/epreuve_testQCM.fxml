@@ -22,7 +22,6 @@
             <Font size="22.0" />
          </font>
       </Label>
-      <Button fx:id="ajouter" layoutX="445.0" layoutY="341.0" mnemonicParsing="false" onAction="#ajouter" text="Ajouter" />
       <Button fx:id="suivant" layoutX="531.0" layoutY="10.0" mnemonicParsing="false" onAction="#suivant" text="Suivant" />
       <VBox layoutX="14.0" layoutY="148.0" prefHeight="114.0" prefWidth="100.0" spacing="40.0">
          <children>
@@ -36,7 +35,7 @@
             <VBox fx:id="formArea" prefHeight="222.0" prefWidth="308.0" />
          </content>
       </ScrollPane>
-      <Button fx:id="submit" layoutX="373.0" layoutY="341.0" mnemonicParsing="false" onAction="#onSubmit" text="Submit" />
+      <Button fx:id="submit" layoutX="432.0" layoutY="341.0" mnemonicParsing="false" onAction="#onSubmit" text="Submit" />
       <TextField fx:id="testNom" layoutX="232.0" layoutY="65.0" text="test nom" />
       <Button fx:id="choisir" layoutX="518.0" layoutY="341.0" mnemonicParsing="false" onAction="#onChoisir" text="Choisir" />
    </children>

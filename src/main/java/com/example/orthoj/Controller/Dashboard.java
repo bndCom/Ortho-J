@@ -41,6 +41,12 @@ public class Dashboard{
     private Button listeBO;
 
     @FXML
+    private Button questions;
+
+    @FXML
+    private Button anam;
+
+    @FXML
     void onAjouterBO(ActionEvent event) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(com.example.orthoj.Main.class.getResource("View/anam_choix.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 600, 400);
@@ -72,6 +78,24 @@ public class Dashboard{
         }
 
 
+    }
+
+
+    @FXML
+    void onQuestions(ActionEvent event) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(com.example.orthoj.Main.class.getResource("View/questions_home.fxml"));
+        Scene scene = new Scene(fxmlLoader.load(), 600, 400);
+        Main.stage.setScene(scene);
+        Main.stage.show();
+    }
+
+
+    @FXML
+    void onAnam(ActionEvent event) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(com.example.orthoj.Main.class.getResource("View/anam_type_home.fxml"));
+        Scene scene = new Scene(fxmlLoader.load(), 600, 400);
+        Main.stage.setScene(scene);
+        Main.stage.show();
     }
 
 

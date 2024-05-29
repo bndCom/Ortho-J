@@ -27,5 +27,7 @@
       </ImageView>
       <Button fx:id="ajouterBO" layoutX="37.0" layoutY="236.0" mnemonicParsing="false" onAction="#onAjouterBO" text="ajouter BO" />
       <Button fx:id="listeBO" layoutX="37.0" layoutY="287.0" mnemonicParsing="false" onAction="#onListeBO" text="Liste BO" />
+      <Button fx:id="questions" layoutX="37.0" layoutY="338.0" mnemonicParsing="false" onAction="#onQuestions" text="Questions" />
+      <Button fx:id="anam" layoutX="37.0" layoutY="188.0" mnemonicParsing="false" onAction="#onAnam" text="Gestion anamnèse" />
    </children>
 </AnchorPane>

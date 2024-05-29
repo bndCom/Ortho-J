@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.orthoj.Controller.AjouterAnamEnfant">
+   <children>
+      <ChoiceBox fx:id="categorie" layoutX="65.0" layoutY="188.0" prefWidth="150.0" />
+      <TextField fx:id="question" layoutX="259.0" layoutY="188.0" prefHeight="25.0" prefWidth="283.0" />
+      <Button fx:id="ajouter" layoutX="490.0" layoutY="306.0" mnemonicParsing="false" onAction="#onAjouter" text="Ajouter" />
+   </children>
+</AnchorPane>

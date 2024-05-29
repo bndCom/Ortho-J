@@ -21,6 +21,18 @@ public class ListeQCM {
     private FlowPane buttonArea;
 
     @FXML
+    private Button ajouter;
+
+    @FXML
+    void ajouter(ActionEvent event) throws IOException {
+        // loading adding question window
+        FXMLLoader fxmlLoader = new FXMLLoader(com.example.orthoj.Main.class.getResource("View/ajouterQCM.fxml"));
+        Scene scene = new Scene(fxmlLoader.load(), 600, 400);
+        Main.stage.setScene(scene);
+        Main.stage.show();
+    }
+
+    @FXML
     void onAnnuler(ActionEvent event) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("View/epreuve_testQCM.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 600, 400);

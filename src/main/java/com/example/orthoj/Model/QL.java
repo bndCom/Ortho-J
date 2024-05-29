@@ -54,6 +54,10 @@ public class QL extends Question{
 
     }
 
+    public boolean equals(QL ql){
+        return this.form.equals(ql.getForm());
+    }
+
 
 
 

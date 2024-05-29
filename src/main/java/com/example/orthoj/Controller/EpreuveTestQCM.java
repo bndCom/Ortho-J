@@ -15,8 +15,7 @@ import java.util.*;
 
 public class EpreuveTestQCM {
 
-    @FXML
-    private Button ajouter;
+
 
     @FXML
     private Button qcm;
@@ -71,14 +70,6 @@ public class EpreuveTestQCM {
         }
     }
 
-    @FXML
-    void ajouter(ActionEvent event) throws IOException {
-        // loading adding question window
-        FXMLLoader fxmlLoader = new FXMLLoader(com.example.orthoj.Main.class.getResource("View/ajouterQCM.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 600, 400);
-        Main.stage.setScene(scene);
-        Main.stage.show();
-    }
 
     @FXML
     void getQCMPage(ActionEvent event) throws IOException {

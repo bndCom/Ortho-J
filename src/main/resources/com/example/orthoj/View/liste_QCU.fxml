@@ -13,5 +13,6 @@
          </content>
       </ScrollPane>
       <Button fx:id="annuler" layoutX="524.0" layoutY="342.0" mnemonicParsing="false" onAction="#onAnnuler" text="Annuler" />
+      <Button fx:id="ajouter" layoutX="447.0" layoutY="342.0" mnemonicParsing="false" onAction="#ajouter" text="Ajouter" />
    </children>
 </AnchorPane>

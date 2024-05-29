@@ -16,8 +16,7 @@ import java.util.*;
 
 public class EpreuveTestQCU {
 
-    @FXML
-    private Button ajouter;
+
 
     @FXML
     private Button qcm;
@@ -89,14 +88,6 @@ public class EpreuveTestQCU {
         }
     }
 
-    @FXML
-    void ajouter(ActionEvent event) throws IOException {
-        // loading adding question window
-        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("View/ajouterQCU.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 600, 400);
-        Main.stage.setScene(scene);
-        Main.stage.show();
-    }
 
     @FXML
     void getQCMPage(ActionEvent event) throws IOException {

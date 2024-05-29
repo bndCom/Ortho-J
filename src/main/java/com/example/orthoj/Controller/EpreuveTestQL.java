@@ -20,9 +20,6 @@ import java.util.Map;
 public class EpreuveTestQL {
 
     @FXML
-    private Button ajouter;
-
-    @FXML
     private Button qcm;
 
     @FXML
@@ -45,6 +42,9 @@ public class EpreuveTestQL {
 
     @FXML
     private TextField testNom;
+
+    @FXML
+    private Button choisir;
 
 
     // the questions to be shown
@@ -73,15 +73,6 @@ public class EpreuveTestQL {
             }
             scrollpane.setContent(formArea);
         }
-    }
-
-    @FXML
-    void ajouter(ActionEvent event) throws IOException {
-        // loading adding question window
-        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("View/ajouterQL.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 600, 400);
-        Main.stage.setScene(scene);
-        Main.stage.show();
     }
 
     @FXML
@@ -154,6 +145,14 @@ public class EpreuveTestQL {
         Main.stage.setScene(scene);
         Main.stage.show();
 
+    }
+
+    @FXML
+    void onChoisir(ActionEvent event) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("View/liste_QL.fxml"));
+        Scene scene = new Scene(fxmlLoader.load(), 600, 400);
+        Main.stage.setScene(scene);
+        Main.stage.show();
     }
 
 }

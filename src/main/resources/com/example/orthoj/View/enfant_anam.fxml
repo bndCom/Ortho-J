@@ -32,8 +32,9 @@
       </TableView>
       <Button fx:id="ajouter" layoutX="531.0" layoutY="341.0" mnemonicParsing="false" onAction="#onAjouter" text="Ajouter" />
       <Button fx:id="suivant" layoutX="531.0" layoutY="10.0" mnemonicParsing="false" onAction="#suivant" text="Suivant" />
-      <TextField fx:id="questionField" layoutX="184.0" layoutY="283.0" prefHeight="25.0" prefWidth="172.0" text="Question" />
       <ChoiceBox fx:id="categorieField" layoutX="36.0" layoutY="283.0" prefHeight="25.0" prefWidth="141.0" />
       <TextField fx:id="reponseField" layoutX="359.0" layoutY="283.0" prefHeight="25.0" prefWidth="172.0" text="Réponse" />
+      <ChoiceBox fx:id="questionField" layoutX="194.0" layoutY="283.0" prefWidth="150.0" />
+      <Button fx:id="submit" layoutX="457.0" layoutY="341.0" mnemonicParsing="false" onAction="#onSubmit" text="Submit" />
    </children>
 </AnchorPane>

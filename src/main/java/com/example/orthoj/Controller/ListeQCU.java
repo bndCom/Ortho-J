@@ -22,6 +22,18 @@ public class ListeQCU {
     private FlowPane buttonArea;
 
     @FXML
+    private Button ajouter;
+
+    @FXML
+    void ajouter(ActionEvent event) throws IOException {
+        // loading adding question window
+        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("View/ajouterQCU.fxml"));
+        Scene scene = new Scene(fxmlLoader.load(), 600, 400);
+        Main.stage.setScene(scene);
+        Main.stage.show();
+    }
+
+    @FXML
     void onAnnuler(ActionEvent event) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("View/epreuve_testQCU.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 600, 400);

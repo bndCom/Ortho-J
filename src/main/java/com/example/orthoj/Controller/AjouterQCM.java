@@ -86,7 +86,7 @@ public class AjouterQCM {
         // add the question to be shown in the qcm windows
         EpreuveTestQCM.qcmForm = qcm;
         // loading the test scene
-        FXMLLoader fxmlLoader = new FXMLLoader(com.example.orthoj.Main.class.getResource("View/epreuve_testQCM.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(com.example.orthoj.Main.class.getResource("View/liste_QCM.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 600, 400);
         Main.stage.setScene(scene);
         Main.stage.show();
