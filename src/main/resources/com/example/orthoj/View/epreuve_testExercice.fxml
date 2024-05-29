@@ -34,5 +34,6 @@
       <TextField fx:id="nomField" layoutX="36.0" layoutY="287.0" prefHeight="25.0" prefWidth="185.0" text="Nom" />
       <TextField fx:id="materielField" layoutX="228.0" layoutY="287.0" prefHeight="25.0" prefWidth="178.0" text="Matériel" />
       <TextField fx:id="scoreField" layoutX="414.0" layoutY="287.0" prefHeight="25.0" prefWidth="95.0" text="Score" />
+      <TextField fx:id="testNom" layoutX="193.0" layoutY="65.0" text="nom" />
    </children>
 </AnchorPane>

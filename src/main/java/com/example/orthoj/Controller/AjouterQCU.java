@@ -93,7 +93,7 @@ public class AjouterQCU {
         // add the question to be shown in the qcm windows
         EpreuveTestQCU.qcuForm = qcu;
         // loading the test scene
-        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("View/epreuve_testQCU.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("View/liste_QCU.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 600, 400);
         Main.stage.setScene(scene);
         Main.stage.show();

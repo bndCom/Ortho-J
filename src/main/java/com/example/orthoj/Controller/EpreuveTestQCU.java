@@ -8,10 +8,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.CheckBox;
-import javafx.scene.control.Label;
-import javafx.scene.control.ScrollPane;
+import javafx.scene.control.*;
 import javafx.scene.layout.VBox;
 
 import java.io.IOException;
@@ -19,8 +16,7 @@ import java.util.*;
 
 public class EpreuveTestQCU {
 
-    @FXML
-    private Button ajouter;
+
 
     @FXML
     private Button qcm;
@@ -42,6 +38,13 @@ public class EpreuveTestQCU {
     private VBox formArea;
     @FXML
     private ScrollPane scrollpane;
+
+    @FXML
+    private TextField testNom;
+
+
+    @FXML
+    private Button choisir;
 
 
     // the questions to be shown
@@ -85,14 +88,6 @@ public class EpreuveTestQCU {
         }
     }
 
-    @FXML
-    void ajouter(ActionEvent event) throws IOException {
-        // loading adding question window
-        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("View/ajouterQCU.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 600, 400);
-        Main.stage.setScene(scene);
-        Main.stage.show();
-    }
 
     @FXML
     void getQCMPage(ActionEvent event) throws IOException {
@@ -163,6 +158,7 @@ public class EpreuveTestQCU {
     @FXML
     void suivant(ActionEvent event) throws IOException {
         // save the test to the epreuve
+        TestChoix.testQuestion.setNom(testNom.getText());
         EpreuveObservation.epreuve.addTest(TestChoix.testQuestion);
         // load the diagnostic window
         FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("View/test_choix.fxml"));
@@ -170,6 +166,13 @@ public class EpreuveTestQCU {
         Main.stage.setScene(scene);
         Main.stage.show();
 
+    }
+    @FXML
+    void onChoisir(ActionEvent event) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("View/liste_QCU.fxml"));
+        Scene scene = new Scene(fxmlLoader.load(), 600, 400);
+        Main.stage.setScene(scene);
+        Main.stage.show();
     }
 
 }

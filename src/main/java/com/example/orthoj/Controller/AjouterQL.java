@@ -58,7 +58,7 @@ public class AjouterQL {
         // add the question to be shown in the qcm windows
         EpreuveTestQL.qlForm = ql;
         // loading the test scene
-        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("View/epreuve_testQL.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("View/liste_QL.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 600, 400);
         Main.stage.setScene(scene);
         Main.stage.show();

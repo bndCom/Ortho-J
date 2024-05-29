@@ -1,8 +1,6 @@
 module com.example.orthoj {
     requires javafx.controls;
     requires javafx.fxml;
-    requires java.desktop;
-    requires jdk.compiler;
 
 
     opens com.example.orthoj to javafx.fxml;

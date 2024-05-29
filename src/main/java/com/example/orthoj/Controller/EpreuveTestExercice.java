@@ -46,6 +46,9 @@ public class EpreuveTestExercice {
     @FXML
     private Button suivant;
 
+    @FXML
+    private TextField testNom;
+
     static List<Exercice> exercices;
 
     @FXML
@@ -61,6 +64,7 @@ public class EpreuveTestExercice {
     @FXML
     void onSuivant(ActionEvent event) throws IOException {
         TestChoix.testExercice.setExercices(exercices);
+        TestChoix.testExercice.setNom(testNom.getText());
         EpreuveObservation.epreuve.addTest(TestChoix.testExercice);
 
         // loading the test choice stage

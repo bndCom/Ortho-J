@@ -2,9 +2,9 @@ package com.example.orthoj.Model;
 
 import com.example.orthoj.Model.CustomException.InvalidResponse;
 import com.example.orthoj.Model.CustomException.InvalidQuestion;
+import com.example.orthoj.Model.CustomException.QuestionNotAnswered;
 
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class QCU extends Question{
     // attributes
@@ -20,6 +20,7 @@ public class QCU extends Question{
      */
     private Map<String, Map<String, Boolean>> form;
     private List<String> reponsesChoisis;
+    private List<CompteRenduQCM> compteRendusQCM;
 
 
     // constructure
@@ -47,6 +48,46 @@ public class QCU extends Question{
         this.calcQstScore(); // calculate the score
         this.done = true; // the question is answered
 
+    }
+
+    // getters
+    public List<CompteRenduQCM> getCompteRendus() throws QuestionNotAnswered {
+        if(!this.done){
+            throw new QuestionNotAnswered();
+        }
+        // setting questions and choix
+        compteRendusQCM = new LinkedList<>();
+        Iterator<String> itr = reponsesChoisis.iterator();
+        for(Map.Entry<String, Map<String, Boolean>> entry : form.entrySet()){
+            CompteRenduQCM compteRenduQCM = new CompteRenduQCM();
+            // setting question
+            compteRenduQCM.setQuestion(entry.getKey());
+            String choisi = itr.next(); // chosen answers in that question
+            String choix = new String();
+            String correctes = new String();
+            String choisis = new String();
+            int i = 1;
+            for(Map.Entry<String, Boolean> entry1 : entry.getValue().entrySet()){
+                // setting choices and the correct ones
+                choix += i+"- "+entry1.getKey()+"\n";
+                if (entry1.getValue()){
+                    correctes += i+"- ";
+                }
+                // checking if the answer is chosen
+                if(choisi.contains(entry1.getKey())){
+                    choisis += i+"- ";
+                }
+                i++;
+            }
+
+            compteRenduQCM.setChoix(choix);
+            compteRenduQCM.setCorrectes(correctes);
+            compteRenduQCM.setChoisis(choisis);
+            compteRenduQCM.setScore(this.score);
+            // adding it to the comptes rendus
+            this.compteRendusQCM.add(compteRenduQCM);
+        }
+        return this.compteRendusQCM;
     }
 
     // implementation of calcQstScore
@@ -79,5 +120,9 @@ public class QCU extends Question{
             }
         }
         return trues == form.size();
+    }
+
+    public boolean equals(QCU qcu){
+        return this.form.equals(qcu.getForm());
     }
 }

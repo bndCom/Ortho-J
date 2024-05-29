@@ -1,6 +1,8 @@
 package com.example.orthoj.Model;
 
-public class Orthophoniste {
+import java.io.Serializable;
+
+public class Orthophoniste implements Serializable {
 
     // attributes
     private String nom;

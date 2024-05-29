@@ -1,28 +1,46 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.orthoj.Controller.Dashboard">
    <children>
-      <VBox layoutX="165.0" layoutY="122.0" prefHeight="156.0" prefWidth="270.0" spacing="10.0">
+      <VBox alignment="CENTER" prefHeight="400.0" prefWidth="162.0" spacing="30.0">
          <children>
-            <Label fx:id="nom" />
-            <Label fx:id="prenom" />
-            <Label fx:id="adresse" />
-            <Label fx:id="telephone" />
-            <Label fx:id="email" />
-            <Label fx:id="password" />
+            <Label text="Ortho-J" />
+            <Button fx:id="listeBO" mnemonicParsing="false" onAction="#onListeBO" prefHeight="25.0" prefWidth="135.0" text="Patients" />
+            <Button fx:id="ajouterBO" mnemonicParsing="false" onAction="#onAjouterBO" prefHeight="25.0" prefWidth="135.0" text="Calendrier" />
+            <Button fx:id="questions" mnemonicParsing="false" onAction="#onQuestions" prefHeight="25.0" prefWidth="135.0" text=" Questionnaires" />
+            <Button fx:id="anam" mnemonicParsing="false" onAction="#onAnam" prefHeight="25.0" prefWidth="135.0" text="Anamnèse questions" />
+            <Button fx:id="disconnect" mnemonicParsing="false" onAction="#onDisconnect" prefHeight="25.0" prefWidth="135.0" text="Déconnecter" />
          </children>
       </VBox>
-      <Label layoutX="271.0" layoutY="105.0" text="Dashboard" />
-      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../Assets/comicsman.jpeg" />
-         </image>
-      </ImageView>
+      <HBox layoutX="178.0" layoutY="33.0" prefHeight="150.0" prefWidth="394.0">
+         <children>
+            <ImageView fitHeight="152.0" fitWidth="165.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Assets/comicsman.jpeg" />
+               </image>
+            </ImageView>
+            <VBox alignment="CENTER" prefHeight="165.0" prefWidth="239.0" spacing="10.0">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome, Doctor!" />
+                  <Text fx:id="nom" strokeType="OUTSIDE" strokeWidth="0.0" text="Anes Bendaoud" />
+                  <Text fx:id="email" strokeType="OUTSIDE" strokeWidth="0.0" text="anes.bendaoud@gmail.com" />
+                  <Text fx:id="telephone" strokeType="OUTSIDE" strokeWidth="0.0" text="Numéro du téléphone" />
+                  <Text fx:id="adresse" strokeType="OUTSIDE" strokeWidth="0.0" text="Adresse" />
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+      <PieChart fx:id="troublesPercent" layoutX="275.0" layoutY="200.0" prefHeight="150.0" prefWidth="162.0" />
+      <Label layoutX="278.0" layoutY="356.0" prefHeight="17.0" prefWidth="194.0" text="Pourcentage de patients par trouble" />
    </children>
 </AnchorPane>

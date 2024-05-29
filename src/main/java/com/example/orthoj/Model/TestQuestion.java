@@ -29,4 +29,9 @@ public class TestQuestion extends Test{
             this.questions.add(q);
         }
     }
+
+    // getters
+    public Set<Question> getQuestions() {
+        return questions;
+    }
 }

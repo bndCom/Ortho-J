@@ -31,4 +31,8 @@ public class TestExercice extends Test{
     public void setExercices(List<Exercice> exercices){
         this.exercices = exercices;
     }
+    // getters
+    public List<Exercice> getExercices(){
+        return exercices;
+    }
 }
