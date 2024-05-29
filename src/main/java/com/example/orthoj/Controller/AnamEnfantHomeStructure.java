@@ -16,6 +16,7 @@ import javafx.scene.control.cell.TextFieldTableCell;
 import javafx.util.converter.DefaultStringConverter;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 public class AnamEnfantHomeStructure {
@@ -57,7 +58,7 @@ public class AnamEnfantHomeStructure {
     @FXML
     private Button suivi;
 
-    private ObservableList<String> stringList;
+    private transient ObservableList<String> stringList;
 
     @FXML
     void onAntecedent(ActionEvent event) throws IOException {
@@ -161,7 +162,7 @@ public class AnamEnfantHomeStructure {
 
     @FXML
     private void handleSave() throws IOException {
-        Main.cabinet.setqStructure(stringList);
+        Main.cabinet.setqStructure(new ArrayList<>(stringList));
         FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("View/anam_type_home.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 600, 400);
         Main.stage.setScene(scene);

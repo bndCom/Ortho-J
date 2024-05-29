@@ -15,6 +15,7 @@ import javafx.scene.control.cell.TextFieldTableCell;
 import javafx.util.converter.DefaultStringConverter;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 public class AnamAdulteHomeSuivi {
@@ -34,7 +35,7 @@ public class AnamAdulteHomeSuivi {
     @FXML
     private Button suivi;
 
-    private ObservableList<String> stringList;
+    private transient ObservableList<String> stringList;
 
     @FXML
     public void onHistoir() throws IOException {
@@ -95,7 +96,7 @@ public class AnamAdulteHomeSuivi {
 
     @FXML
     private void handleSave() throws IOException {
-        Main.cabinet.setqSuivi(stringList);
+        Main.cabinet.setqSuivi(new ArrayList<>(stringList));
         FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("View/anam_type_home.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 600, 400);
         Main.stage.setScene(scene);

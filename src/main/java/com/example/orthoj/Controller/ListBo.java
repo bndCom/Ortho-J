@@ -17,9 +17,11 @@ public class ListBo {
     @FXML
     private FlowPane areaBo;
 
+    public static List<BO> list;
+
     @FXML
     void initialize(){
-        List<BO> list = Main.bos;
+        //List<BO> list = Main.bos;
         if(list.size() == 0){
             Label label = new Label("No List");
             areaBo.getChildren().add(label);

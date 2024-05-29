@@ -12,6 +12,7 @@ import javafx.scene.control.cell.TextFieldTableCell;
 import javafx.util.converter.DefaultStringConverter;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 public class AnamAdulteHomeHistoir {
@@ -31,7 +32,7 @@ public class AnamAdulteHomeHistoir {
     @FXML
     private Button suivi;
 
-    private ObservableList<String> stringList;
+    private transient ObservableList<String> stringList;
 
     @FXML
     public void onHistoir(){
@@ -92,7 +93,7 @@ public class AnamAdulteHomeHistoir {
 
     @FXML
     private void handleSave() throws IOException {
-        Main.cabinet.setqHistoir(stringList);
+        Main.cabinet.setqHistoir(new ArrayList<>(stringList));
         FXMLLoader fxmlLoader = new FXMLLoader(com.example.orthoj.Main.class.getResource("View/anam_type_home.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 600, 400);
         Main.stage.setScene(scene);

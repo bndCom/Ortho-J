@@ -21,6 +21,10 @@ public class ProjetTherapeutique {
     @FXML
     private TextArea text;
 
+    // ------------------------------------
+    public static Dossier dossier;
+    public static Patient patient;
+
     @FXML
     void onFin(ActionEvent event) throws IOException {
         // checking if it is premierBO or not
@@ -32,7 +36,8 @@ public class ProjetTherapeutique {
             premierBO.setDiagnostic(DiagnosticController.diagnostic);
             premierBO.setProjetTherapeutique(text.getText());
             // adding the bo
-            Main.bos.add(premierBO);
+            // -----------------------------------------------------
+            Main.cabinet.addPremierBO(patient, premierBO);
             // setting anamEnfant to null
             AnamChoix.anamEnfant = null;
         }else if(AnamChoix.anamAdulte != null){
@@ -43,7 +48,7 @@ public class ProjetTherapeutique {
             premierBO.setDiagnostic(DiagnosticController.diagnostic);
             premierBO.setProjetTherapeutique(text.getText());
             // adding the bo
-            Main.bos.add(premierBO);
+            Main.cabinet.addPremierBO(patient, premierBO);
             // setting anamAdulte to null
             AnamChoix.anamAdulte = null;
         }else{
@@ -55,7 +60,7 @@ public class ProjetTherapeutique {
             bo.setDiagnostic(DiagnosticController.diagnostic);
             bo.setProjetTherapeutique(text.getText());
             // adding the bo
-            Main.bos.add(bo);
+            Main.cabinet.addBO(dossier, bo);
         }
 
         // loading dashboard

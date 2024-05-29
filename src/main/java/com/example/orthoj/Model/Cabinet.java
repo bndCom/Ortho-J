@@ -2,12 +2,13 @@ package com.example.orthoj.Model;
 
 import com.example.orthoj.Model.CustomException.NoUserException;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Set;
 
-public class Cabinet {
+public class Cabinet implements Serializable {
 
     //attributes
     private Orthophoniste orthophoniste;

@@ -1,8 +1,9 @@
 package com.example.orthoj.Model;
 
+import java.io.Serializable;
 import java.util.List;
 
-abstract public class Question{
+abstract public class Question implements Serializable {
 
     // attributes
     protected int score;
