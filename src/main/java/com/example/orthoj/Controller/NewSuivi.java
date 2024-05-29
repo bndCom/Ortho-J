@@ -1,7 +1,7 @@
 package com.example.orthoj.Controller;
 
 import com.example.orthoj.Main;
-import com.example.orthoj.MainChakib;
+import com.example.orthoj.Main;
 import com.example.orthoj.Model.CustomException.InvalidRendezVousTimeClash;
 import com.example.orthoj.Model.DossierManagementPackage.Dossier;
 import com.example.orthoj.Model.RendezVousManagement.RendezVous;
@@ -50,7 +50,7 @@ public class NewSuivi {
         int num =Integer.parseInt(numDossier.getText());
         boolean found = false;
         //Verifier si le N du dossier existe ou pas
-        LinkedList<Dossier> listeDeDossier = MainChakib.cabinet.getLinkedListDossier();
+        LinkedList<Dossier> listeDeDossier = Main.cabinet.getLinkedListDossier();
         Dossier dossier = null;
         for (Dossier dossier1 : listeDeDossier){
             if ( dossier1.getNbDossier() == num ){
@@ -73,7 +73,7 @@ public class NewSuivi {
             }
            suivi.setNbDossier(num);
         suivi.setDateTime(LocalDateTime.of(date.getValue().getYear() , date.getValue().getMonth() , date.getValue().getDayOfMonth(), Integer.parseInt(heure.getText()), Integer.parseInt(min.getText()) ));
-        MainChakib.cabinet.getCalendrier().AjouterRDV((RendezVous) suivi);
+        Main.cabinet.getCalendrier().AjouterRDV((RendezVous) suivi);
         dossier.addRendezVous(suivi);
         suivi.setPatient(dossier.getPatient());
 

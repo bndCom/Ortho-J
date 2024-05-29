@@ -1,6 +1,6 @@
 package com.example.orthoj.Controller;
 import com.example.orthoj.Main;
-import com.example.orthoj.MainChakib;
+import com.example.orthoj.Main;
 import com.example.orthoj.Model.DossierManagementPackage.Dossier;
 import com.example.orthoj.Model.Patient.Patient;
 import com.example.orthoj.Model.RendezVousManagement.*;
@@ -65,7 +65,7 @@ public class CalendrierController {
         online.setCellValueFactory(data ->new SimpleBooleanProperty(data.getValue().isOnline()));
         prenom.setCellValueFactory(data -> new SimpleStringProperty(data.getValue().getPatient().getPrenom()));
         type.setCellValueFactory(data -> new SimpleStringProperty(data.getValue().type()));
-        TreeMap<LocalDate , LinkedList<RendezVous> > tmp =  MainChakib.cabinet.getCalendrier().getCalendrier();
+        TreeMap<LocalDate , LinkedList<RendezVous> > tmp =  Main.cabinet.getCalendrier().getCalendrier();
 
 
         for (Map.Entry<LocalDate , LinkedList<RendezVous> > entry : tmp.entrySet()){
@@ -97,7 +97,7 @@ public class CalendrierController {
 
     public void start(ActionEvent event) throws IOException {
         if (selectedRendezVous != null) {
-            MainChakib.cabinet.setSelectedRendezVous(selectedRendezVous);
+            Main.cabinet.setSelectedRendezVous(selectedRendezVous);
 
             FXMLLoader fxmlLoader;
             if (selectedRendezVous instanceof ConsultaionAdulte) {
@@ -138,10 +138,10 @@ public class CalendrierController {
     public void delete(ActionEvent event)throws IOException{
         if(selectedRendezVous != null){
             if(selectedRendezVous instanceof Consultaion){
-                MainChakib.cabinet.getCalendrier().deleteRDV(selectedRendezVous);
-                LinkedList<Patient> patientLinkedListtmp = MainChakib.cabinet.getPatientsNonPrisEnCharge();
+                Main.cabinet.getCalendrier().deleteRDV(selectedRendezVous);
+                LinkedList<Patient> patientLinkedListtmp = Main.cabinet.getPatientsNonPrisEnCharge();
                 patientLinkedListtmp.remove(selectedRendezVous.getPatient());
-                MainChakib.cabinet.setPatientsNonPrisEnCharge(patientLinkedListtmp);
+                Main.cabinet.setPatientsNonPrisEnCharge(patientLinkedListtmp);
             }else {
                 if(selectedRendezVous instanceof Atelier){
                     LinkedList<Dossier> dossierLinkedListtmp =  ((Atelier) selectedRendezVous).getList();
@@ -150,11 +150,11 @@ public class CalendrierController {
                         rendezVousLinkedListtmp.remove(selectedRendezVous);
                         dossier.setListDeRendezVousTotale(rendezVousLinkedListtmp);
                     }
-                    MainChakib.cabinet.getCalendrier().deleteRDV(selectedRendezVous);
+                    Main.cabinet.getCalendrier().deleteRDV(selectedRendezVous);
                 }else {
-                    MainChakib.cabinet.getCalendrier().deleteRDV(selectedRendezVous);
+                    Main.cabinet.getCalendrier().deleteRDV(selectedRendezVous);
                     int num = selectedRendezVous.getPatient().getNumDossier();
-                    LinkedList<Dossier> linkedList = MainChakib.cabinet.getLinkedListDossier();
+                    LinkedList<Dossier> linkedList = Main.cabinet.getLinkedListDossier();
                     Dossier dossier = null;
                     for (Dossier dossier1 : linkedList){
                         if(dossier1.getNbDossier() == num){

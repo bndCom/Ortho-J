@@ -31,7 +31,7 @@ public class Dashboard{
     private Text telephone;
 
     @FXML
-    private Button ajouterBO;
+    private Button calendrier;
 
     @FXML
     private Button listeBO;
@@ -48,13 +48,13 @@ public class Dashboard{
     @FXML
     private PieChart troublesPercent;
 
-    @FXML
-    void onAjouterBO(ActionEvent event) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(com.example.orthoj.Main.class.getResource("View/anam_choix.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 600, 400);
-        Main.stage.setScene(scene);
-        Main.stage.show();
-    }
+//    @FXML
+//    void onAjouterBO(ActionEvent event) throws IOException {
+//        FXMLLoader fxmlLoader = new FXMLLoader(com.example.orthoj.Main.class.getResource("View/anam_choix.fxml"));
+//        Scene scene = new Scene(fxmlLoader.load(), 600, 400);
+//        Main.stage.setScene(scene);
+//        Main.stage.show();
+//    }
 
     @FXML
     void onListeBO(ActionEvent event) throws IOException {
@@ -95,13 +95,17 @@ public class Dashboard{
         Main.stage.show();
     }
 
-
     @FXML
-    void onAnam(ActionEvent event) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(com.example.orthoj.Main.class.getResource("View/anam_type_home.fxml"));
+    void onCalendrier(ActionEvent event) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(com.example.orthoj.Main.class.getResource("View/CalendrierMain.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 600, 400);
         Main.stage.setScene(scene);
         Main.stage.show();
+    }
+
+    @FXML
+    void onAnam(ActionEvent event) throws IOException {
+
     }
 
     @FXML

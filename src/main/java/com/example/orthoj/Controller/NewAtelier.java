@@ -8,7 +8,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import com.example.orthoj.Main;
-import com.example.orthoj.MainChakib;
+import com.example.orthoj.Main;
 import com.example.orthoj.Model.CustomException.InvalidRendezVousTimeClash;
 import com.example.orthoj.Model.DossierManagementPackage.Dossier;
 import com.example.orthoj.Model.RendezVousManagement.RendezVous;
@@ -82,7 +82,7 @@ public class NewAtelier {
         private void handleAdd() {
             try {
                 int number = Integer.parseInt(inputField.getText());
-                Dossier dossier = MainChakib.cabinet.dossierExist(number);
+                Dossier dossier = Main.cabinet.dossierExist(number);
                 if (dossier != null) {
                     boolean exist = false;
                     for (Dossier dossier1 : ListDossierTmp) {
@@ -164,7 +164,7 @@ public class NewAtelier {
             patient.setNom("---");
             patient.setPrenom("---");
             atelier.setPatient(patient);
-            MainChakib.cabinet.getCalendrier().AjouterRDV((RendezVous) atelier);
+            Main.cabinet.getCalendrier().AjouterRDV((RendezVous) atelier);
             FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("View/CalendrierMain.fxml"));
             Scene scene = new Scene(fxmlLoader.load(), 600, 400);
             Main.stage.setScene(scene);

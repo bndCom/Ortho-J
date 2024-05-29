@@ -1,7 +1,7 @@
 package com.example.orthoj.Controller;
 
 import com.example.orthoj.Main;
-import com.example.orthoj.MainChakib;
+import com.example.orthoj.Main;
 import com.example.orthoj.Model.CustomException.InvalidRendezVousTimeClash;
 import com.example.orthoj.Model.Patient.Patient;
 import com.example.orthoj.Model.Patient.PatientAdulte;
@@ -98,14 +98,14 @@ public class NewConsultationViewController{
         patientEnfant.setConsultationEnfant(consultationEnfant);
         consultationEnfant.setPatient(patientEnfant);
         // we should probably save this somewhere ?
-        Calendrier calendrier = MainChakib.cabinet.getCalendrier();
+        Calendrier calendrier = Main.cabinet.getCalendrier();
         try {
             calendrier.AjouterRDV((RendezVous) consultationEnfant);
         } catch (InvalidRendezVousTimeClash e) {
             throw new RuntimeException(e);
         }
-        MainChakib.cabinet.setCalendrier(calendrier);
-        MainChakib.cabinet.insertPatient(patientEnfant);
+        Main.cabinet.setCalendrier(calendrier);
+        Main.cabinet.insertPatient(patientEnfant);
         consultationEnfant.getClass();
 
     }else {
@@ -119,15 +119,15 @@ public class NewConsultationViewController{
         patientEnfant.setConsultaionAdulte(consultationEnfant);
         consultationEnfant.setPatient(patientEnfant);
         // we should probably save this somewhere ?
-        Calendrier calendrier = MainChakib.cabinet.getCalendrier();
+        Calendrier calendrier = Main.cabinet.getCalendrier();
         try {
             calendrier.AjouterRDV((RendezVous) consultationEnfant);
         } catch (InvalidRendezVousTimeClash e) {
             throw new RuntimeException(e);
         }
 
-        MainChakib.cabinet.setCalendrier(calendrier);
-        MainChakib.cabinet.insertPatient(patientEnfant);
+        Main.cabinet.setCalendrier(calendrier);
+        Main.cabinet.insertPatient(patientEnfant);
         consultationEnfant.getClass();
 
 

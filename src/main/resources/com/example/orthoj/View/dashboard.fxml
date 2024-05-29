@@ -16,7 +16,7 @@
          <children>
             <Label text="Ortho-J" />
             <Button fx:id="listeBO" mnemonicParsing="false" onAction="#onListeBO" prefHeight="25.0" prefWidth="135.0" text="Patients" />
-            <Button fx:id="ajouterBO" mnemonicParsing="false" onAction="#onAjouterBO" prefHeight="25.0" prefWidth="135.0" text="Calendrier" />
+            <Button fx:id="calendrier" mnemonicParsing="false" onAction="#onCalendrier" prefHeight="25.0" prefWidth="135.0" text="Calendrier" />
             <Button fx:id="questions" mnemonicParsing="false" onAction="#onQuestions" prefHeight="25.0" prefWidth="135.0" text=" Questionnaires" />
             <Button fx:id="anam" mnemonicParsing="false" onAction="#onAnam" prefHeight="25.0" prefWidth="135.0" text="Anamnèse questions" />
             <Button fx:id="disconnect" mnemonicParsing="false" onAction="#onDisconnect" prefHeight="25.0" prefWidth="135.0" text="Déconnecter" />
