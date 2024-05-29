@@ -10,7 +10,6 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
-<?import jfxtras.scene.control.LocalTimeTextField?>
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.orthoj.Controller.NewConsultationViewController">
    <children>
@@ -24,9 +23,9 @@
       </Text>
       <Text layoutX="74.0" layoutY="74.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Remplissez les champs suivant svp : " />
       <TextField id="Nom" fx:id="nom" layoutX="74.0" layoutY="115.0" promptText="Nom" />
-      <TextField id="Prenom" fx:id="Prenom" layoutX="247.0" layoutY="115.0" promptText="Prenom" />
-      <TextField id="Age" fx:id="Age" layoutX="74.0" layoutY="168.0" promptText="Age" />
-      <TextField id="NumTel" fx:id="Tel" layoutX="247.0" layoutY="168.0" promptText="Numero de Tel" />
+      <TextField id="Prenom" fx:id="prenom" layoutX="247.0" layoutY="115.0" promptText="Prenom" />
+      <TextField id="Age" fx:id="age" layoutX="74.0" layoutY="168.0" promptText="Age" />
+      <TextField id="NumTel" fx:id="numTel" layoutX="247.0" layoutY="168.0" promptText="Numero de Tel" />
       <HBox layoutX="74.0" layoutY="273.0" prefHeight="16.0" prefWidth="200.0" spacing="30.0">
          <children>
             <RadioButton fx:id="Adulte" mnemonicParsing="false" text="Adulte">
@@ -37,7 +36,15 @@
             <RadioButton fx:id="Enfant" mnemonicParsing="false" text="Enfant" toggleGroup="$grp1" />
          </children>
       </HBox>
-      <Button id="ajouter" layoutX="430.0" layoutY="336.0" mnemonicParsing="false" onAction="#AjouterConsultation" text="Ajouter" />
-      <LocalTimeTextField fx:id="temp" layoutX="247.0" layoutY="219.0" promptText="temp" />
+      <Button id="ajouter" layoutX="430.0" layoutY="336.0" mnemonicParsing="false" onAction="#SaveNewConsultation" text="Ajouter" />
+      <TextField fx:id="heure" layoutX="248.0" layoutY="219.0" prefHeight="26.0" prefWidth="40.0" promptText="hr" />
+      <TextField fx:id="min" layoutX="300.0" layoutY="219.0" prefHeight="26.0" prefWidth="40.0" promptText="min" />
+      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+      <Text layoutX="291.0" layoutY="238.0" strokeType="OUTSIDE" strokeWidth="0.0" text=":">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Text>
+      <Button fx:id="calendrier" layoutX="67.0" layoutY="337.0" mnemonicParsing="false" onAction="#BackToCalendrier" text="Calendrier" />
    </children>
 </AnchorPane>

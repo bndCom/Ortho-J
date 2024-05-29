@@ -12,9 +12,12 @@ import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.Objects;
 
-public class Suivi {
+public class Suivi extends RendezVous {
+    public String type(){
+        return "Suivi";
+    }
     private int NbDossier ;
-    boolean online ;
+
     // not sure how to declare keep tab of the objectifs that were treated in this specific session
     // nothing is declared yet , should figure it out later
     //private int note ;
@@ -27,13 +30,6 @@ public class Suivi {
         NbDossier = nbDossier;
     }
 
-    public boolean isOnline() {
-        return online;
-    }
-
-    public void setOnline(boolean online) {
-        this.online = online;
-    }
 
     HashSet<Objectif> ObjectifLinkedList = new HashSet<Objectif>();
 

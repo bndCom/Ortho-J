@@ -2,6 +2,7 @@ package com.example.orthoj.Model.RendezVousManagement;
 
 
 import com.example.orthoj.Model.CustomException.InvalidRendezVousTimeClash;
+import com.sun.source.tree.Tree;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -14,12 +15,14 @@ public class Calendrier {
 
     TreeMap<LocalDate , LinkedList<RendezVous>> calendrier = new TreeMap<LocalDate , LinkedList<RendezVous>>();
 
-
+    public TreeMap<LocalDate , LinkedList<RendezVous>> getCalendrier(){
+        return calendrier;
+    }
 
     public void AjouterRDV ( RendezVous RDV) throws InvalidRendezVousTimeClash {
         LinkedList<RendezVous> list ;
         // check if the wanted date has any RDV's in the calendar
-        if(calendrier.containsKey(RDV.getDateTime().toLocalDate())){
+        if( calendrier.containsKey(RDV.getDateTime().toLocalDate()) ){
             // making sure that no time interval clashes are happening
             boolean valid = true ;
             LocalTime startTime , endTime , time ;
@@ -111,5 +114,9 @@ public class Calendrier {
             }
         }
         return false;
+    }
+
+    public void deleteRDV(RendezVous rendezVous){
+        calendrier.get(rendezVous.getDateTime().toLocalDate()).remove(rendezVous);
     }
 }

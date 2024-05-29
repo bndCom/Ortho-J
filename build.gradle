@@ -9,6 +9,7 @@ plugins {
 group 'com.example'
 version '1.0-SNAPSHOT'
 
+
 repositories {
     mavenCentral()
 }
@@ -35,9 +36,10 @@ javafx {
 }
 
 dependencies {
-    implementation 'org.jfxtras:jfxtras-controls:11.0-r1'
+    implementation 'org.controlsfx:controlsfx:11.1.0'
     testImplementation("org.junit.jupiter:junit-jupiter-api:${junitVersion}")
     testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:${junitVersion}")
+
 }
 
 test {

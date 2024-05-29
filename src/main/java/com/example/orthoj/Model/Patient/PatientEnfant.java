@@ -1,6 +1,11 @@
 package com.example.orthoj.Model.Patient;
 
-public class PatientEnfant {
+import com.example.orthoj.Model.RendezVousManagement.ConsultationEnfant;
+import com.example.orthoj.Model.RendezVousManagement.RendezVous;
+
+import java.util.LinkedList;
+
+public class PatientEnfant  extends  Patient{
     String Classe ;
     String nomPere ;
     String prenomPere;
@@ -8,6 +13,20 @@ public class PatientEnfant {
     String prenomMere ;
     String numPapa ;
     String numMama ;
+
+    LinkedList<RendezVous> rendezVousLinkedList = new LinkedList<RendezVous>();
+    public ConsultationEnfant getConsultationEnfant() {
+        return consultationEnfant;
+    }
+
+    public void setConsultationEnfant(ConsultationEnfant consultationEnfant) {
+        this.consultationEnfant = consultationEnfant;
+        rendezVousLinkedList.add(consultationEnfant);
+    }
+
+
+
+    ConsultationEnfant consultationEnfant;
 
     public String getClasse() {
         return Classe;

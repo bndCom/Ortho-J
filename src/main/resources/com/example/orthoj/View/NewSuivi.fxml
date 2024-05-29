@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.orthoj.Controller.NewSuivi">
+   <children>
+      <Text layoutX="84.0" layoutY="42.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nouvelle seance de suivi">
+         <font>
+            <Font size="26.0" />
+         </font>
+      </Text>
+      <Text layoutX="86.0" layoutY="68.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Remplissez les champs suivant svp : " />
+      <TextField fx:id="numDossier" layoutX="84.0" layoutY="104.0" promptText=" Nº Dossier" />
+      <RadioButton fx:id="presentielle" layoutX="84.0" layoutY="205.0" mnemonicParsing="false" selected="true" text="Presentielle ">
+         <toggleGroup>
+            <ToggleGroup fx:id="grp2" />
+         </toggleGroup>
+      </RadioButton>
+      <RadioButton fx:id="online" layoutX="180.0" layoutY="205.0" mnemonicParsing="false" text="En ligne" toggleGroup="$grp2" />
+      <Button layoutX="432.0" layoutY="336.0" mnemonicParsing="false" onAction="#NewSuivi" text="Ajouter" />
+      <Button layoutX="73.0" layoutY="335.0" mnemonicParsing="false" onAction="#BackToCalendrier" text="Calendrier" />
+      <DatePicker id="Date" fx:id="date" layoutX="83.0" layoutY="149.0" prefHeight="26.0" prefWidth="150.0" promptText="Date" />
+      <TextField fx:id="heure" layoutX="258.0" layoutY="150.0" prefHeight="26.0" prefWidth="40.0" promptText="hr" />
+      <TextField fx:id="min" layoutX="310.0" layoutY="150.0" prefHeight="26.0" prefWidth="40.0" promptText="min" />
+      <Text layoutX="301.0" layoutY="169.0" strokeType="OUTSIDE" strokeWidth="0.0" text=":">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Text>
+   </children>
+</AnchorPane>

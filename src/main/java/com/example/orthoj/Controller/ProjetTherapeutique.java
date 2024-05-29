@@ -3,6 +3,8 @@ package com.example.orthoj.Controller;
 import com.example.orthoj.Main;
 import com.example.orthoj.Model.BO;
 import com.example.orthoj.Controller.DiagnosticController;
+import com.example.orthoj.Model.DossierManagementPackage.Dossier;
+import com.example.orthoj.Model.Patient.Patient;
 import com.example.orthoj.Model.PremierBO;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -37,7 +39,7 @@ public class ProjetTherapeutique {
             premierBO.setProjetTherapeutique(text.getText());
             // adding the bo
             // -----------------------------------------------------
-            Main.cabinet.addPremierBO(patient, premierBO);
+          //  Main.cabinet.addPremierBO(patient, premierBO);
             // setting anamEnfant to null
             AnamChoix.anamEnfant = null;
         }else if(AnamChoix.anamAdulte != null){
@@ -48,7 +50,7 @@ public class ProjetTherapeutique {
             premierBO.setDiagnostic(DiagnosticController.diagnostic);
             premierBO.setProjetTherapeutique(text.getText());
             // adding the bo
-            Main.cabinet.addPremierBO(patient, premierBO);
+           // Main.cabinet.addPremierBO(patient, premierBO);
             // setting anamAdulte to null
             AnamChoix.anamAdulte = null;
         }else{
@@ -60,7 +62,7 @@ public class ProjetTherapeutique {
             bo.setDiagnostic(DiagnosticController.diagnostic);
             bo.setProjetTherapeutique(text.getText());
             // adding the bo
-            Main.cabinet.addBO(dossier, bo);
+           // Main.cabinet.addBO(dossier, bo);
         }
 
         // loading dashboard
