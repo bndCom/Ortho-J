@@ -10,7 +10,7 @@
 
 <AnchorPane prefHeight="830.0" prefWidth="1440.0" stylesheets="@../Style/button.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.orthoj.Controller.ListeQCMHome">
    <children>
-      <VBox alignment="CENTER" layoutX="436.0" layoutY="44.0" prefHeight="710.0" prefWidth="596.0" spacing="30.0">
+      <VBox alignment="CENTER" layoutX="564.0" layoutY="86.0" prefHeight="710.0" prefWidth="596.0" spacing="30.0">
          <children>
             <Label styleClass="title1" text="Liste des QCM" />
             <ScrollPane prefHeight="252.0" prefWidth="447.0">
@@ -26,10 +26,10 @@
             </HBox>
          </children>
       </VBox>
-      <VBox alignment="CENTER" layoutX="-2.0" layoutY="-1.0" prefHeight="971.0" prefWidth="382.0" style="-fx-background-color: EDECF4;">
+      <VBox alignment="CENTER" layoutX="-2.0" layoutY="-1.0" prefHeight="831.0" prefWidth="382.0" style="-fx-background-color: EDECF4;">
          <children>
             <Label styleClass="title1" text="Ortho-J" />
-            <VBox alignment="CENTER" prefHeight="611.0" prefWidth="370.0" spacing="30.0">
+            <VBox alignment="CENTER" prefHeight="653.0" prefWidth="382.0" spacing="30.0">
                <children>
                   <Button fx:id="home" mnemonicParsing="false" onAction="#onHome" styleClass="menu-button" text="Home" />
                   <Button fx:id="listePatients" mnemonicParsing="false" onAction="#onListePatients" prefHeight="25.0" prefWidth="135.0" styleClass="menu-button" text="Patients" />
