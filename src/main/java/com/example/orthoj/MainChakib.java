@@ -58,7 +58,7 @@ LinkedList<Dossier> listeDeDossier = cabinet.getLinkedListDossier();
         // setting the main stage
         System.out.println("lol");
         Main.stage = stage;
-        FXMLLoader fxmlLoader = new FXMLLoader(com.example.orthoj.Main.class.getResource("View/CalendrierMain.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(com.example.orthoj.Main.class.getResource("View/objectif.fxml"));
         Scene scene = null;
         try {
             scene = new Scene(fxmlLoader.load(), 600, 400);
