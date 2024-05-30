@@ -89,3 +89,34 @@
     -fx-font-size: 12px; /* Smaller font size for descriptions */
     -fx-text-fill: #4527A0; /* Text color */
 }
+
+/* Menu button styles */
+.menu-button {
+    -fx-background-color: transparent;
+    -fx-text-fill: #4527A0; /* Deep purple color for text */
+    -fx-font-size: 16px; /* Font size for the menu button */
+    -fx-font-family: "Segoe UI", "Arial", sans-serif; /* Font family */
+    -fx-padding: 10px 20px;
+    -fx-cursor: hand;
+    -fx-font-weight: bold;
+    -fx-transition: background-color 0.3s ease-in-out, text-fill 0.3s ease-in-out;
+}
+
+/* Hover effect for menu buttons */
+.menu-button:hover {
+    -fx-background-color: rgba(69, 39, 160, 0.1); /* Slightly purple background on hover */
+    -fx-text-fill: #311B92; /* Darker purple text on hover */
+}
+
+/* Pressed effect for menu buttons */
+.menu-button:pressed {
+    -fx-background-color: rgba(69, 39, 160, 0.2); /* More pronounced background when pressed */
+    -fx-text-fill: #000000; /* Black text when pressed */
+}
+
+/* Focused effect for menu buttons */
+.menu-button:focused {
+    -fx-background-color: transparent;
+    -fx-text-fill: #311B92; /* Darker purple text */
+    -fx-effect: dropshadow(gaussian, rgba(69, 39, 160, 0.25), 5, 0, 0, 1);
+}

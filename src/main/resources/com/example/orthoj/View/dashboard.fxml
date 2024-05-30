@@ -8,39 +8,42 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
-<?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.orthoj.Controller.Dashboard">
+<AnchorPane prefHeight="810.0" prefWidth="1440.0" stylesheets="@../Style/button.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.orthoj.Controller.Dashboard">
    <children>
-      <VBox alignment="CENTER" prefHeight="400.0" prefWidth="162.0" spacing="30.0">
+      <PieChart fx:id="troublesPercent" layoutX="803.0" layoutY="599.0" prefHeight="306.0" prefWidth="369.0" />
+      <Label layoutX="743.0" layoutY="919.0" prefHeight="43.0" prefWidth="494.0" styleClass="title3" text="Pourcentage de patients par trouble" />
+      <VBox alignment="CENTER" layoutY="-1.0" prefHeight="1070.0" prefWidth="370.0" style="-fx-background-color: EDECF4;">
          <children>
-            <Label text="Ortho-J" />
-            <Button fx:id="listeBO" mnemonicParsing="false" onAction="#onPatients" prefHeight="25.0" prefWidth="135.0" text="Patients" />
-            <Button fx:id="calendrier" mnemonicParsing="false" onAction="#onCalendrier" prefHeight="25.0" prefWidth="135.0" text="Calendrier" />
-            <Button fx:id="questions" mnemonicParsing="false" onAction="#onQuestions" prefHeight="25.0" prefWidth="135.0" text=" Questionnaires" />
-            <Button fx:id="anam" mnemonicParsing="false" onAction="#onAnam" prefHeight="25.0" prefWidth="135.0" text="Anamnèse questions" />
-            <Button fx:id="disconnect" mnemonicParsing="false" onAction="#onDisconnect" prefHeight="25.0" prefWidth="135.0" text="Déconnecter" />
+            <Label styleClass="title1" text="Ortho-J" />
+            <VBox alignment="CENTER" prefHeight="611.0" prefWidth="370.0" spacing="30.0">
+               <children>
+                  <Button fx:id="listeBO" mnemonicParsing="false" onAction="#onListeBO" prefHeight="25.0" prefWidth="135.0" styleClass="menu-button" text="Patients" />
+                  <Button fx:id="calendrier" mnemonicParsing="false" onAction="#onCalendrier" prefHeight="25.0" prefWidth="135.0" styleClass="menu-button" text="Calendrier" />
+                  <Button fx:id="questions" mnemonicParsing="false" onAction="#onQuestions" prefHeight="39.0" prefWidth="171.0" styleClass="menu-button" text=" Questionnaires" />
+                  <Button fx:id="anam" mnemonicParsing="false" onAction="#onAnam" prefHeight="39.0" prefWidth="211.0" styleClass="menu-button" text="Anamnèse questions" />
+                  <Button fx:id="disconnect" mnemonicParsing="false" onAction="#onDisconnect" prefHeight="25.0" prefWidth="135.0" styleClass="menu-button" text="Déconnecter" />
+               </children>
+            </VBox>
          </children>
       </VBox>
-      <HBox layoutX="178.0" layoutY="33.0" prefHeight="150.0" prefWidth="394.0">
+      <HBox alignment="CENTER" layoutX="501.0" layoutY="73.0" prefHeight="286.0" prefWidth="860.0" spacing="150.0" style="-fx-background-color: C6BFD9; -fx-background-radius: 40;">
          <children>
-            <ImageView fitHeight="152.0" fitWidth="165.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="296.0" fitWidth="272.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../Assets/comicsman.jpeg" />
+                  <Image url="@../Assets/login.png" />
                </image>
             </ImageView>
-            <VBox alignment="CENTER" prefHeight="165.0" prefWidth="239.0" spacing="10.0">
+            <VBox alignment="CENTER" prefHeight="416.0" prefWidth="438.0" spacing="10.0" style="-fx-background-color: EDECF4; -fx-background-radius: 30;">
                <children>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome, Doctor!" />
-                  <Text fx:id="nom" strokeType="OUTSIDE" strokeWidth="0.0" text="Anes Bendaoud" />
-                  <Text fx:id="email" strokeType="OUTSIDE" strokeWidth="0.0" text="anes.bendaoud@gmail.com" />
-                  <Text fx:id="telephone" strokeType="OUTSIDE" strokeWidth="0.0" text="Numéro du téléphone" />
-                  <Text fx:id="adresse" strokeType="OUTSIDE" strokeWidth="0.0" text="Adresse" />
+                  <Label styleClass="title1" text="welcome, Doctor!" />
+                  <Label fx:id="nom" styleClass="title3" text="nom" />
+                  <Label fx:id="email" styleClass="title3" text="email" />
+                  <Label fx:id="telephone" styleClass="title3" text="telephone" />
+                  <Label fx:id="adresse" styleClass="title3" text="adresse" />
                </children>
             </VBox>
          </children>
       </HBox>
-      <PieChart fx:id="troublesPercent" layoutX="275.0" layoutY="200.0" prefHeight="150.0" prefWidth="162.0" />
-      <Label layoutX="278.0" layoutY="356.0" prefHeight="17.0" prefWidth="194.0" text="Pourcentage de patients par trouble" />
    </children>
 </AnchorPane>
