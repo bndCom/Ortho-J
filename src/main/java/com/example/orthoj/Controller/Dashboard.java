@@ -31,6 +31,9 @@ public class Dashboard{
     private Label telephone;
 
     @FXML
+    private Button home;
+
+    @FXML
     private Button calendrier;
 
     @FXML
@@ -46,23 +49,13 @@ public class Dashboard{
     private Button disconnect;
 
     @FXML
-    private PieChart troublesPercent;
+    void onHome(ActionEvent event) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(com.example.orthoj.Main.class.getResource("View/dashboard.fxml"));
+        Scene scene = new Scene(fxmlLoader.load(), 600, 400);
+        Main.stage.setScene(scene);
+        Main.stage.show();
+    }
 
-//    @FXML
-//    void onAjouterBO(ActionEvent event) throws IOException {
-//        FXMLLoader fxmlLoader = new FXMLLoader(com.example.orthoj.Main.class.getResource("View/anam_choix.fxml"));
-//        Scene scene = new Scene(fxmlLoader.load(), 600, 400);
-//        Main.stage.setScene(scene);
-//        Main.stage.show();
-//    }
-
-//    @FXML
-//    void onListeBO(ActionEvent event) throws IOException {
-//        FXMLLoader fxmlLoader = new FXMLLoader(com.example.orthoj.Main.class.getResource("View/list_bo.fxml"));
-//        Scene scene = new Scene(fxmlLoader.load(), 600, 400);
-//        Main.stage.setScene(scene);
-//        Main.stage.show();
-//    }
     @FXML
     void onListePatients(ActionEvent event) throws IOException{
         FXMLLoader fxmlLoader = new FXMLLoader(com.example.orthoj.Main.class.getResource("View/Dossiertable.fxml"));
@@ -70,6 +63,42 @@ public class Dashboard{
         Main.stage.setScene(scene);
         Main.stage.show();
     }
+
+    @FXML
+    void onQuestions(ActionEvent event) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(com.example.orthoj.Main.class.getResource("View/questions_home.fxml"));
+        Scene scene = new Scene(fxmlLoader.load(), 600, 400);
+        Main.stage.setScene(scene);
+        Main.stage.show();
+    }
+
+    @FXML
+    void onCalendrier(ActionEvent event) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(com.example.orthoj.Main.class.getResource("View/CalendrierMain.fxml"));
+        Scene scene = new Scene(fxmlLoader.load(), 600, 400);
+        Main.stage.setScene(scene);
+        Main.stage.show();
+    }
+
+    @FXML
+    void onAnam(ActionEvent event) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(com.example.orthoj.Main.class.getResource("View/AnamTypeHome.fxml"));
+        Scene scene = new Scene(fxmlLoader.load(), 600, 400);
+        Main.stage.setScene(scene);
+        Main.stage.show();
+    }
+
+    @FXML
+    void onDisconnect(ActionEvent event) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(com.example.orthoj.Main.class.getResource("View/main.fxml"));
+        Scene scene = new Scene(fxmlLoader.load(), 600, 400);
+        Main.stage.setScene(scene);
+        Main.stage.show();
+    }
+
+    @FXML
+    private PieChart troublesPercent;
+
 
 
     @FXML
@@ -94,34 +123,6 @@ public class Dashboard{
     }
 
 
-    @FXML
-    void onQuestions(ActionEvent event) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(com.example.orthoj.Main.class.getResource("View/questions_home.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 600, 400);
-        Main.stage.setScene(scene);
-        Main.stage.show();
-    }
-
-    @FXML
-    void onCalendrier(ActionEvent event) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(com.example.orthoj.Main.class.getResource("View/CalendrierMain.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 600, 400);
-        Main.stage.setScene(scene);
-        Main.stage.show();
-    }
-
-    @FXML
-    void onAnam(ActionEvent event) throws IOException {
-
-    }
-
-    @FXML
-    void onDisconnect(ActionEvent event) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(com.example.orthoj.Main.class.getResource("View/main.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 600, 400);
-        Main.stage.setScene(scene);
-        Main.stage.show();
-    }
 
 
 }
