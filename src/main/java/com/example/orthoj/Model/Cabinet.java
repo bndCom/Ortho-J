@@ -99,6 +99,23 @@ public class Cabinet implements Serializable {
         }
         return null;
     }
+    // add a BO to an existing dossier
+    public void addBOToDossier(BO bo, int num){
+        for (Dossier dossier : this.dossierLinkedList){
+            if (dossier.getNbDossier() == num){
+                dossier.addBO(bo);
+                break;
+            }
+        }
+    }
+    // add premier bo to patient
+    public void addPremierBO(PremierBO premierBO,Patient patient){
+        for (Dossier dossier : dossierLinkedList){
+            if(dossier.getPatient().equals(patient)){
+                dossier.addPremierBO(premierBO);
+            }
+        }
+    }
 
     //attributes
     private Orthophoniste orthophoniste;

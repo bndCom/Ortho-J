@@ -1,6 +1,7 @@
 package com.example.orthoj.Controller;
 
 import com.example.orthoj.Main;
+import com.example.orthoj.Model.PremierBO;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -82,6 +83,9 @@ public class ShowEpreuve {
     void initialize(){
         nomBO.setText("BO "+BoMain.bo.getId());
         epreuve.setDisable(true);
+        if(!(BoMain.bo instanceof PremierBO)){
+            anamnese.setDisable(true);
+        }
 
     }
 

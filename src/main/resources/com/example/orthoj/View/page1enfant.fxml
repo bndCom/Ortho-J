@@ -21,7 +21,7 @@
             <Text layoutX="74.0" layoutY="74.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Remplissez les champs suivant svp : " />
             <TextField id="Nom" fx:id="nom" layoutX="74.0" layoutY="98.0" promptText="Nom" />
             <TextField id="Prenom" fx:id="prenom" layoutX="247.0" layoutY="98.0" promptText="Prenom" />
-            <TextField id="lieu" fx:id="numTel" layoutX="247.0" layoutY="140.0" promptText="lieu de naissance" />
+            <TextField id="lieu" fx:id="lieu" layoutX="247.0" layoutY="140.0" promptText="lieu de naissance" />
             <HBox layoutX="74.0" layoutY="273.0" prefHeight="16.0" prefWidth="200.0" spacing="30.0" />
             <Button id="ajouter" fx:id="suivant" layoutX="430.0" layoutY="336.0" mnemonicParsing="false" onAction="#onSuivant" text="Suivant" />
             <Text strokeType="OUTSIDE" strokeWidth="0.0" />

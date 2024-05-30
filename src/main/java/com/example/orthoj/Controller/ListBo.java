@@ -2,6 +2,7 @@ package com.example.orthoj.Controller;
 
 import com.example.orthoj.Main;
 import com.example.orthoj.Model.BO;
+import com.example.orthoj.Model.PremierBO;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -28,7 +29,13 @@ public class ListBo {
         }else{
             for(BO bo : list){
                 // creating button for each bo
-                Button button = new Button("BO "+bo.getId());
+                Button button;
+                if(bo instanceof PremierBO){
+                    button = new Button("Premier BO "+bo.getId());
+                }else{
+                    button = new Button("BO "+bo.getId());
+                }
+
                 button.setId(Integer.toString(bo.getId()));
                 button.setOnAction(event -> {
                     BoMain.bo = bo;

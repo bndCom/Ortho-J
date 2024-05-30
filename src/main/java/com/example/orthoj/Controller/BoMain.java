@@ -70,9 +70,6 @@ public class BoMain {
         // disabling anamnese if bo is not premier bo
         if(!(bo instanceof PremierBO)){
             anamnese.setDisable(true);
-            Projet.anamnese.setDisable(true);
-            ShowDiagnostic.anamnese.setDisable(true);
-
         }
     }
 

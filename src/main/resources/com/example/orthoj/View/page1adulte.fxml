@@ -7,7 +7,6 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.orthoj.Controller.FirstPageConsultationAdulte">
    <children>
       <DatePicker id="Date" fx:id="date" layoutX="83.0" layoutY="150.0" prefHeight="26.0" prefWidth="150.0" promptText="Date de Naissance" />
@@ -20,10 +19,10 @@
       <TextField id="Nom" fx:id="nom" layoutX="84.0" layoutY="108.0" promptText="Nom" />
       <TextField id="Prenom" fx:id="prenom" layoutX="257.0" layoutY="108.0" promptText="Prenom" />
       <TextField id="lieu" fx:id="lieu" layoutX="257.0" layoutY="150.0" promptText="lieu de naissance" />
-      <Button id="ajouter" layoutX="440.0" layoutY="346.0" mnemonicParsing="false" text="Suivant" />
+      <Button id="ajouter" fx:id="suivant" layoutX="440.0" layoutY="346.0" mnemonicParsing="false" onAction="#onSuivant" text="Suivant" />
       <TextField id="adresse" fx:id="adresse" layoutX="83.0" layoutY="195.0" promptText="Adresse " />
       <TextField id="classe" fx:id="diplome" layoutX="83.0" layoutY="237.0" promptText="Diplome " />
       <TextField id="numpapa" fx:id="numtel" layoutX="257.0" layoutY="195.0" promptText="Num Tel" />
-      <TextField id="numpapa" fx:id="profession" layoutX="257.0" layoutY="237.0"  promptText="Profession" />
+      <TextField id="numpapa" fx:id="profession" layoutX="257.0" layoutY="237.0" promptText="Profession" />
    </children>
 </AnchorPane>

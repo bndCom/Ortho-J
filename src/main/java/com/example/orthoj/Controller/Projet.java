@@ -1,6 +1,7 @@
 package com.example.orthoj.Controller;
 
 import com.example.orthoj.Main;
+import com.example.orthoj.Model.PremierBO;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -15,7 +16,7 @@ import java.io.IOException;
 public class Projet {
 
     @FXML
-    static public Button anamnese;
+    private Button anamnese;
 
     @FXML
     private Button diagnostic;
@@ -64,6 +65,9 @@ public class Projet {
     @FXML
     void initialize() {
         projet.setDisable(true);
+        if(!(BoMain.bo instanceof PremierBO)){
+            anamnese.setDisable(true);
+        }
         nomBO.setText("BO "+BoMain.bo.getId());
         // showing le projet therapeutique
         Text text = new Text(BoMain.bo.getProjetTherapeutique());

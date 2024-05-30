@@ -1,8 +1,10 @@
 package com.example.orthoj.Model.DossierManagementPackage;
 
+import com.example.orthoj.Model.BO;
 import com.example.orthoj.Model.FicheDeSuiviPackage.*;
 
 import com.example.orthoj.Model.Patient.Patient;
+import com.example.orthoj.Model.PremierBO;
 import com.example.orthoj.Model.RendezVousManagement.*;
 
 import java.util.LinkedList;
@@ -19,6 +21,7 @@ public class Dossier {
     private int NbDossier ;
     FicheDeSuivi FicheDeSuiviCourante ;
     Patient patient;
+    List<BO> BOs;
 
     // Bilan ortophonique courant si on en a besoin ;
 
@@ -37,6 +40,19 @@ public class Dossier {
         NbDossier = counter + 1 ;
         counter++;
         patient = consultaion.getPatient();
+        this.BOs = new LinkedList<>();
+    }
+    // add a bo to the list
+    public void addBO(BO bo){
+        this.BOs.add(bo);
+    }
+
+    public List<BO> getBOs(){
+        return this.BOs;
+    }
+
+    public void addPremierBO(PremierBO bo){
+        this.patient.setPremierBO(bo);
     }
 
     public int getNbDossier() {

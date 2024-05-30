@@ -127,7 +127,7 @@ public class CalendrierController {
             } else {
 
                 if (selectedRendezVous instanceof Suivi){
-                    ProjetTherapeutique.numDossier = Main.cabinet.getSelectedRendezVous().getPatient().getNumDossier();
+                    ProjetTherapeutique.numDossier = ((Suivi) selectedRendezVous).getNbDossier();
                     fxmlLoader = new FXMLLoader(com.example.orthoj.Main.class.getResource("View/epreuve_observation.fxml"));
 
 

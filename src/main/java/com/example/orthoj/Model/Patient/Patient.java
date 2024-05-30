@@ -1,5 +1,6 @@
 package com.example.orthoj.Model.Patient;
 
+import com.example.orthoj.Model.PremierBO;
 import com.example.orthoj.Model.RendezVousManagement.Consultaion;
 
 import java.time.LocalDate;
@@ -13,6 +14,8 @@ public class Patient {
     String NumTel ;
 
     int numDossier;
+
+    private PremierBO premierBO;
 
 
     LocalDate DateDeNaissance ;
@@ -88,5 +91,12 @@ public class Patient {
 
     public  String getType(){
         return "";
+    }
+
+    public void setPremierBO(PremierBO premierBO){
+        this.premierBO = premierBO;
+    }
+    public PremierBO getPremierBO(){
+        return this.premierBO;
     }
 }

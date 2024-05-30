@@ -80,7 +80,8 @@ public class PatientProfile {
 
     @FXML
     void onBo(ActionEvent event) throws IOException {
-        //ListBo.list = dossier.getBOs();
+        ListBo.list = dossier.getBOs();
+        ListBo.list.add(dossier.getPatient().getPremierBO());
         FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("View/list_bo.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 600, 400);
         Main.stage.setScene(scene);

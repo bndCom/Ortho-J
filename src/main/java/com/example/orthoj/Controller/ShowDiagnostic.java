@@ -2,6 +2,7 @@ package com.example.orthoj.Controller;
 
 import com.example.orthoj.Main;
 import com.example.orthoj.Model.Diagnostic;
+import com.example.orthoj.Model.PremierBO;
 import com.example.orthoj.Model.Trouble;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.event.ActionEvent;
@@ -18,7 +19,7 @@ import java.io.IOException;
 public class ShowDiagnostic {
 
     @FXML
-    static public Button anamnese;
+    private Button anamnese;
 
     @FXML
     private TableColumn<Trouble, String> categorieColumn;
@@ -74,6 +75,9 @@ public class ShowDiagnostic {
     void initialize(){
         nomBO.setText("BO "+BoMain.bo.getId());
         diagnostic.setDisable(true);
+        if(!(BoMain.bo instanceof PremierBO)){
+            anamnese.setDisable(true);
+        }
         // init the table
         nomColumn.setCellValueFactory(data -> new SimpleStringProperty(data.getValue().getNom()));
         categorieColumn.setCellValueFactory(data -> new SimpleStringProperty(data.getValue().getType().toString()));

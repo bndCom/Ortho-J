@@ -39,7 +39,7 @@ public class ProjetTherapeutique {
             premierBO.setProjetTherapeutique(text.getText());
             // adding the bo
             // -----------------------------------------------------
-          //  Main.cabinet.addPremierBO(patient, premierBO);
+            Main.cabinet.addPremierBO(premierBO, patient);
             // setting anamEnfant to null
             AnamChoix.anamEnfant = null;
         }else if(AnamChoix.anamAdulte != null){
@@ -50,7 +50,7 @@ public class ProjetTherapeutique {
             premierBO.setDiagnostic(DiagnosticController.diagnostic);
             premierBO.setProjetTherapeutique(text.getText());
             // adding the bo
-           // Main.cabinet.addPremierBO(patient, premierBO);
+            Main.cabinet.addPremierBO(premierBO, patient);
             // setting anamAdulte to null
             AnamChoix.anamAdulte = null;
         }else{
@@ -62,7 +62,7 @@ public class ProjetTherapeutique {
             bo.setDiagnostic(DiagnosticController.diagnostic);
             bo.setProjetTherapeutique(text.getText());
             // adding the bo
-           // Main.cabinet.addBO(numDossier, bo);
+            Main.cabinet.addBOToDossier(bo, numDossier);
         }
 
         // loading dashboard
