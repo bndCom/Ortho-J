@@ -82,7 +82,7 @@ public class Dossiertable {
     public void open(ActionEvent event)throws IOException {
         if (selectedDossier != null) {
             PatientProfile.dossier = selectedDossier;
-            FXMLLoader fxmlLoader = new FXMLLoader(com.example.orthoj.Main.class.getResource("View/patientinfo.fxml"));
+            FXMLLoader fxmlLoader = new FXMLLoader(com.example.orthoj.Main.class.getResource("View/patient_profile.fxml"));
             Scene scene = new Scene(fxmlLoader.load(), 600, 400);
             Main.stage.setScene(scene);
             Main.stage.show();

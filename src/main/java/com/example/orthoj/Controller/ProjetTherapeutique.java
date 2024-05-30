@@ -24,7 +24,7 @@ public class ProjetTherapeutique {
     private TextArea text;
 
     // ------------------------------------
-    public static Dossier dossier;
+    public static int numDossier;
     public static Patient patient;
 
     @FXML
@@ -62,7 +62,7 @@ public class ProjetTherapeutique {
             bo.setDiagnostic(DiagnosticController.diagnostic);
             bo.setProjetTherapeutique(text.getText());
             // adding the bo
-           // Main.cabinet.addBO(dossier, bo);
+           // Main.cabinet.addBO(numDossier, bo);
         }
 
         // loading dashboard

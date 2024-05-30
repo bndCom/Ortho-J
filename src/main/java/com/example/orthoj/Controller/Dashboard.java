@@ -34,7 +34,7 @@ public class Dashboard{
     private Button calendrier;
 
     @FXML
-    private Button listeBO;
+    private Button listePatients;
 
     @FXML
     private Button questions;
@@ -56,9 +56,16 @@ public class Dashboard{
 //        Main.stage.show();
 //    }
 
+//    @FXML
+//    void onListeBO(ActionEvent event) throws IOException {
+//        FXMLLoader fxmlLoader = new FXMLLoader(com.example.orthoj.Main.class.getResource("View/list_bo.fxml"));
+//        Scene scene = new Scene(fxmlLoader.load(), 600, 400);
+//        Main.stage.setScene(scene);
+//        Main.stage.show();
+//    }
     @FXML
-    void onListeBO(ActionEvent event) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(com.example.orthoj.Main.class.getResource("View/list_bo.fxml"));
+    void onListePatients(ActionEvent event) throws IOException{
+        FXMLLoader fxmlLoader = new FXMLLoader(com.example.orthoj.Main.class.getResource("View/Dossiertable.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 600, 400);
         Main.stage.setScene(scene);
         Main.stage.show();

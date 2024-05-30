@@ -91,6 +91,15 @@ public class Cabinet implements Serializable {
         this.listpatientsNonPrisEnCharge = patientsNonPrisEnCharge;
     }
 
+    public Dossier getDossierById(int id){
+        for(Dossier dossier : dossierLinkedList){
+            if (dossier.getNbDossier() == id){
+                return dossier;
+            }
+        }
+        return null;
+    }
+
     //attributes
     private Orthophoniste orthophoniste;
     // questions templates

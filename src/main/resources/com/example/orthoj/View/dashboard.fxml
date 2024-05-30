@@ -18,7 +18,7 @@
             <Label styleClass="title1" text="Ortho-J" />
             <VBox alignment="CENTER" prefHeight="611.0" prefWidth="370.0" spacing="30.0">
                <children>
-                  <Button fx:id="listeBO" mnemonicParsing="false" onAction="#onListeBO" prefHeight="25.0" prefWidth="135.0" styleClass="menu-button" text="Patients" />
+                  <Button fx:id="listePatients" mnemonicParsing="false" onAction="#onListePatients" prefHeight="25.0" prefWidth="135.0" styleClass="menu-button" text="Patients" />
                   <Button fx:id="calendrier" mnemonicParsing="false" onAction="#onCalendrier" prefHeight="25.0" prefWidth="135.0" styleClass="menu-button" text="Calendrier" />
                   <Button fx:id="questions" mnemonicParsing="false" onAction="#onQuestions" prefHeight="39.0" prefWidth="171.0" styleClass="menu-button" text=" Questionnaires" />
                   <Button fx:id="anam" mnemonicParsing="false" onAction="#onAnam" prefHeight="39.0" prefWidth="211.0" styleClass="menu-button" text="Anamnèse questions" />
