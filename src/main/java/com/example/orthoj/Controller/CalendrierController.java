@@ -100,31 +100,44 @@ public class CalendrierController {
             Main.cabinet.setSelectedRendezVous(selectedRendezVous);
 
             FXMLLoader fxmlLoader;
-            if (selectedRendezVous instanceof ConsultaionAdulte) {
-                System.out.print("1");
-                fxmlLoader = new FXMLLoader(com.example.orthoj.Main.class.getResource("View/page1adulte.fxml"));
+            if (selectedRendezVous instanceof Consultaion) {
+                if (selectedRendezVous instanceof ConsultaionAdulte) {
+                    System.out.print("1");
+                    fxmlLoader = new FXMLLoader(com.example.orthoj.Main.class.getResource("View/page1adulte.fxml"));
+                } else {
+                    System.out.print("2");
+                    fxmlLoader = new FXMLLoader(com.example.orthoj.Main.class.getResource("View/page1enfant.fxml"));
+                }
+
+                try {
+                    Parent root = fxmlLoader.load();
+                    Scene scene = new Scene(root, 600, 400);
+                    Main.stage.setScene(scene);
+                    Main.stage.show();
+
+                    // Optional: Pass selectedRendezVous to the new controller if needed
+                    // ControllerType controller = fxmlLoader.getController();
+                    // controller.setRendezVous(selectedRendezVous);
+
+                } catch (IOException e) {
+                    e.printStackTrace();
+                    // Optionally, show an error dialog to the user
+                    showAlert("Error", "Unable to load the requested page.");
+                }
             } else {
-                System.out.print("2");
-                fxmlLoader = new FXMLLoader(com.example.orthoj.Main.class.getResource("View/page1enfant.fxml"));
+
+                if (selectedRendezVous instanceof Suivi){
+                    fxmlLoader = new FXMLLoader(com.example.orthoj.Main.class.getResource("View/page1adulte.fxml"));
+
+
+                }else {
+
+
+                }
+
+
+
             }
-
-            try {
-                Parent root = fxmlLoader.load();
-                Scene scene = new Scene(root, 600, 400);
-                Main.stage.setScene(scene);
-                Main.stage.show();
-
-                // Optional: Pass selectedRendezVous to the new controller if needed
-                // ControllerType controller = fxmlLoader.getController();
-                // controller.setRendezVous(selectedRendezVous);
-
-            } catch (IOException e) {
-                e.printStackTrace();
-                // Optionally, show an error dialog to the user
-                showAlert("Error", "Unable to load the requested page.");
-            }
-        } else {
-            showAlert("Error", "No rendezvous selected.");
         }
     }
 
