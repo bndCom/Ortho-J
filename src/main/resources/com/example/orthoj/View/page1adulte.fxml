@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -24,5 +25,6 @@
       <TextField id="classe" fx:id="diplome" layoutX="83.0" layoutY="237.0" promptText="Diplome " />
       <TextField id="numpapa" fx:id="numtel" layoutX="257.0" layoutY="195.0" promptText="Num Tel" />
       <TextField id="numpapa" fx:id="profession" layoutX="257.0" layoutY="237.0" promptText="Profession" />
+      <CheckBox fx:id="creerDossier" layoutX="83.0" layoutY="307.0" mnemonicParsing="false" text="Prise en charge" />
    </children>
 </AnchorPane>

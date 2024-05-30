@@ -1,13 +1,17 @@
 package com.example.orthoj.Controller;
 
 import com.example.orthoj.Main;
+import com.example.orthoj.Model.AnamneseAdulte;
+import com.example.orthoj.Model.DossierManagementPackage.Dossier;
 import com.example.orthoj.Model.Patient.PatientAdulte;
 import com.example.orthoj.Model.Patient.PatientEnfant;
+import com.example.orthoj.Model.RendezVousManagement.Consultaion;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.CheckBox;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
 
@@ -44,6 +48,9 @@ public class FirstPageConsultationAdulte {
     @FXML
     private Button suivant;
 
+    @FXML
+    private CheckBox creerDossier;
+
 
     @FXML
     public void initialize(){
@@ -68,8 +75,14 @@ public class FirstPageConsultationAdulte {
 
         // set the patient
         ProjetTherapeutique.patient = Main.cabinet.getSelectedRendezVous().getPatient();
+        if(creerDossier.isSelected()){
+            Dossier dossier = new Dossier((Consultaion) Main.cabinet.getSelectedRendezVous());
+            Main.cabinet.addDossier(dossier);
+        }
+
         // loading first bo
-        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("View/anam_choix.fxml"));
+        AnamChoix.anamAdulte = new AnamneseAdulte();
+        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("View/adulte_anam.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 600, 400);
         Main.stage.setScene(scene);
         Main.stage.show();

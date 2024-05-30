@@ -1,7 +1,10 @@
 package com.example.orthoj.Controller;
 
 import com.example.orthoj.Main;
+import com.example.orthoj.Model.AnamneseEnfant;
+import com.example.orthoj.Model.DossierManagementPackage.Dossier;
 import com.example.orthoj.Model.Patient.PatientEnfant;
+import com.example.orthoj.Model.RendezVousManagement.Consultaion;
 import com.example.orthoj.Model.RendezVousManagement.ConsultationEnfant;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -41,6 +44,10 @@ public class FirstPageConsultataionenfantController {
     @FXML
     private Button suivant;
 
+
+    @FXML
+    private CheckBox creerDossier;
+
     // @FXML
     //private LocalTimeTextField temp;
 
@@ -65,8 +72,15 @@ public class FirstPageConsultataionenfantController {
         Main.cabinet.getSelectedRendezVous().getPatient().setAdresse(adresse.getText());
         // set the patient
         ProjetTherapeutique.patient = Main.cabinet.getSelectedRendezVous().getPatient();
+        // add dossier if prise en charge
+        if(creerDossier.isSelected()){
+            Dossier dossier = new Dossier((Consultaion) Main.cabinet.getSelectedRendezVous());
+            Main.cabinet.addDossier(dossier);
+        }
+
         // loading first bo
-        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("View/anam_choix.fxml"));
+        AnamChoix.anamEnfant = new AnamneseEnfant();
+        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("View/enfant_anam.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 600, 400);
         Main.stage.setScene(scene);
         Main.stage.show();

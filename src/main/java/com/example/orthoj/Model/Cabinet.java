@@ -116,6 +116,10 @@ public class Cabinet implements Serializable {
             }
         }
     }
+    // add dossier
+    public void addDossier(Dossier dossier){
+        this.dossierLinkedList.add(dossier);
+    }
 
     //attributes
     private Orthophoniste orthophoniste;
