@@ -127,14 +127,30 @@ public class CalendrierController {
             } else {
 
                 if (selectedRendezVous instanceof Suivi){
-                    fxmlLoader = new FXMLLoader(com.example.orthoj.Main.class.getResource("View/page1adulte.fxml"));
+                    fxmlLoader = new FXMLLoader(com.example.orthoj.Main.class.getResource("View/page1suivi.fxml"));
 
 
                 }else {
+                    fxmlLoader = new FXMLLoader(com.example.orthoj.Main.class.getResource("View/page1Atelier.fxml"));
 
 
                 }
 
+                try {
+                    Parent root = fxmlLoader.load();
+                    Scene scene = new Scene(root, 600, 400);
+                    Main.stage.setScene(scene);
+                    Main.stage.show();
+
+                    // Optional: Pass selectedRendezVous to the new controller if needed
+                    // ControllerType controller = fxmlLoader.getController();
+                    // controller.setRendezVous(selectedRendezVous);
+
+                } catch (IOException e) {
+                    e.printStackTrace();
+                    // Optionally, show an error dialog to the user
+                    showAlert("Error", "Unable to load the requested page.");
+                }
 
 
             }
