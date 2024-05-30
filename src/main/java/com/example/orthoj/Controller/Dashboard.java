@@ -19,16 +19,16 @@ import java.util.ResourceBundle;
 public class Dashboard{
 
     @FXML
-    private Text adresse;
+    private Label adresse;
 
     @FXML
-    private Text email;
+    private Label email;
 
     @FXML
-    private Text nom;
+    private Label nom;
 
     @FXML
-    private Text telephone;
+    private Label telephone;
 
     @FXML
     private Button calendrier;
