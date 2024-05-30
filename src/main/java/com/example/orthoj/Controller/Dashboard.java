@@ -51,7 +51,7 @@ public class Dashboard{
     @FXML
     void onHome(ActionEvent event) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(com.example.orthoj.Main.class.getResource("View/dashboard.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 600, 400);
+        Scene scene = new Scene(fxmlLoader.load(), 1440, 810);
         Main.stage.setScene(scene);
         Main.stage.show();
     }
@@ -59,7 +59,7 @@ public class Dashboard{
     @FXML
     void onListePatients(ActionEvent event) throws IOException{
         FXMLLoader fxmlLoader = new FXMLLoader(com.example.orthoj.Main.class.getResource("View/Dossiertable.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 600, 400);
+        Scene scene = new Scene(fxmlLoader.load(), 1440, 810);
         Main.stage.setScene(scene);
         Main.stage.show();
     }
@@ -67,7 +67,7 @@ public class Dashboard{
     @FXML
     void onQuestions(ActionEvent event) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(com.example.orthoj.Main.class.getResource("View/questions_home.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 600, 400);
+        Scene scene = new Scene(fxmlLoader.load(), 1440, 810);
         Main.stage.setScene(scene);
         Main.stage.show();
     }
@@ -75,7 +75,7 @@ public class Dashboard{
     @FXML
     void onCalendrier(ActionEvent event) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(com.example.orthoj.Main.class.getResource("View/CalendrierMain.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 600, 400);
+        Scene scene = new Scene(fxmlLoader.load(), 1440, 810);
         Main.stage.setScene(scene);
         Main.stage.show();
     }
@@ -83,7 +83,7 @@ public class Dashboard{
     @FXML
     void onAnam(ActionEvent event) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(com.example.orthoj.Main.class.getResource("View/anam_type_home.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 600, 400);
+        Scene scene = new Scene(fxmlLoader.load(), 1440, 810);
         Main.stage.setScene(scene);
         Main.stage.show();
     }
@@ -91,7 +91,7 @@ public class Dashboard{
     @FXML
     void onDisconnect(ActionEvent event) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(com.example.orthoj.Main.class.getResource("View/main.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 600, 400);
+        Scene scene = new Scene(fxmlLoader.load(), 1440, 810);
         Main.stage.setScene(scene);
         Main.stage.show();
     }

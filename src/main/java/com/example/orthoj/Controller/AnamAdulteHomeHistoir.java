@@ -55,7 +55,7 @@ public class AnamAdulteHomeHistoir {
     @FXML
     void onHome(ActionEvent event) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(com.example.orthoj.Main.class.getResource("View/dashboard.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 600, 400);
+        Scene scene = new Scene(fxmlLoader.load(), 1440, 810);
         Main.stage.setScene(scene);
         Main.stage.show();
     }
@@ -63,7 +63,7 @@ public class AnamAdulteHomeHistoir {
     @FXML
     void onListePatients(ActionEvent event) throws IOException{
         FXMLLoader fxmlLoader = new FXMLLoader(com.example.orthoj.Main.class.getResource("View/Dossiertable.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 600, 400);
+        Scene scene = new Scene(fxmlLoader.load(), 1440, 810);
         Main.stage.setScene(scene);
         Main.stage.show();
     }
@@ -71,7 +71,7 @@ public class AnamAdulteHomeHistoir {
     @FXML
     void onQuestions(ActionEvent event) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(com.example.orthoj.Main.class.getResource("View/questions_home.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 600, 400);
+        Scene scene = new Scene(fxmlLoader.load(), 1440, 810);
         Main.stage.setScene(scene);
         Main.stage.show();
     }
@@ -79,7 +79,7 @@ public class AnamAdulteHomeHistoir {
     @FXML
     void onCalendrier(ActionEvent event) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(com.example.orthoj.Main.class.getResource("View/CalendrierMain.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 600, 400);
+        Scene scene = new Scene(fxmlLoader.load(), 1440, 810);
         Main.stage.setScene(scene);
         Main.stage.show();
     }
@@ -87,7 +87,7 @@ public class AnamAdulteHomeHistoir {
     @FXML
     void onAnam(ActionEvent event) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(com.example.orthoj.Main.class.getResource("View/anam_type_home.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 600, 400);
+        Scene scene = new Scene(fxmlLoader.load(), 1440, 810);
         Main.stage.setScene(scene);
         Main.stage.show();
     }
@@ -95,7 +95,7 @@ public class AnamAdulteHomeHistoir {
     @FXML
     void onDisconnect(ActionEvent event) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(com.example.orthoj.Main.class.getResource("View/main.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 600, 400);
+        Scene scene = new Scene(fxmlLoader.load(), 1440, 810);
         Main.stage.setScene(scene);
         Main.stage.show();
     }
@@ -109,7 +109,7 @@ public class AnamAdulteHomeHistoir {
     @FXML
     public void onSuivi() throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(com.example.orthoj.Main.class.getResource("View/anam_adulte_home_suivi.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 600, 400);
+        Scene scene = new Scene(fxmlLoader.load(), 1440, 810);
         Main.stage.setScene(scene);
         Main.stage.show();
     }
@@ -162,7 +162,7 @@ public class AnamAdulteHomeHistoir {
     private void handleSave() throws IOException {
         Main.cabinet.setqHistoir(new ArrayList<>(stringList));
         FXMLLoader fxmlLoader = new FXMLLoader(com.example.orthoj.Main.class.getResource("View/anam_type_home.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 600, 400);
+        Scene scene = new Scene(fxmlLoader.load(), 1440, 810);
         Main.stage.setScene(scene);
         Main.stage.show();
     }

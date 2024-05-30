@@ -69,7 +69,7 @@ public class EpreuveTestExercice {
 
         // loading the test choice stage
         FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("View/test_choix.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 600, 400);
+        Scene scene = new Scene(fxmlLoader.load(), 1440, 810);
         Main.stage.setScene(scene);
         Main.stage.show();
     }

@@ -92,7 +92,7 @@ public class EpreuveTestQCU {
     @FXML
     void getQCMPage(ActionEvent event) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(com.example.orthoj.Main.class.getResource("View/epreuve_testQCM.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 600, 400);
+        Scene scene = new Scene(fxmlLoader.load(), 1440, 810);
         Main.stage.setScene(scene);
         Main.stage.show();
     }
@@ -105,7 +105,7 @@ public class EpreuveTestQCU {
     @FXML
     void getQLPage(ActionEvent event) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("View/epreuve_testQL.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 600, 400);
+        Scene scene = new Scene(fxmlLoader.load(), 1440, 810);
         Main.stage.setScene(scene);
         Main.stage.show();
     }
@@ -146,7 +146,7 @@ public class EpreuveTestQCU {
             qcuForm = null;
             // reload the form windows
             FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("View/epreuve_testQCU.fxml"));
-            Scene scene = new Scene(fxmlLoader.load(), 600, 400);
+            Scene scene = new Scene(fxmlLoader.load(), 1440, 810);
             Main.stage.setScene(scene);
             Main.stage.show();
 
@@ -162,7 +162,7 @@ public class EpreuveTestQCU {
         EpreuveObservation.epreuve.addTest(TestChoix.testQuestion);
         // load the diagnostic window
         FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("View/test_choix.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 600, 400);
+        Scene scene = new Scene(fxmlLoader.load(), 1440, 810);
         Main.stage.setScene(scene);
         Main.stage.show();
 
@@ -170,7 +170,7 @@ public class EpreuveTestQCU {
     @FXML
     void onChoisir(ActionEvent event) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("View/liste_QCU.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 600, 400);
+        Scene scene = new Scene(fxmlLoader.load(), 1440, 810);
         Main.stage.setScene(scene);
         Main.stage.show();
     }

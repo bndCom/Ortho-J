@@ -54,7 +54,7 @@ public class AjouterAnamEnfant {
             }
             // return to anamnese window
             FXMLLoader fxmlLoader = new FXMLLoader(com.example.orthoj.Main.class.getResource("View/enfant_anam.fxml"));
-            Scene scene = new Scene(fxmlLoader.load(), 600, 400);
+            Scene scene = new Scene(fxmlLoader.load(), 1440, 810);
             Main.stage.setScene(scene);
             Main.stage.show();
         }

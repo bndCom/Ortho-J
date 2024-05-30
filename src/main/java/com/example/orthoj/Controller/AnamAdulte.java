@@ -100,7 +100,7 @@ public class AnamAdulte {
     @FXML
     void onAjouter(ActionEvent event) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("View/ajouter_anam_adulte.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 600, 400);
+        Scene scene = new Scene(fxmlLoader.load(), 1440, 810);
         Main.stage.setScene(scene);
         Main.stage.show();
     }
@@ -134,14 +134,14 @@ public class AnamAdulte {
             alert.setContentText("Question répetée");
             alert.showAndWait();
             FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("View/adulte_anam.fxml"));
-            Scene scene = new Scene(fxmlLoader.load(), 600, 400);
+            Scene scene = new Scene(fxmlLoader.load(), 1440, 810);
             Main.stage.setScene(scene);
             Main.stage.show();
             return;
         }
         // loading the next window
         FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("View/epreuve_observation.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 600, 400);
+        Scene scene = new Scene(fxmlLoader.load(), 1440, 810);
         Main.stage.setScene(scene);
         Main.stage.show();
     }

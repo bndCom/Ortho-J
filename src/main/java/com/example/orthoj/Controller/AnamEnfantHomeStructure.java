@@ -81,7 +81,7 @@ public class AnamEnfantHomeStructure {
     @FXML
     void onHome(ActionEvent event) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(com.example.orthoj.Main.class.getResource("View/dashboard.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 600, 400);
+        Scene scene = new Scene(fxmlLoader.load(), 1440, 810);
         Main.stage.setScene(scene);
         Main.stage.show();
     }
@@ -89,7 +89,7 @@ public class AnamEnfantHomeStructure {
     @FXML
     void onListePatients(ActionEvent event) throws IOException{
         FXMLLoader fxmlLoader = new FXMLLoader(com.example.orthoj.Main.class.getResource("View/Dossiertable.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 600, 400);
+        Scene scene = new Scene(fxmlLoader.load(), 1440, 810);
         Main.stage.setScene(scene);
         Main.stage.show();
     }
@@ -97,7 +97,7 @@ public class AnamEnfantHomeStructure {
     @FXML
     void onQuestions(ActionEvent event) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(com.example.orthoj.Main.class.getResource("View/questions_home.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 600, 400);
+        Scene scene = new Scene(fxmlLoader.load(), 1440, 810);
         Main.stage.setScene(scene);
         Main.stage.show();
     }
@@ -105,7 +105,7 @@ public class AnamEnfantHomeStructure {
     @FXML
     void onCalendrier(ActionEvent event) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(com.example.orthoj.Main.class.getResource("View/CalendrierMain.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 600, 400);
+        Scene scene = new Scene(fxmlLoader.load(), 1440, 810);
         Main.stage.setScene(scene);
         Main.stage.show();
     }
@@ -113,7 +113,7 @@ public class AnamEnfantHomeStructure {
     @FXML
     void onAnam(ActionEvent event) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(com.example.orthoj.Main.class.getResource("View/AnamTypeHome.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 600, 400);
+        Scene scene = new Scene(fxmlLoader.load(), 1440, 810);
         Main.stage.setScene(scene);
         Main.stage.show();
     }
@@ -121,7 +121,7 @@ public class AnamEnfantHomeStructure {
     @FXML
     void onDisconnect(ActionEvent event) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(com.example.orthoj.Main.class.getResource("View/main.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 600, 400);
+        Scene scene = new Scene(fxmlLoader.load(), 1440, 810);
         Main.stage.setScene(scene);
         Main.stage.show();
     }
@@ -129,7 +129,7 @@ public class AnamEnfantHomeStructure {
     @FXML
     void onAntecedent(ActionEvent event) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("View/anam_enfant_home_antecedent.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 600, 400);
+        Scene scene = new Scene(fxmlLoader.load(), 1440, 810);
         Main.stage.setScene(scene);
         Main.stage.show();
     }
@@ -137,7 +137,7 @@ public class AnamEnfantHomeStructure {
     @FXML
     void onCaractere(ActionEvent event) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("View/anam_enfant_home_caractere.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 600, 400);
+        Scene scene = new Scene(fxmlLoader.load(), 1440, 810);
         Main.stage.setScene(scene);
         Main.stage.show();
     }
@@ -145,7 +145,7 @@ public class AnamEnfantHomeStructure {
     @FXML
     void onCondition(ActionEvent event) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("View/anam_enfant_home_condition.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 600, 400);
+        Scene scene = new Scene(fxmlLoader.load(), 1440, 810);
         Main.stage.setScene(scene);
         Main.stage.show();
     }
@@ -153,7 +153,7 @@ public class AnamEnfantHomeStructure {
     @FXML
     void onDynamique(ActionEvent event) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("View/anam_enfant_home_dynamique.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 600, 400);
+        Scene scene = new Scene(fxmlLoader.load(), 1440, 810);
         Main.stage.setScene(scene);
         Main.stage.show();
     }
@@ -161,7 +161,7 @@ public class AnamEnfantHomeStructure {
     @FXML
     void onLangagier(ActionEvent event) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("View/anam_enfant_home_langagier.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 600, 400);
+        Scene scene = new Scene(fxmlLoader.load(), 1440, 810);
         Main.stage.setScene(scene);
         Main.stage.show();
     }
@@ -169,7 +169,7 @@ public class AnamEnfantHomeStructure {
     @FXML
     void onPsycho(ActionEvent event) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("View/anam_enfant_home_psycho.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 600, 400);
+        Scene scene = new Scene(fxmlLoader.load(), 1440, 810);
         Main.stage.setScene(scene);
         Main.stage.show();
     }
@@ -177,7 +177,7 @@ public class AnamEnfantHomeStructure {
     @FXML
     void onStructure(ActionEvent event) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("View/anam_enfant_home_structure.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 600, 400);
+        Scene scene = new Scene(fxmlLoader.load(), 1440, 810);
         Main.stage.setScene(scene);
         Main.stage.show();
     }
@@ -230,7 +230,7 @@ public class AnamEnfantHomeStructure {
     private void handleSave() throws IOException {
         Main.cabinet.setqStructure(new ArrayList<>(stringList));
         FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("View/anam_type_home.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 600, 400);
+        Scene scene = new Scene(fxmlLoader.load(), 1440, 810);
         Main.stage.setScene(scene);
         Main.stage.show();
     }

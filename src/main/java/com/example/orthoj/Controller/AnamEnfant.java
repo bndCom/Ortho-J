@@ -145,7 +145,7 @@ public class AnamEnfant {
     @FXML
     void onAjouter(ActionEvent event) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(com.example.orthoj.Main.class.getResource("View/ajouter_anam_enfant.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 600, 400);
+        Scene scene = new Scene(fxmlLoader.load(), 1440, 810);
         Main.stage.setScene(scene);
         Main.stage.show();
     }
@@ -209,14 +209,14 @@ public class AnamEnfant {
             alert.setContentText("Question répetée");
             alert.showAndWait();
             FXMLLoader fxmlLoader = new FXMLLoader(com.example.orthoj.Main.class.getResource("View/enfant_anam.fxml"));
-            Scene scene = new Scene(fxmlLoader.load(), 600, 400);
+            Scene scene = new Scene(fxmlLoader.load(), 1440, 810);
             Main.stage.setScene(scene);
             Main.stage.show();
             return;
         }
         // loading the next window
         FXMLLoader fxmlLoader = new FXMLLoader(com.example.orthoj.Main.class.getResource("View/epreuve_observation.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 600, 400);
+        Scene scene = new Scene(fxmlLoader.load(), 1440, 810);
         Main.stage.setScene(scene);
         Main.stage.show();
     }

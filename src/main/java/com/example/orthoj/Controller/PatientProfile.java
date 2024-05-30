@@ -83,7 +83,7 @@ public class PatientProfile {
         ListBo.list = dossier.getBOs();
         ListBo.list.add(dossier.getPatient().getPremierBO());
         FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("View/list_bo.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 600, 400);
+        Scene scene = new Scene(fxmlLoader.load(), 1440, 810);
         Main.stage.setScene(scene);
         Main.stage.show();
     }

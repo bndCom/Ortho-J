@@ -108,7 +108,7 @@ public class CalendrierController {
 
                 try {
                     Parent root = fxmlLoader.load();
-                    Scene scene = new Scene(root, 600, 400);
+                    Scene scene = new Scene(root, 1440, 810);
                     Main.stage.setScene(scene);
                     Main.stage.show();
 
@@ -136,7 +136,7 @@ public class CalendrierController {
 
                 try {
                     Parent root = fxmlLoader.load();
-                    Scene scene = new Scene(root, 600, 400);
+                    Scene scene = new Scene(root, 1440, 810);
                     Main.stage.setScene(scene);
                     Main.stage.show();
 
@@ -207,7 +207,7 @@ public class CalendrierController {
     @FXML
     void NewAtelier(ActionEvent event) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(com.example.orthoj.Main.class.getResource("View/NewAtelier.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 600, 400);
+        Scene scene = new Scene(fxmlLoader.load(), 1440, 810);
         Main.stage.setScene(scene);
         Main.stage.show();
 
@@ -216,7 +216,7 @@ public class CalendrierController {
     @FXML
     private void NewConsultation(ActionEvent event) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(com.example.orthoj.Main.class.getResource("View/newconsultationview.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 600, 400);
+        Scene scene = new Scene(fxmlLoader.load(), 1440, 810);
         Main.stage.setScene(scene);
         Main.stage.show();
 
@@ -227,7 +227,7 @@ public class CalendrierController {
         FXMLLoader fxmlLoader = new FXMLLoader(com.example.orthoj.Main.class.getResource("View/NewSuivi.fxml"));
         Scene scene = null;
         try {
-            scene = new Scene(fxmlLoader.load(), 600, 400);
+            scene = new Scene(fxmlLoader.load(), 1440, 810);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
@@ -258,7 +258,7 @@ public class CalendrierController {
     @FXML
     void onHome(ActionEvent event) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(com.example.orthoj.Main.class.getResource("View/dashboard.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 600, 400);
+        Scene scene = new Scene(fxmlLoader.load(), 1440, 810);
         Main.stage.setScene(scene);
         Main.stage.show();
     }
@@ -266,7 +266,7 @@ public class CalendrierController {
     @FXML
     void onListePatients(ActionEvent event) throws IOException{
         FXMLLoader fxmlLoader = new FXMLLoader(com.example.orthoj.Main.class.getResource("View/Dossiertable.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 600, 400);
+        Scene scene = new Scene(fxmlLoader.load(), 1440, 810);
         Main.stage.setScene(scene);
         Main.stage.show();
     }
@@ -274,7 +274,7 @@ public class CalendrierController {
     @FXML
     void onQuestions(ActionEvent event) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(com.example.orthoj.Main.class.getResource("View/questions_home.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 600, 400);
+        Scene scene = new Scene(fxmlLoader.load(), 1440, 810);
         Main.stage.setScene(scene);
         Main.stage.show();
     }
@@ -282,15 +282,15 @@ public class CalendrierController {
     @FXML
     void onCalendrier(ActionEvent event) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(com.example.orthoj.Main.class.getResource("View/CalendrierMain.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 600, 400);
+        Scene scene = new Scene(fxmlLoader.load(), 1440, 810);
         Main.stage.setScene(scene);
         Main.stage.show();
     }
 
     @FXML
     void onAnam(ActionEvent event) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(com.example.orthoj.Main.class.getResource("View/AnamTypeHome.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 600, 400);
+        FXMLLoader fxmlLoader = new FXMLLoader(com.example.orthoj.Main.class.getResource("View/anam_type_home.fxml"));
+        Scene scene = new Scene(fxmlLoader.load(), 1440, 810);
         Main.stage.setScene(scene);
         Main.stage.show();
     }
@@ -298,7 +298,7 @@ public class CalendrierController {
     @FXML
     void onDisconnect(ActionEvent event) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(com.example.orthoj.Main.class.getResource("View/main.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 600, 400);
+        Scene scene = new Scene(fxmlLoader.load(), 1440, 810);
         Main.stage.setScene(scene);
         Main.stage.show();
     }

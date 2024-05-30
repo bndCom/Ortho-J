@@ -19,9 +19,6 @@ import java.util.*;
 public class Main extends Application {
     public static Cabinet cabinet = new Cabinet();
 
-    // tmp (waiting for integration)
-    public static List<BO> bos = new ArrayList<>();
-    // used variables (tmp) --------------------------------------------
 
     // -----------------------------------------------------------------
     public static Stage stage;
@@ -55,28 +52,6 @@ public class Main extends Application {
                 i.printStackTrace();
             }
         });
-
-        //hello chakib
-        PatientAdulte patientAdulte = new PatientAdulte();
-        ConsultaionAdulte consultaionAdulte = new ConsultaionAdulte();
-        patientAdulte.setNom("chakib");
-        patientAdulte.setPrenom("Boumissa");
-        patientAdulte.setAge(28);
-
-
-        consultaionAdulte.setPatient(patientAdulte);
-        patientAdulte.setConsultaionAdulte(consultaionAdulte);
-        Dossier dossier = new Dossier(consultaionAdulte);
-
-        cabinet.ajouterDossier(dossier);
-        LinkedList<Dossier> listeDeDossier = cabinet.getLinkedListDossier();
-        int num = 1;
-        boolean found = false;
-        dossier = null;
-        for (Dossier dossier1 : listeDeDossier){
-            System.out.print("Dossier num" + dossier1.getNbDossier());
-        }
-        System.out.print("done");
 
 
 

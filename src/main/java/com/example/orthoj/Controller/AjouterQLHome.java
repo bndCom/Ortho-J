@@ -55,7 +55,7 @@ public class AjouterQLHome {
         //EpreuveTestQL.qlForm = ql;
         // loading the test scene
         FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("View/liste_QL_home.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 600, 400);
+        Scene scene = new Scene(fxmlLoader.load(), 1440, 810);
         Main.stage.setScene(scene);
         Main.stage.show();
     }

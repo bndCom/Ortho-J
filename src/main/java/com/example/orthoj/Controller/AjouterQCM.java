@@ -87,7 +87,7 @@ public class AjouterQCM {
         EpreuveTestQCM.qcmForm = qcm;
         // loading the test scene
         FXMLLoader fxmlLoader = new FXMLLoader(com.example.orthoj.Main.class.getResource("View/liste_QCM.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 600, 400);
+        Scene scene = new Scene(fxmlLoader.load(), 1440, 810);
         Main.stage.setScene(scene);
         Main.stage.show();
         //Main.qcmQuestion = new LinkedHashMap<String, Map<String, Boolean>>(); // free the memory

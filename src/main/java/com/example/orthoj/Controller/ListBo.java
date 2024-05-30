@@ -35,7 +35,7 @@ public class ListBo {
                     FXMLLoader fxmlLoader = new FXMLLoader(com.example.orthoj.Main.class.getResource("View/bo_main.fxml"));
                     Scene scene = null;
                     try {
-                        scene = new Scene(fxmlLoader.load(), 600, 400);
+                        scene = new Scene(fxmlLoader.load(), 1440, 810);
                     } catch (IOException e) {
                         throw new RuntimeException(e);
                     }

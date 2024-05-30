@@ -43,7 +43,7 @@ public class ShowEpreuveTestsQuestions {
     @FXML
     void onAnamnese(ActionEvent event) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(com.example.orthoj.Main.class.getResource("View/show_anam.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 600, 400);
+        Scene scene = new Scene(fxmlLoader.load(), 1440, 810);
         Main.stage.setScene(scene);
         Main.stage.show();
     }
@@ -51,7 +51,7 @@ public class ShowEpreuveTestsQuestions {
     @FXML
     void onDiagnostic(ActionEvent event) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(com.example.orthoj.Main.class.getResource("View/show_diagnostic.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 600, 400);
+        Scene scene = new Scene(fxmlLoader.load(), 1440, 810);
         Main.stage.setScene(scene);
         Main.stage.show();
     }
@@ -64,7 +64,7 @@ public class ShowEpreuveTestsQuestions {
     @FXML
     void onProjet(ActionEvent event) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(com.example.orthoj.Main.class.getResource("View/projet.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 600, 400);
+        Scene scene = new Scene(fxmlLoader.load(), 1440, 810);
         Main.stage.setScene(scene);
         Main.stage.show();
     }
@@ -83,7 +83,7 @@ public class ShowEpreuveTestsQuestions {
                     FXMLLoader fxmlLoader = new FXMLLoader(com.example.orthoj.Main.class.getResource("View/show_epreuve_tests_questions_QCM.fxml"));
                     Scene scene = null;
                     try {
-                        scene = new Scene(fxmlLoader.load(), 600, 400);
+                        scene = new Scene(fxmlLoader.load(), 1440, 810);
                     } catch (IOException e) {
                         throw new RuntimeException(e);
                     }
@@ -101,7 +101,7 @@ public class ShowEpreuveTestsQuestions {
                     FXMLLoader fxmlLoader = new FXMLLoader(com.example.orthoj.Main.class.getResource("View/show_epreuve_tests_questions_QCU.fxml"));
                     Scene scene = null;
                     try {
-                        scene = new Scene(fxmlLoader.load(), 600, 400);
+                        scene = new Scene(fxmlLoader.load(), 1440, 810);
                     } catch (IOException e) {
                         throw new RuntimeException(e);
                     }
@@ -119,7 +119,7 @@ public class ShowEpreuveTestsQuestions {
                     FXMLLoader fxmlLoader = new FXMLLoader(com.example.orthoj.Main.class.getResource("View/show_epreuve_tests_questions_QL.fxml"));
                     Scene scene = null;
                     try {
-                        scene = new Scene(fxmlLoader.load(), 600, 400);
+                        scene = new Scene(fxmlLoader.load(), 1440, 810);
                     } catch (IOException e) {
                         throw new RuntimeException(e);
                     }
