@@ -10,9 +10,12 @@ import com.example.orthoj.Model.RendezVousManagement.Calendrier;
 import com.example.orthoj.Model.RendezVousManagement.ConsultaionAdulte;
 import com.example.orthoj.Model.RendezVousManagement.ConsultationEnfant;
 import com.example.orthoj.Model.RendezVousManagement.RendezVous;
+import javafx.beans.value.ObservableValue;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.ToggleGroup;
@@ -26,7 +29,6 @@ import javax.swing.*;
 import javax.swing.event.ChangeListener;
 import javax.swing.text.LabelView;
 import java.awt.*;
-import java.awt.event.ActionEvent;
 import java.io.IOException;
 import java.net.URL;
 import java.time.LocalDateTime;
@@ -76,7 +78,71 @@ public class NewConsultationViewController{
 //                age.setText(newValue.replaceAll("[^\\d]", ""));
 //            }
 //        });}
+@FXML
+private javafx.scene.control.Button home;
 
+    @FXML
+    private javafx.scene.control.Button calendrier;
+
+    @FXML
+    private javafx.scene.control.Button listePatients;
+
+    @FXML
+    private javafx.scene.control.Button questions;
+
+    @FXML
+    private javafx.scene.control.Button anam;
+
+    @FXML
+    private Button disconnect;
+
+    @FXML
+    void onHome(javafx.event.ActionEvent event) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(com.example.orthoj.Main.class.getResource("View/dashboard.fxml"));
+        Scene scene = new Scene(fxmlLoader.load(), 600, 400);
+        Main.stage.setScene(scene);
+        Main.stage.show();
+    }
+
+    @FXML
+    void onListePatients(javafx.event.ActionEvent event) throws IOException{
+        FXMLLoader fxmlLoader = new FXMLLoader(com.example.orthoj.Main.class.getResource("View/Dossiertable.fxml"));
+        Scene scene = new Scene(fxmlLoader.load(), 600, 400);
+        Main.stage.setScene(scene);
+        Main.stage.show();
+    }
+
+    @FXML
+    void onQuestions(javafx.event.ActionEvent event) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(com.example.orthoj.Main.class.getResource("View/questions_home.fxml"));
+        Scene scene = new Scene(fxmlLoader.load(), 600, 400);
+        Main.stage.setScene(scene);
+        Main.stage.show();
+    }
+
+    @FXML
+    void onCalendrier(javafx.event.ActionEvent event) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(com.example.orthoj.Main.class.getResource("View/CalendrierMain.fxml"));
+        Scene scene = new Scene(fxmlLoader.load(), 600, 400);
+        Main.stage.setScene(scene);
+        Main.stage.show();
+    }
+
+    @FXML
+    void onAnam(javafx.event.ActionEvent event) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(com.example.orthoj.Main.class.getResource("View/AnamTypeHome.fxml"));
+        Scene scene = new Scene(fxmlLoader.load(), 600, 400);
+        Main.stage.setScene(scene);
+        Main.stage.show();
+    }
+
+    @FXML
+    void onDisconnect(ActionEvent event) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(com.example.orthoj.Main.class.getResource("View/main.fxml"));
+        Scene scene = new Scene(fxmlLoader.load(), 600, 400);
+        Main.stage.setScene(scene);
+        Main.stage.show();
+    }
 
 
 
@@ -94,6 +160,8 @@ public class NewConsultationViewController{
         patientEnfant.setAge(Integer.parseInt(age.getText()));
         patientEnfant.setNumTel(numTel.getText());
         ConsultationEnfant consultationEnfant = new ConsultationEnfant();
+
+
         consultationEnfant.setDateTime(LocalDateTime.of(date.getValue().getYear() , date.getValue().getMonth() , date.getValue().getDayOfMonth(), Integer.parseInt(heure.getText()), Integer.parseInt(min.getText()) ));
         patientEnfant.setConsultationEnfant(consultationEnfant);
         consultationEnfant.setPatient(patientEnfant);
@@ -156,6 +224,8 @@ public class NewConsultationViewController{
         Main.stage.setScene(scene);
         Main.stage.show();
     }
+
+
 
 
 }

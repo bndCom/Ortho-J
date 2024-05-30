@@ -1,29 +1,58 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.orthoj.Controller.AnamAdulteHomeHistoir">
+<AnchorPane prefHeight="810.0" prefWidth="1440.0" stylesheets="@../Style/button.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.orthoj.Controller.AnamAdulteHomeHistoir">
    <children>
-      <VBox layoutX="14.0" layoutY="155.0" prefHeight="0.0" prefWidth="87.0" spacing="40.0">
+      <VBox alignment="CENTER" layoutX="-3.0" layoutY="-4.0" prefHeight="854.0" prefWidth="403.0" style="-fx-background-color: EDECF4;">
          <children>
-            <Button fx:id="histoir" mnemonicParsing="false" onAction="#onHistoir" prefHeight="25.0" prefWidth="85.0" text="Histoir" />
-            <Button fx:id="suivi" mnemonicParsing="false" onAction="#onSuivi" text="Suivi médical" />
+            <Label styleClass="title1" text="Ortho-J" />
+            <VBox alignment="CENTER" prefHeight="653.0" prefWidth="382.0" spacing="30.0">
+               <children>
+                  <Button fx:id="home" mnemonicParsing="false" onAction="#onHome" styleClass="menu-button" text="Home" />
+                  <Button fx:id="listePatients" mnemonicParsing="false" onAction="#onListePatients" prefHeight="25.0" prefWidth="135.0" styleClass="menu-button" text="Patients" />
+                  <Button fx:id="calendrier" mnemonicParsing="false" onAction="#onCalendrier" prefHeight="25.0" prefWidth="135.0" styleClass="menu-button" text="Calendrier" />
+                  <Button fx:id="questions" mnemonicParsing="false" onAction="#onQuestions" prefHeight="39.0" prefWidth="171.0" styleClass="menu-button" text=" Questionnaires" />
+                  <Button fx:id="anam" mnemonicParsing="false" onAction="#onAnam" prefHeight="39.0" prefWidth="211.0" styleClass="menu-button" text="Anamnèse questions" />
+                  <Button fx:id="disconnect" mnemonicParsing="false" onAction="#onDisconnect" prefHeight="25.0" prefWidth="135.0" styleClass="menu-button" text="Déconnecter" />
+               </children>
+            </VBox>
          </children>
       </VBox>
-      <TableView fx:id="tableView" layoutX="139.0" layoutY="58.0" prefHeight="225.0" prefWidth="411.0">
-        <columns>
-          <TableColumn fx:id="stringColumn" prefWidth="410.0" text="Questions" />
-        </columns>
-      </TableView>
-      <TextField fx:id="inputField" layoutX="139.0" layoutY="299.0" prefHeight="25.0" prefWidth="177.0" />
-      <Button layoutX="325.0" layoutY="299.0" mnemonicParsing="false" onAction="#handleAdd" text="Ajouter" />
-      <Button layoutX="388.0" layoutY="299.0" mnemonicParsing="false" onAction="#handleEdit" text="Modifier" />
-      <Button layoutX="458.0" layoutY="299.0" mnemonicParsing="false" onAction="#handleDelete" text="Supprimer" />
-      <Button layoutX="509.0" layoutY="343.0" mnemonicParsing="false" onAction="#handleSave" text="Sauvegarder" />
+      <VBox alignment="CENTER" layoutX="468.0" layoutY="125.0" prefHeight="690.0" prefWidth="895.0" spacing="40.0">
+         <children>
+            <HBox alignment="CENTER" prefHeight="39.0" prefWidth="421.0" spacing="60.0">
+               <children>
+                  <Button fx:id="suivi" mnemonicParsing="false" onAction="#onSuivi" styleClass="menu-button" text="Suivi médical" />
+                  <Button fx:id="histoir" mnemonicParsing="false" onAction="#onHistoir" prefHeight="39.0" prefWidth="142.0" styleClass="menu-button" text="Histoir" />
+               </children>
+            </HBox>
+            <TableView fx:id="tableView" prefHeight="336.0" prefWidth="591.0">
+              <columns>
+                <TableColumn fx:id="stringColumn" prefWidth="894.0" text="Questions" />
+              </columns>
+            </TableView>
+            <HBox alignment="CENTER" prefHeight="52.0" prefWidth="786.0">
+               <children>
+                  <TextField fx:id="inputField" prefHeight="25.0" prefWidth="356.0" />
+                  <HBox alignment="CENTER" prefHeight="63.0" prefWidth="495.0" spacing="20.0">
+                     <children>
+                        <Button mnemonicParsing="false" onAction="#handleAdd" text="Ajouter" />
+                        <Button mnemonicParsing="false" onAction="#handleEdit" text="Modifier" />
+                        <Button mnemonicParsing="false" onAction="#handleDelete" text="Supprimer" />
+                     </children>
+                  </HBox>
+               </children>
+            </HBox>
+            <Button mnemonicParsing="false" onAction="#handleSave" text="Sauvegarder" />
+         </children>
+      </VBox>
    </children>
 </AnchorPane>

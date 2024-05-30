@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.net.URL?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
@@ -10,34 +12,56 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.orthoj.Controller.NewAtelier">
+<AnchorPane prefHeight="810.0" prefWidth="1440.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.orthoj.Controller.NewAtelier">
 
     <VBox xmlns:fx="http://javafx.com/fxml/1" />
-     <TableView fx:id="tableView" layoutX="349.0" layoutY="64.0" prefHeight="317.0" prefWidth="240.0">
+     <TableView fx:id="tableView" layoutX="1029.0" layoutY="132.0" prefHeight="405.0" prefWidth="333.0">
          <columns>
              <TableColumn fx:id="numberColumn" text="Number" />
-             <TableColumn fx:id="nomColumn" text="Name" />
-             <TableColumn fx:id="prenomColumn" text="Last Name" />
+             <TableColumn fx:id="nomColumn" prefWidth="126.0" text="Name" />
+             <TableColumn fx:id="prenomColumn" prefWidth="116.0" text="Last Name" />
          </columns>
      </TableView>
-     <TextField fx:id="inputField" layoutX="28.0" layoutY="119.0" promptText="Nº Dosseier" />
-     <Button layoutX="194.0" layoutY="119.0" onAction="#handleAdd" text="Add" />
-   <Text layoutX="39.0" layoutY="54.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nouvelle seance d'Atelier" wrappingWidth="309.7578125">
+     <TextField fx:id="inputField" layoutX="453.0" layoutY="175.0" prefHeight="32.0" prefWidth="203.0" promptText="Nº Dosseier" />
+     <Button layoutX="868.0" layoutY="164.0" onAction="#handleAdd" text="Add" />
+   <Text layoutX="453.0" layoutY="96.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nouvelle seance d'Atelier" wrappingWidth="443.7578125">
       <font>
-         <Font size="26.0" />
+         <Font size="35.0" />
       </font>
    </Text>
-   <Text layoutX="39.0" layoutY="84.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Remplissez les champs suivant svp : " />
-   <DatePicker id="Date" fx:id="date" layoutX="28.0" layoutY="166.0" prefHeight="26.0" prefWidth="150.0" promptText="Date" />
-   <TextField fx:id="heure" layoutX="28.0" layoutY="213.0" prefHeight="26.0" prefWidth="40.0" promptText="heure" />
-   <TextField fx:id="min" layoutX="80.0" layoutY="213.0" prefHeight="26.0" prefWidth="40.0" promptText="min" />
-   <Text layoutX="71.0" layoutY="232.0" strokeType="OUTSIDE" strokeWidth="0.0" text=":">
+   <Text layoutX="453.0" layoutY="130.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Remplissez les champs suivant svp : ">
       <font>
-         <Font size="24.0" />
+         <Font size="18.0" />
+      </font></Text>
+   <DatePicker id="Date" fx:id="date" layoutX="453.0" layoutY="237.0" prefHeight="32.0" prefWidth="203.0" promptText="Date" />
+   <TextField fx:id="heure" layoutX="700.0" layoutY="317.0" prefHeight="32.0" prefWidth="47.0" promptText="heure" />
+   <TextField fx:id="min" layoutX="759.0" layoutY="317.0" prefHeight="32.0" prefWidth="47.0" promptText="min" />
+   <Text layoutX="750.0" layoutY="342.0" strokeType="OUTSIDE" strokeWidth="0.0" text=":">
+      <font>
+         <Font size="33.0" />
       </font>
    </Text>
-   <Button fx:id="save" layoutX="246.0" layoutY="356.0" mnemonicParsing="false" onAction="#save" text="Enregistrer" />
-   <Button fx:id="calendrier" layoutX="28.0" layoutY="356.0" mnemonicParsing="false" onAction="#BackToCalendrier" text="Calendrier" />
-   <TextField fx:id="theme" layoutX="28.0" layoutY="257.0" promptText="Thematique" />
+   <Button fx:id="save" layoutX="797.0" layoutY="489.0" mnemonicParsing="false" onAction="#save" text="Enregistrer" />
+   <Button fx:id="calendrier" layoutX="631.0" layoutY="489.0" mnemonicParsing="false" onAction="#BackToCalendrier" text="Calendrier" />
+   <TextField fx:id="theme" layoutX="453.0" layoutY="313.0" prefHeight="32.0" prefWidth="203.0" promptText="Thematique" />
+   <VBox alignment="CENTER" layoutX="-4.0" prefHeight="870.0" prefWidth="424.0" style="-fx-background-color: EDECF4;">
+      <children>
+         <Label styleClass="title1" text="Ortho-J" />
+         <VBox alignment="CENTER" prefHeight="653.0" prefWidth="382.0" spacing="30.0">
+            <children>
+               <Button fx:id="home" mnemonicParsing="false" onAction="#onHome" styleClass="menu-button" text="Home" />
+               <Button fx:id="listePatients" mnemonicParsing="false" onAction="#onListePatients" prefHeight="25.0" prefWidth="135.0" styleClass="menu-button" text="Patients" />
+               <Button fx:id="calendrier1" mnemonicParsing="false" onAction="#onCalendrier" prefHeight="25.0" prefWidth="135.0" styleClass="menu-button" text="Calendrier" />
+               <Button fx:id="questions" mnemonicParsing="false" onAction="#onQuestions" prefHeight="39.0" prefWidth="171.0" styleClass="menu-button" text=" Questionnaires" />
+               <Button fx:id="anam" mnemonicParsing="false" onAction="#onAnam" prefHeight="39.0" prefWidth="211.0" styleClass="menu-button" text="Anamnèse questions" />
+               <Button fx:id="disconnect" mnemonicParsing="false" onAction="#onDisconnect" prefHeight="25.0" prefWidth="135.0" styleClass="menu-button" text="Déconnecter" />
+            </children>
+         </VBox>
+      </children>
+   </VBox>
+   <stylesheets>
+      <URL value="@../Style/menu.css" />
+      <URL value="@../Style/button.css" />
+   </stylesheets>
 
 </AnchorPane>

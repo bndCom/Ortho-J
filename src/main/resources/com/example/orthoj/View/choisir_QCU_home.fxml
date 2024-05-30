@@ -1,18 +1,44 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.orthoj.Controller.ChoisirQCUHome">
+<AnchorPane prefHeight="830.0" prefWidth="1440.0" stylesheets="@../Style/button.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.orthoj.Controller.ChoisirQCUHome">
    <children>
-      <ScrollPane fx:id="scrollpane" layoutX="42.0" layoutY="40.0" prefHeight="321.0" prefWidth="280.0">
-         <content>
-            <VBox fx:id="formArea" prefHeight="319.0" prefWidth="278.0" />
-         </content>
-      </ScrollPane>
-      <Button fx:id="annuler" layoutX="508.0" layoutY="336.0" mnemonicParsing="false" onAction="#onAnnuler" text="Annuler" />
-      <Button fx:id="supprimer" layoutX="344.0" layoutY="336.0" mnemonicParsing="false" onAction="#onSupprimer" text="Supprimer" />
+      <VBox alignment="CENTER" layoutX="690.0" layoutY="144.0" prefHeight="554.0" prefWidth="518.0" spacing="30.0">
+         <children>
+            <Label styleClass="title1" text="QCU gestion" />
+            <ScrollPane fx:id="scrollpane" prefHeight="321.0" prefWidth="280.0">
+               <content>
+                  <VBox fx:id="formArea" prefHeight="228.0" prefWidth="218.0" />
+               </content>
+            </ScrollPane>
+            <HBox alignment="CENTER" prefHeight="27.0" prefWidth="200.0" spacing="20.0">
+               <children>
+                  <Button fx:id="supprimer" mnemonicParsing="false" onAction="#onSupprimer" text="Supprimer" />
+                  <Button fx:id="annuler" mnemonicParsing="false" onAction="#onAnnuler" text="Annuler" />
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+      <VBox alignment="CENTER" layoutX="1.0" layoutY="-2.0" prefHeight="862.0" prefWidth="409.0" style="-fx-background-color: EDECF4;">
+         <children>
+            <Label styleClass="title1" text="Ortho-J" />
+            <VBox alignment="CENTER" prefHeight="653.0" prefWidth="382.0" spacing="30.0">
+               <children>
+                  <Button fx:id="home" mnemonicParsing="false" onAction="#onHome" styleClass="menu-button" text="Home" />
+                  <Button fx:id="listePatients" mnemonicParsing="false" onAction="#onListePatients" prefHeight="25.0" prefWidth="135.0" styleClass="menu-button" text="Patients" />
+                  <Button fx:id="calendrier" mnemonicParsing="false" onAction="#onCalendrier" prefHeight="25.0" prefWidth="135.0" styleClass="menu-button" text="Calendrier" />
+                  <Button fx:id="questions" mnemonicParsing="false" onAction="#onQuestions" prefHeight="39.0" prefWidth="171.0" styleClass="menu-button" text=" Questionnaires" />
+                  <Button fx:id="anam" mnemonicParsing="false" onAction="#onAnam" prefHeight="39.0" prefWidth="211.0" styleClass="menu-button" text="Anamnèse questions" />
+                  <Button fx:id="disconnect" mnemonicParsing="false" onAction="#onDisconnect" prefHeight="25.0" prefWidth="135.0" styleClass="menu-button" text="Déconnecter" />
+               </children>
+            </VBox>
+         </children>
+      </VBox>
    </children>
 </AnchorPane>

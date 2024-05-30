@@ -82,7 +82,7 @@ public class Dashboard{
 
     @FXML
     void onAnam(ActionEvent event) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(com.example.orthoj.Main.class.getResource("View/AnamTypeHome.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(com.example.orthoj.Main.class.getResource("View/anam_type_home.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 600, 400);
         Main.stage.setScene(scene);
         Main.stage.show();

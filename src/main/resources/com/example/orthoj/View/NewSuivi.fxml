@@ -2,38 +2,62 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.orthoj.Controller.NewSuivi">
+<AnchorPane prefHeight="810.0" prefWidth="1440.0" stylesheets="@../Style/button.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.orthoj.Controller.NewSuivi">
    <children>
-      <Text layoutX="84.0" layoutY="42.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nouvelle seance de suivi">
+      <Text layoutX="471.0" layoutY="78.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nouvelle seance de suivi">
          <font>
-            <Font size="26.0" />
+            <Font size="44.0" />
          </font>
       </Text>
-      <Text layoutX="86.0" layoutY="68.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Remplissez les champs suivant svp : " />
-      <TextField fx:id="numDossier" layoutX="84.0" layoutY="104.0" promptText=" Nº Dossier" />
-      <RadioButton fx:id="presentielle" layoutX="84.0" layoutY="205.0" mnemonicParsing="false" selected="true" text="Presentielle ">
+      <Text layoutX="478.0" layoutY="123.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Remplissez les champs suivant svp : ">
+         <font>
+            <Font size="25.0" />
+         </font></Text>
+      <TextField fx:id="numDossier" layoutX="507.0" layoutY="172.0" prefHeight="29.0" prefWidth="216.0" promptText=" Nº Dossier" />
+      <RadioButton fx:id="presentielle" layoutX="507.0" layoutY="324.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="117.0" selected="true" text="Presentielle ">
          <toggleGroup>
             <ToggleGroup fx:id="grp2" />
          </toggleGroup>
       </RadioButton>
-      <RadioButton fx:id="online" layoutX="180.0" layoutY="205.0" mnemonicParsing="false" text="En ligne" toggleGroup="$grp2" />
-      <Button layoutX="432.0" layoutY="336.0" mnemonicParsing="false" onAction="#NewSuivi" text="Ajouter" />
-      <Button layoutX="73.0" layoutY="335.0" mnemonicParsing="false" onAction="#BackToCalendrier" text="Calendrier" />
-      <DatePicker id="Date" fx:id="date" layoutX="83.0" layoutY="149.0" prefHeight="26.0" prefWidth="150.0" promptText="Date" />
-      <TextField fx:id="heure" layoutX="258.0" layoutY="150.0" prefHeight="26.0" prefWidth="40.0" promptText="hr" />
-      <TextField fx:id="min" layoutX="310.0" layoutY="150.0" prefHeight="26.0" prefWidth="40.0" promptText="min" />
+      <RadioButton fx:id="online" layoutX="624.0" layoutY="324.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="78.0" text="En ligne" toggleGroup="$grp2" />
+      <Button layoutX="820.0" layoutY="391.0" mnemonicParsing="false" onAction="#NewSuivi" text="Ajouter" />
+      <Button layoutX="592.0" layoutY="391.0" mnemonicParsing="false" onAction="#BackToCalendrier" text="Calendrier" />
+      <DatePicker id="Date" fx:id="date" layoutX="507.0" layoutY="256.0" prefHeight="32.0" prefWidth="216.0" promptText="Date" stylesheets="@../Style/menu.css" />
+      <TextField fx:id="heure" layoutX="767.0" layoutY="257.0" prefHeight="33.0" prefWidth="54.0" promptText="hr" />
+      <TextField fx:id="min" layoutX="852.0" layoutY="257.0" prefHeight="33.0" prefWidth="54.0" promptText="min" />
       <Text layoutX="301.0" layoutY="169.0" strokeType="OUTSIDE" strokeWidth="0.0" text=":">
          <font>
             <Font size="24.0" />
          </font>
       </Text>
+      <Text layoutX="830.0" layoutY="286.0" strokeType="OUTSIDE" strokeWidth="0.0" text=":" wrappingWidth="24.6015625">
+         <font>
+            <Font size="52.0" />
+         </font>
+      </Text>
+      <VBox alignment="CENTER" layoutX="1.0" prefHeight="860.0" prefWidth="409.0" style="-fx-background-color: EDECF4;">
+         <children>
+            <Label styleClass="title1" text="Ortho-J" />
+            <VBox alignment="CENTER" prefHeight="653.0" prefWidth="382.0" spacing="30.0">
+               <children>
+                  <Button fx:id="home" mnemonicParsing="false" onAction="#onHome" styleClass="menu-button" text="Home" />
+                  <Button fx:id="listePatients" mnemonicParsing="false" onAction="#onListePatients" prefHeight="25.0" prefWidth="135.0" styleClass="menu-button" text="Patients" />
+                  <Button fx:id="calendrier" mnemonicParsing="false" onAction="#onCalendrier" prefHeight="25.0" prefWidth="135.0" styleClass="menu-button" text="Calendrier" />
+                  <Button fx:id="questions" mnemonicParsing="false" onAction="#onQuestions" prefHeight="39.0" prefWidth="171.0" styleClass="menu-button" text=" Questionnaires" />
+                  <Button fx:id="anam" mnemonicParsing="false" onAction="#onAnam" prefHeight="39.0" prefWidth="211.0" styleClass="menu-button" text="Anamnèse questions" />
+                  <Button fx:id="disconnect" mnemonicParsing="false" onAction="#onDisconnect" prefHeight="25.0" prefWidth="135.0" styleClass="menu-button" text="Déconnecter" />
+               </children>
+            </VBox>
+         </children>
+      </VBox>
    </children>
 </AnchorPane>

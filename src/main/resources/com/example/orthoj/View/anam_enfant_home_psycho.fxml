@@ -1,34 +1,75 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.orthoj.Controller.AnamEnfantHomePsycho">
+<AnchorPane prefHeight="810.0" prefWidth="1440.0" stylesheets="@../Style/button.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.orthoj.Controller.AnamEnfantHomePsycho">
    <children>
-      <VBox layoutX="14.0" layoutY="98.0" prefHeight="205.0" prefWidth="156.0" spacing="5.0">
+      <VBox alignment="CENTER" layoutX="7.0" layoutY="6.0" prefHeight="854.0" prefWidth="403.0" style="-fx-background-color: EDECF4;">
          <children>
-            <Button fx:id="structure" mnemonicParsing="false" onAction="#onStructure" prefHeight="25.0" prefWidth="178.0" text="Structure familiale" />
-            <Button fx:id="dynamique" mnemonicParsing="false" onAction="#onDynamique" prefHeight="25.0" prefWidth="185.0" text="Dynamique familiale" />
-            <Button fx:id="antecedent" mnemonicParsing="false" onAction="#onAntecedent" prefHeight="25.0" prefWidth="183.0" text="Antecedents familiaux" />
-            <Button fx:id="condition" mnemonicParsing="false" onAction="#onCondition" prefHeight="25.0" prefWidth="192.0" text="Conditions natales" />
-            <Button fx:id="psycho" mnemonicParsing="false" onAction="#onPsycho" prefHeight="25.0" prefWidth="182.0" text="Developpement psycho" />
-            <Button fx:id="langagier" mnemonicParsing="false" onAction="#onLangagier" prefHeight="25.0" prefWidth="167.0" text="Developpement langagier" />
-            <Button fx:id="caractere" mnemonicParsing="false" onAction="#onCaractere" prefHeight="25.0" prefWidth="159.0" text="Caractere comportement" />
+            <Label styleClass="title1" text="Ortho-J" />
+            <VBox alignment="CENTER" prefHeight="653.0" prefWidth="382.0" spacing="30.0">
+               <children>
+                  <Button fx:id="home" mnemonicParsing="false" onAction="#onHome" styleClass="menu-button" text="Home" />
+                  <Button fx:id="listePatients" mnemonicParsing="false" onAction="#onListePatients" prefHeight="25.0" prefWidth="135.0" styleClass="menu-button" text="Patients" />
+                  <Button fx:id="calendrier" mnemonicParsing="false" onAction="#onCalendrier" prefHeight="25.0" prefWidth="135.0" styleClass="menu-button" text="Calendrier" />
+                  <Button fx:id="questions" mnemonicParsing="false" onAction="#onQuestions" prefHeight="39.0" prefWidth="171.0" styleClass="menu-button" text=" Questionnaires" />
+                  <Button fx:id="anam" mnemonicParsing="false" onAction="#onAnam" prefHeight="39.0" prefWidth="211.0" styleClass="menu-button" text="Anamnèse questions" />
+                  <Button fx:id="disconnect" mnemonicParsing="false" onAction="#onDisconnect" prefHeight="25.0" prefWidth="135.0" styleClass="menu-button" text="Déconnecter" />
+               </children>
+            </VBox>
          </children>
       </VBox>
-      <TableView fx:id="tableView" layoutX="175.0" layoutY="60.0" prefHeight="225.0" prefWidth="411.0">
-        <columns>
-          <TableColumn fx:id="stringColumn" prefWidth="410.0" text="Questions" />
-        </columns>
-      </TableView>
-      <TextField fx:id="inputField" layoutX="185.0" layoutY="303.0" prefHeight="25.0" prefWidth="177.0" />
-      <Button layoutX="371.0" layoutY="303.0" mnemonicParsing="false" onAction="#handleAdd" text="Ajouter" />
-      <Button layoutX="434.0" layoutY="303.0" mnemonicParsing="false" onAction="#handleEdit" text="Modifier" />
-      <Button layoutX="504.0" layoutY="303.0" mnemonicParsing="false" onAction="#handleDelete" text="Supprimer" />
-      <Button layoutX="509.0" layoutY="343.0" mnemonicParsing="false" onAction="#handleSave" text="Sauvegarder" />
+      <VBox alignment="CENTER" layoutX="478.0" layoutY="135.0" prefHeight="690.0" prefWidth="895.0" spacing="40.0">
+         <children>
+            <VBox prefHeight="205.0" prefWidth="156.0" spacing="5.0">
+               <children>
+                  <HBox alignment="CENTER" prefHeight="39.0" prefWidth="848.0" spacing="30.0">
+                     <children>
+                        <Button fx:id="condition" mnemonicParsing="false" onAction="#onCondition" prefHeight="39.0" prefWidth="204.0" styleClass="menu-button" text="Conditions natales" />
+                        <Button fx:id="antecedent" mnemonicParsing="false" onAction="#onAntecedent" prefHeight="39.0" prefWidth="238.0" styleClass="menu-button" text="Antecedents familiaux" />
+                        <Button fx:id="dynamique" mnemonicParsing="false" onAction="#onDynamique" prefHeight="39.0" prefWidth="229.0" styleClass="menu-button" text="Dynamique familiale" />
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="51.0" prefWidth="895.0" spacing="20.0">
+                     <children>
+                        <Button fx:id="caractere" mnemonicParsing="false" onAction="#onCaractere" prefHeight="39.0" prefWidth="277.0" styleClass="menu-button" text="Caractere comportement" />
+                        <Button fx:id="langagier" mnemonicParsing="false" onAction="#onLangagier" prefHeight="39.0" prefWidth="263.0" styleClass="menu-button" text="Developpement langagier" />
+                        <Button fx:id="psycho" mnemonicParsing="false" onAction="#onPsycho" prefHeight="39.0" prefWidth="248.0" styleClass="menu-button" text="Developpement psycho" />
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="49.0" prefWidth="895.0">
+                     <children>
+                        <Button fx:id="structure" mnemonicParsing="false" onAction="#onStructure" prefHeight="39.0" prefWidth="232.0" styleClass="menu-button" text="Structure familiale" />
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+            <TableView fx:id="tableView" prefHeight="336.0" prefWidth="591.0">
+               <columns>
+                  <TableColumn fx:id="stringColumn" prefWidth="894.0" text="Questions" />
+               </columns>
+            </TableView>
+            <HBox alignment="CENTER" prefHeight="52.0" prefWidth="786.0">
+               <children>
+                  <TextField fx:id="inputField" prefHeight="25.0" prefWidth="356.0" />
+                  <HBox alignment="CENTER" prefHeight="63.0" prefWidth="495.0" spacing="20.0">
+                     <children>
+                        <Button mnemonicParsing="false" onAction="#handleAdd" text="Ajouter" />
+                        <Button mnemonicParsing="false" onAction="#handleEdit" text="Modifier" />
+                        <Button mnemonicParsing="false" onAction="#handleDelete" text="Supprimer" />
+                     </children>
+                  </HBox>
+               </children>
+            </HBox>
+            <Button mnemonicParsing="false" onAction="#handleSave" text="Sauvegarder" />
+         </children>
+      </VBox>
    </children>
 </AnchorPane>

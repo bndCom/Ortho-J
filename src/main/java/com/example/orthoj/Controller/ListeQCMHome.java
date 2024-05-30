@@ -41,6 +41,8 @@ public class ListeQCMHome {
     @FXML
     private Button disconnect;
 
+
+
     @FXML
     void onHome(ActionEvent event) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(com.example.orthoj.Main.class.getResource("View/dashboard.fxml"));
