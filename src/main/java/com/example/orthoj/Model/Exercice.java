@@ -1,6 +1,8 @@
 package com.example.orthoj.Model;
 
-public class Exercice {
+import java.io.Serializable;
+
+public class Exercice implements Serializable {
     // attributes
     private String nom;
     private String materiel;

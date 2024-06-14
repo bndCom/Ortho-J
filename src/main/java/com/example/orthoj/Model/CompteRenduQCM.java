@@ -1,6 +1,8 @@
 package com.example.orthoj.Model;
 
-public class CompteRenduQCM {
+import java.io.Serializable;
+
+public class CompteRenduQCM implements Serializable {
     // attributes
     private String question;
     private String choix;

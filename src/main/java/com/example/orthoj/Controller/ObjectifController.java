@@ -1,18 +1,25 @@
 package com.example.orthoj.Controller;
 
+import com.example.orthoj.Main;
+import com.example.orthoj.Model.DossierManagementPackage.Dossier;
 import com.example.orthoj.Model.FicheDeSuiviPackage.FicheDeSuivi;
 import com.example.orthoj.Model.FicheDeSuiviPackage.Objectif;
 import com.example.orthoj.Model.FicheDeSuiviPackage.TypeObjectifs;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 
+import javax.swing.*;
 import java.awt.*;
+import java.io.IOException;
 
 public class ObjectifController {
     @FXML
@@ -45,15 +52,13 @@ public class ObjectifController {
         typeColumn.setCellValueFactory(data -> new SimpleStringProperty(data.getValue().getTypeObjectifString()));
        gradesColumn.setCellValueFactory(data -> new SimpleStringProperty(data.getValue().getLol()));
 
-        ficheDeSuivi = new FicheDeSuivi();
+        int num =   Main.cabinet.getSelectedRendezVous().getPatient().getNumDossier();
+        Dossier dossier = Main.cabinet.getDossierById(num);
+        ficheDeSuivi = dossier.getFicheDeSuiviCourante();
     }
 
     @FXML
     private void handleLoadFicheDeSuivi() {
-        // For demonstration, we'll just add some dummy data
-        ficheDeSuivi.AjouterObjectif("Objectif 1", TypeObjectifs.Cours);
-        ficheDeSuivi.AjouterObjectif("Objectif 2", TypeObjectifs.Long);
-        // For demonstration, we'll just add some dummy data
 
         objectifs.setAll(ficheDeSuivi.getObjectifs());
         tableView1.refresh();
@@ -76,6 +81,14 @@ public class ObjectifController {
         } else {
             errorLabel.setText("Please select an objectif.");
         }
+    }
+
+    @FXML
+    public void onFin(ActionEvent event) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("View/dashboard.fxml"));
+        Scene scene = new Scene(fxmlLoader.load(), 1440, 810);
+        Main.stage.setScene(scene);
+        Main.stage.show();
     }
 }
 

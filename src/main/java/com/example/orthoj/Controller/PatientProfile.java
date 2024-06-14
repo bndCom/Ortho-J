@@ -12,7 +12,9 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.text.Text;
 
+import javax.swing.*;
 import java.io.IOException;
+import java.util.LinkedList;
 
 public class PatientProfile {
 
@@ -132,6 +134,15 @@ public class PatientProfile {
             prenomMere.setText("Prénom de mère");
             prenomMereVal.setText(((PatientEnfant)patient).getPrenomMere());
         }
+    }
+
+    @FXML
+    public void onMenu(ActionEvent event) throws IOException {
+
+        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("View/dashboard.fxml"));
+        Scene scene = new Scene(fxmlLoader.load(), 1440, 810);
+        Main.stage.setScene(scene);
+        Main.stage.show();
     }
 
 }

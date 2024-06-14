@@ -1,6 +1,8 @@
 package com.example.orthoj.Model;
 
-public class Anamnese {
+import java.io.Serializable;
+
+public class Anamnese implements Serializable {
     // constructor
     public Anamnese(){}
 }

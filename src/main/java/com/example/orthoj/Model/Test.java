@@ -1,10 +1,12 @@
 package com.example.orthoj.Model;
 
+import java.io.Serializable;
+
 /**
  * Test class is for managing session questions and suggested exercices
  * @author bnd-cboumi
  */
-abstract public class Test {
+abstract public class Test implements Serializable {
     // attributes
     protected String nom;
     protected int scoreTotal;

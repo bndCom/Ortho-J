@@ -1,6 +1,8 @@
 package com.example.orthoj.Model;
 
-public class QLData {
+import java.io.Serializable;
+
+public class QLData implements Serializable {
 
     private String question;
     private String answer;

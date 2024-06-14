@@ -10,6 +10,7 @@ import javafx.scene.control.Label;
 import javafx.scene.layout.FlowPane;
 
 import java.io.IOException;
+import java.util.LinkedList;
 import java.util.List;
 
 public class ListBo {
@@ -31,6 +32,7 @@ public class ListBo {
                 Button button = new Button("BO");
                 button.setId(Integer.toString(bo.getId()));
                 button.setOnAction(event -> {
+
                     BoMain.bo = bo;
                     FXMLLoader fxmlLoader = new FXMLLoader(com.example.orthoj.Main.class.getResource("View/bo_main.fxml"));
                     Scene scene = null;

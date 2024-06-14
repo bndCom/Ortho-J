@@ -3,11 +3,12 @@ package com.example.orthoj.Model.RendezVousManagement;
 import com.example.orthoj.Model.Patient.Patient;
 import com.example.orthoj.Model.Patient.PatientEnfant;
 
+import java.io.Serializable;
 import java.time.*;
 import java.util.*;
 
 
-abstract public class RendezVous {
+abstract public class RendezVous implements Serializable {
     public String type(){
         return "";
     }

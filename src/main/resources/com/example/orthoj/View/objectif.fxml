@@ -28,5 +28,6 @@
        <TextField fx:id="gradeField" layoutX="56.0" layoutY="88.0" promptText="Enter grade" />
        <Button layoutX="226.0" layoutY="88.0" onAction="#handleAddGrade" text="Add Grade" />
       <Button layoutX="56.0" layoutY="21.0" onAction="#handleLoadFicheDeSuivi" text="Load FicheDeSuivi" />
+   <Button layoutX="99.0" layoutY="175.0" mnemonicParsing="false" onAction="#onFin" text="Fin" />
 
 </AnchorPane>

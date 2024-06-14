@@ -1,9 +1,10 @@
     package com.example.orthoj.Model.FicheDeSuiviPackage;
 
+    import java.io.Serializable;
     import java.lang.reflect.Type;
     import java.util.LinkedList;
 
-    public class Objectif {
+    public class Objectif implements Serializable {
         private String nom ;
         private TypeObjectifs typeObjectifs ;
 

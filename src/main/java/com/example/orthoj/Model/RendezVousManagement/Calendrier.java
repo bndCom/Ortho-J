@@ -4,6 +4,7 @@ package com.example.orthoj.Model.RendezVousManagement;
 import com.example.orthoj.Model.CustomException.InvalidRendezVousTimeClash;
 import com.sun.source.tree.Tree;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
@@ -11,7 +12,7 @@ import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.TreeMap;
 
-public class Calendrier {
+public class Calendrier implements Serializable {
 
     TreeMap<LocalDate , LinkedList<RendezVous>> calendrier = new TreeMap<LocalDate , LinkedList<RendezVous>>();
 

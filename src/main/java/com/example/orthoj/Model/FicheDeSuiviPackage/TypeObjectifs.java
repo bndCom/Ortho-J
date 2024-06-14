@@ -1,5 +1,7 @@
 package com.example.orthoj.Model.FicheDeSuiviPackage;
 
-public enum TypeObjectifs {
+import java.io.Serializable;
+
+public enum TypeObjectifs implements Serializable {
     Cours , Moyen , Long
 }

@@ -84,5 +84,6 @@
             </HBox>
          </children>
       </VBox>
+      <Button layoutX="424.0" layoutY="295.0" mnemonicParsing="false" onAction="#onMenu" text="Menu" />
    </children>
 </AnchorPane>

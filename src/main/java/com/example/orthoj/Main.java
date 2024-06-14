@@ -14,10 +14,12 @@ import javafx.stage.Screen;
 import javafx.stage.Stage;
 
 import java.io.*;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.*;
 
 public class Main extends Application {
-    public static Cabinet cabinet = new Cabinet();
+    public static Cabinet cabinet = null;
 
 
     // -----------------------------------------------------------------
@@ -25,27 +27,34 @@ public class Main extends Application {
     @Override
     public void start(Stage stage) throws IOException {
 
-        // loading cabinet
-//        try (FileInputStream fileIn = new FileInputStream("C:\\Users\\anesb\\IdeaProjects\\Ortho-J\\src\\main\\resources\\com\\example\\orthoj\\Data\\cabinet.ser");
-//             ObjectInputStream in = new ObjectInputStream(fileIn)) {
-//            cabinet = (Cabinet) in.readObject();
-//        } catch (IOException i) {
-//            i.printStackTrace();
-//        } catch (ClassNotFoundException c) {
-//            System.out.println("Class not found");
-//            c.printStackTrace();
-//        }
+        // loading cabinet from file ( file is found in the temporary directory %TEMP% )
+        String tempDir = System.getenv("TEMP");
+        if (tempDir == null || tempDir.isEmpty()) {
+            tempDir = System.getProperty("java.io.tmpdir");
+        }
+
+        Path tempFile = Paths.get(tempDir, "cabinet.ser");
+        try (FileInputStream fileIn = new FileInputStream(tempFile.toFile());
+             ObjectInputStream in = new ObjectInputStream(fileIn)) {
+            cabinet = (Cabinet) in.readObject();
+        } catch (IOException i) {
+            // create new cabinet
+            cabinet = new Cabinet();
+        } catch (ClassNotFoundException c) {
+            c.printStackTrace();
+        }
 
         // setting the main stage
         Main.stage = stage;
-        FXMLLoader fxmlLoader = new FXMLLoader(com.example.orthoj.Main.class.getResource("View/dashboard.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(com.example.orthoj.Main.class.getResource("View/main.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 1440, 810);
         stage.setTitle("Ortho-J");
         stage.setScene(scene);
 
+        // executed when the application exits
         stage.setOnCloseRequest(event -> {
-            // Call your cleanup or shutdown method
-            try (FileOutputStream fileOut = new FileOutputStream("C:\\Users\\anesb\\IdeaProjects\\Ortho-J\\src\\main\\resources\\com\\example\\orthoj\\Data\\cabinet.ser");
+            // saving data to the file cabinet.ser in the temp directory
+            try (FileOutputStream fileOut = new FileOutputStream(tempFile.toFile());
                  ObjectOutputStream out = new ObjectOutputStream(fileOut)) {
                 out.writeObject(cabinet);
             } catch (IOException i) {

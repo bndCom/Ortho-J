@@ -42,6 +42,12 @@ public class ProjetTherapeutique {
             Main.cabinet.addPremierBO(premierBO, patient);
             // setting anamEnfant to null
             AnamChoix.anamEnfant = null;
+
+            // loading dashboard
+            FXMLLoader fxmlLoader = new FXMLLoader(com.example.orthoj.Main.class.getResource("View/dashboard.fxml"));
+            Scene scene = new Scene(fxmlLoader.load(), 1440, 810);
+            Main.stage.setScene(scene);
+            Main.stage.show();
         }else if(AnamChoix.anamAdulte != null){
             // it is premierBO
             PremierBO premierBO = new PremierBO();
@@ -53,6 +59,11 @@ public class ProjetTherapeutique {
             Main.cabinet.addPremierBO(premierBO, patient);
             // setting anamAdulte to null
             AnamChoix.anamAdulte = null;
+            // loading dashboard
+            FXMLLoader fxmlLoader = new FXMLLoader(com.example.orthoj.Main.class.getResource("View/dashboard.fxml"));
+            Scene scene = new Scene(fxmlLoader.load(), 1440, 810);
+            Main.stage.setScene(scene);
+            Main.stage.show();
         }else{
             // not premier bo
             // it is not premier BO
@@ -63,13 +74,15 @@ public class ProjetTherapeutique {
             bo.setProjetTherapeutique(text.getText());
             // adding the bo
             Main.cabinet.addBOToDossier(bo, numDossier);
+
+            // loading dashboard
+            FXMLLoader fxmlLoader = new FXMLLoader(com.example.orthoj.Main.class.getResource("View/nouvelleFicheDeSuivi.fxml"));
+            Scene scene = new Scene(fxmlLoader.load(), 1440, 810);
+            Main.stage.setScene(scene);
+            Main.stage.show();
         }
 
-        // loading dashboard
-        FXMLLoader fxmlLoader = new FXMLLoader(com.example.orthoj.Main.class.getResource("View/dashboard.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 1440, 810);
-        Main.stage.setScene(scene);
-        Main.stage.show();
+
     }
 
 }

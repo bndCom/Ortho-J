@@ -65,6 +65,14 @@ public class BoMain {
     }
 
     @FXML
+    void onMenu(ActionEvent event) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("View/dashboard.fxml"));
+        Scene scene = new Scene(fxmlLoader.load(), 1440, 810);
+        Main.stage.setScene(scene);
+        Main.stage.show();
+    }
+
+    @FXML
     void initialize(){
         nomBO.setText("BO "+bo.getId());
         // disabling anamnese if bo is not premier bo

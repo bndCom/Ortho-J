@@ -8,9 +8,14 @@ import com.example.orthoj.Model.FicheDeSuiviPackage.TypeObjectifs;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+
+import java.io.IOException;
 
 public class NouvelleFicheDeSuiviController {
 
@@ -59,18 +64,51 @@ public class NouvelleFicheDeSuiviController {
         }
 
         @FXML
-    private void save(){
+    public void save() throws IOException {
           int num =   Main.cabinet.getSelectedRendezVous().getPatient().getNumDossier();
           Dossier dossier = null;
           for (Dossier dossier1 : Main.cabinet.getLinkedListDossier()){
               if (dossier1.getNbDossier() == num){
                   dossier = dossier1;
-                  // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-                  // add the thing that adds the fiche de suivi to the dossier
+                  dossier.setFicheDeSuiviCourante(ficheDeSuivi);
                   break;
               }
           }
+            FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("View/objectif.fxml"));
+            Scene scene = new Scene(fxmlLoader.load(), 1440, 810);
+            Main.stage.setScene(scene);
+            Main.stage.show();
 
 
         }
+
+        @FXML
+        public void notnew() throws IOException {
+        int num =   Main.cabinet.getSelectedRendezVous().getPatient().getNumDossier();
+        Dossier dossier = null;
+        for (Dossier dossier1 : Main.cabinet.getLinkedListDossier()){
+            if (dossier1.getNbDossier() == num){
+                dossier = dossier1;
+                if (dossier.getFicheDeSuiviCourante() == null) {
+                    break;
+                }else {
+                    FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("View/objectif.fxml"));
+                    Scene scene = new Scene(fxmlLoader.load(), 1440, 810);
+                    Main.stage.setScene(scene);
+                    Main.stage.show();
+                }
+            }
+        }
+
+
+
+    }
+
+    @FXML
+    public void onMenu(ActionEvent event) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("View/dashboard.fxml"));
+        Scene scene = new Scene(fxmlLoader.load(), 1440, 810);
+        Main.stage.setScene(scene);
+        Main.stage.show();
+    }
 }

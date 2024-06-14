@@ -1,5 +1,7 @@
 package com.example.orthoj.Model.Enumeration;
 
-public enum TypeQLAnam {
+import java.io.Serializable;
+
+public enum TypeQLAnam implements Serializable {
 
 }

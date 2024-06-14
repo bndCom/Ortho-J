@@ -29,5 +29,6 @@
             <TableColumn fx:id="categorieColumn" prefWidth="207.5" text="Catégorie" />
          </columns>
       </TableView>
+      <Button layoutX="475.0" layoutY="321.0" mnemonicParsing="false" onAction="#onMenu" text="Menu" />
    </children>
 </AnchorPane>

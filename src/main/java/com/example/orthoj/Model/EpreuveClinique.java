@@ -1,9 +1,10 @@
 package com.example.orthoj.Model;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class EpreuveClinique {
+public class EpreuveClinique implements Serializable {
 
     // attributes
     private List<String> observations;

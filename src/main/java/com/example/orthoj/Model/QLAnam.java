@@ -2,11 +2,12 @@ package com.example.orthoj.Model;
 
 import com.example.orthoj.Model.CustomException.InvalidResponse;
 
+import java.io.Serializable;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-abstract public class QLAnam {
+abstract public class QLAnam implements Serializable {
     // the difference with the QL of epreuve is that this QL is not noted, and also has a specific category
     // attributes
     protected Map<String, String> form ;

@@ -15,14 +15,12 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.DatePicker;
-import javafx.scene.control.RadioButton;
-import javafx.scene.control.ToggleGroup;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.fxml.Initializable;
 //import  jfxtras.scene.control.*;
 import javafx.beans.*;
+import javafx.scene.control.Button;
+import javafx.scene.control.TextField;
 import javafx.util.converter.LocalDateStringConverter;
 
 import javax.swing.*;
@@ -170,7 +168,12 @@ private javafx.scene.control.Button home;
         try {
             calendrier.AjouterRDV((RendezVous) consultationEnfant);
         } catch (InvalidRendezVousTimeClash e) {
-            throw new RuntimeException(e);
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Error");
+            alert.setHeaderText("Erreur");
+            String errorMessage = "Chevauchement des RendezVous";
+            alert.setContentText(errorMessage);
+            alert.showAndWait();
         }
         Main.cabinet.setCalendrier(calendrier);
         Main.cabinet.insertPatient(patientEnfant);
@@ -191,7 +194,12 @@ private javafx.scene.control.Button home;
         try {
             calendrier.AjouterRDV((RendezVous) consultationEnfant);
         } catch (InvalidRendezVousTimeClash e) {
-            throw new RuntimeException(e);
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Error");
+            alert.setHeaderText("Erreur");
+            String errorMessage = "Chevauchement des RendezVous";
+            alert.setContentText(errorMessage);
+            alert.showAndWait();
         }
 
         Main.cabinet.setCalendrier(calendrier);

@@ -1,7 +1,9 @@
 package com.example.orthoj.Controller;
 
 import com.example.orthoj.Main;
+import com.example.orthoj.Model.Enumeration.TypeTrouble;
 import com.example.orthoj.Model.Orthophoniste;
+import com.example.orthoj.Model.Trouble;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -14,6 +16,8 @@ import javafx.scene.text.Text;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.LinkedList;
+import java.util.List;
 import java.util.ResourceBundle;
 
 public class Dashboard{
@@ -103,6 +107,9 @@ public class Dashboard{
 
     @FXML
     void initialize(){
+        // init bo list
+        // free bos
+        ListBo.list = new LinkedList<>();
         // getting the doctor of the cabinet
         Orthophoniste doctor = Main.cabinet.getOrthophoniste();
         if(doctor != null){
@@ -113,9 +120,23 @@ public class Dashboard{
             adresse.setText(doctor.getAddress());
         }
         // setting data in the piechart
-        PieChart.Data slice1 = new PieChart.Data("déglutition", 30);
-        PieChart.Data slice2 = new PieChart.Data("neuro-développementaux", 20);
-        PieChart.Data slice3 = new PieChart.Data("cognitifs", 50);
+        List<Trouble> list = new LinkedList<>();
+        list = Main.cabinet.getTroubles();
+        int deg = 0;
+        int neuro = 0;
+        int cog = 0;
+        for (Trouble trouble : list){
+            if(trouble.getType().equals(TypeTrouble.COGNITIF)){
+                cog++;
+            }else if(trouble.getType().equals(TypeTrouble.DEGLUTITION)){
+                deg++;
+            }else{
+                neuro++;
+            }
+        }
+        PieChart.Data slice1 = new PieChart.Data("déglutition", deg);
+        PieChart.Data slice2 = new PieChart.Data("neuro-développementaux", neuro);
+        PieChart.Data slice3 = new PieChart.Data("cognitifs", cog);
 
         troublesPercent.getData().addAll(slice1, slice2, slice3);
 

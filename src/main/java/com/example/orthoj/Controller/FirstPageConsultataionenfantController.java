@@ -76,6 +76,7 @@ public class FirstPageConsultataionenfantController {
         if(creerDossier.isSelected()){
             Dossier dossier = new Dossier((Consultaion) Main.cabinet.getSelectedRendezVous());
             Main.cabinet.addDossier(dossier);
+            Main.cabinet.getSelectedRendezVous().getPatient().setNumDossier(dossier.getNbDossier());
         }
 
         // loading first bo

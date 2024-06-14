@@ -6,12 +6,14 @@ import com.example.orthoj.Model.FicheDeSuiviPackage.*;
 import com.example.orthoj.Model.Patient.Patient;
 import com.example.orthoj.Model.PremierBO;
 import com.example.orthoj.Model.RendezVousManagement.*;
+import com.example.orthoj.Model.Trouble;
 
+import java.io.Serializable;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.concurrent.LinkedBlockingDeque;
 
-public class Dossier {
+public class Dossier implements Serializable {
 //    String nom ;
 //    String prenom ;
 //    String NumTel ;
@@ -19,7 +21,7 @@ public class Dossier {
 
     private static int counter = 1;
     private int NbDossier ;
-    FicheDeSuivi FicheDeSuiviCourante ;
+    FicheDeSuivi FicheDeSuiviCourante = null ;
     Patient patient;
     List<BO> BOs;
 
@@ -30,6 +32,8 @@ public class Dossier {
     // ajouter le bilan ortophonique
     // !!!!!!!!!!!!!!!! Do not forget
     LinkedList<RendezVous> ListDeRendezVousTotale = new LinkedList<RendezVous>();
+
+
 
 
 
@@ -77,5 +81,27 @@ public class Dossier {
 
     public void setListDeRendezVousTotale(LinkedList<RendezVous> listDeRendezVousTotale) {
         ListDeRendezVousTotale = listDeRendezVousTotale;
+    }
+
+    public void setFicheDeSuiviCourante(FicheDeSuivi ficheDeSuiviCourante) {
+        if (FicheDeSuiviCourante != null){
+            ListFicheDeSuivi.add(FicheDeSuiviCourante);
+        }
+        FicheDeSuiviCourante = ficheDeSuiviCourante;
+    }
+
+    public FicheDeSuivi getFicheDeSuiviCourante() {
+        return FicheDeSuiviCourante;
+    }
+    // get all troubles
+    public List<Trouble> getTroubles(){
+        List<Trouble> troubles = new LinkedList<>();
+        for(BO bo : this.BOs){
+            troubles.addAll(bo.getTroubles());
+        }
+        if (patient.getPremierBO() != null){
+            troubles.addAll(patient.getPremierBO().getTroubles());
+        }
+        return troubles;
     }
 }

@@ -1,6 +1,8 @@
 package com.example.orthoj.Model.Enumeration;
 
-public enum TypeQLAnamEnfant {
+import java.io.Serializable;
+
+public enum TypeQLAnamEnfant implements Serializable {
     STRUCTURE_FAMILIALE,
     DYNAMIQUE_FAMILIALE,
     ANTECEDENTS_FAMILIAUX,

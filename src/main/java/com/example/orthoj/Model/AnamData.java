@@ -3,7 +3,9 @@ package com.example.orthoj.Model;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 
-public class AnamData {
+import java.io.Serializable;
+
+public class AnamData implements Serializable {
     private final SimpleStringProperty question;
     private final SimpleStringProperty response;
     private final SimpleStringProperty category;

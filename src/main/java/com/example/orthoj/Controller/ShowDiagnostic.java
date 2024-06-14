@@ -72,6 +72,14 @@ public class ShowDiagnostic {
     }
 
     @FXML
+    void onMenu(ActionEvent event) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(com.example.orthoj.Main.class.getResource("View/dashboard.fxml"));
+        Scene scene = new Scene(fxmlLoader.load(), 1440, 810);
+        Main.stage.setScene(scene);
+        Main.stage.show();
+    }
+
+    @FXML
     void initialize(){
         nomBO.setText("BO "+BoMain.bo.getId());
         diagnostic.setDisable(true);

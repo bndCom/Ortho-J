@@ -1,6 +1,8 @@
 package com.example.orthoj.Model.Enumeration;
 
-public enum TypeTrouble {
+import java.io.Serializable;
+
+public enum TypeTrouble implements Serializable {
     DEGLUTITION,
     NEURO_DEVELOPPEMENTAL,
     COGNITIF

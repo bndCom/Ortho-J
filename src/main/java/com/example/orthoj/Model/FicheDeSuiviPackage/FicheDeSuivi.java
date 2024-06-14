@@ -1,11 +1,12 @@
 package com.example.orthoj.Model.FicheDeSuiviPackage;
 
 import javax.print.attribute.standard.JobKOctets;
+import java.io.Serializable;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.LinkedList;
 
-public class FicheDeSuivi {
+public class FicheDeSuivi implements Serializable {
    LinkedList<Objectif> objectifs = new LinkedList<>();
 
     public Objectif CreeObjectif(String nom, TypeObjectifs type) {

@@ -21,5 +21,6 @@
             <Button fx:id="projet" mnemonicParsing="false" onAction="#onProjet" text="projet thérapeutique" />
          </children>
       </HBox>
+      <Button layoutX="501.0" layoutY="321.0" mnemonicParsing="false" onAction="#onMenu" text="Menu" />
    </children>
 </AnchorPane>

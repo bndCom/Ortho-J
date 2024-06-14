@@ -2,7 +2,9 @@ package com.example.orthoj.Model;
 
 import com.example.orthoj.Model.Enumeration.TypeTrouble;
 
-public class Trouble {
+import java.io.Serializable;
+
+public class Trouble implements Serializable {
 
     // attributes
     private String nom;

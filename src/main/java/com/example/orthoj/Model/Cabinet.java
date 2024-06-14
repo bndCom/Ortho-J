@@ -290,4 +290,13 @@ public class Cabinet implements Serializable {
     public void removeQuestion(Question question){
         this.questions.remove(question);
     }
+
+    // get all troubles
+    public List<Trouble> getTroubles(){
+        List<Trouble> troubles = new LinkedList<>();
+        for(Dossier dossier : dossierLinkedList){
+            troubles.addAll(dossier.getTroubles());
+        }
+        return troubles;
+    }
 }

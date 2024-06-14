@@ -3,9 +3,10 @@ package com.example.orthoj.Model.Patient;
 import com.example.orthoj.Model.PremierBO;
 import com.example.orthoj.Model.RendezVousManagement.Consultaion;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 
-public class Patient {
+public class Patient implements Serializable {
     String nom ;
     String prenom ;
 

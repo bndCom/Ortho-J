@@ -20,4 +20,7 @@
   <TextField fx:id="inputField1" layoutX="32.0" layoutY="89.0" promptText="Enter an objectif" />
   <ComboBox fx:id="typeComboBox" layoutX="204.0" layoutY="89.0" />
   <Button layoutX="32.0" layoutY="135.0" onAction="#handleAddObjectif" text="Add Objectif" />
+   <Button layoutX="60.0" layoutY="196.0" mnemonicParsing="false" onAction="#save" text="sauvegarder" />
+   <Button layoutX="178.0" layoutY="196.0" mnemonicParsing="false" onAction="#notnew" text="Skip" />
+   <Button layoutX="34.0" layoutY="244.0" mnemonicParsing="false" onAction="#onMenu" text="Menu" />
 </AnchorPane>

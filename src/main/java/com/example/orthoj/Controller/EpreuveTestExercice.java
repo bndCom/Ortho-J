@@ -8,10 +8,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -54,7 +51,16 @@ public class EpreuveTestExercice {
     @FXML
     void onAjouter(ActionEvent event) {
         Exercice exercice = new Exercice(nomField.getText(), materielField.getText());
-        exercice.setScore(Integer.parseInt(scoreField.getText()));
+        try{
+            exercice.setScore(Integer.parseInt(scoreField.getText()));
+        }catch (Exception e){
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Error");
+            alert.setHeaderText("Erreur");
+            String errorMessage = "Score n'est pas valid";
+            alert.setContentText(errorMessage);
+            alert.showAndWait();
+        }
         // add the exercise to the array
         exercices.add(exercice);
         // add the exercise to the table
