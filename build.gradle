@@ -4,11 +4,11 @@ plugins {
     id 'org.javamodularity.moduleplugin' version '1.8.12'
     id 'org.openjfx.javafxplugin' version '0.0.13'
     id 'org.beryx.jlink' version '2.25.0'
+    id 'com.github.johnrengelman.shadow' version '7.1.2'
 }
 
 group 'com.example'
 version '1.0-SNAPSHOT'
-
 
 repositories {
     mavenCentral()
@@ -27,7 +27,7 @@ tasks.withType(JavaCompile) {
 
 application {
     mainModule = 'com.example.orthoj'
-    mainClass = 'com.example.orthoj.HelloApplication'
+    mainClass = 'com.example.orthoj.Main'
 }
 
 javafx {
@@ -37,23 +37,28 @@ javafx {
 
 dependencies {
     implementation 'org.controlsfx:controlsfx:11.1.0'
+    implementation 'org.openjfx:javafx-controls:21'
+    implementation 'org.openjfx:javafx-fxml:21'
     testImplementation("org.junit.jupiter:junit-jupiter-api:${junitVersion}")
     testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:${junitVersion}")
-
 }
 
 test {
     useJUnitPlatform()
 }
 
-jlink {
-    imageZip = project.file("${buildDir}/distributions/app-${javafx.platform.classifier}.zip")
-    options = ['--strip-debug', '--compress', '2', '--no-header-files', '--no-man-pages']
-    launcher {
-        name = 'app'
+shadowJar {
+    archiveClassifier.set('all')
+    mergeServiceFiles()
+    manifest {
+        attributes 'Main-Class': 'com.example.orthoj.Main'
     }
 }
 
-jlinkZip {
-    group = 'distribution'
+jar {
+    manifest {
+        attributes(
+                'Main-Class': 'com.example.orthoj.Main'
+        )
+    }
 }
